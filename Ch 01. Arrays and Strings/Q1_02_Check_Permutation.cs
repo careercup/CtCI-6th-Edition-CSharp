@@ -1,15 +1,14 @@
-﻿
-using ctci.Contracts;
+﻿using ctci.Contracts;
 using System;
 
 namespace Chapter01
 {
     public class Q1_02_Check_Permutation : IQuestion
     {
-        bool IsPermutation(string original, string valueToTest)
+        private bool IsPermutation(string original, string valueToTest)
         {
             if (original.Length != valueToTest.Length)
-            { 
+            {
                 return false;
             }
 
@@ -24,10 +23,10 @@ namespace Chapter01
             return original.Equals(valueToTest);
         }
 
-        bool IsPermutation2(string original, string valueToTest)
+        private bool IsPermutation2(string original, string valueToTest)
         {
-            if (original.Length != valueToTest.Length) 
-            { 
+            if (original.Length != valueToTest.Length)
+            {
                 return false;
             }
 
@@ -45,7 +44,7 @@ namespace Chapter01
             {
                 letters[character]--;
 
-                if (letters[character] < 0) 
+                if (letters[character] < 0)
                 {
                     return false;
                 }
@@ -56,10 +55,10 @@ namespace Chapter01
 
         public void Run()
         {
-		    string[][] pairs = 
+            string[][] pairs =
             {
                 new string[]{"apple", "papel"},
-                new string[]{"carrot", "tarroc"}, 
+                new string[]{"carrot", "tarroc"},
                 new string[]{"hello", "llloh"}
             };
 

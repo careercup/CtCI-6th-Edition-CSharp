@@ -1,12 +1,11 @@
-﻿
-using ctci.Contracts;
+﻿using ctci.Contracts;
 using System;
 
 namespace Chapter01
 {
     public class Q1_03_URLify : IQuestion
     {
-        void ReplaceSpaces(char[] input, int length) 
+        private void ReplaceSpaces(char[] input, int length)
         {
             var spaceCount = 0;
 
@@ -43,15 +42,15 @@ namespace Chapter01
         public void Run()
         {
             const string input = "abc d e f";
-		    var characterArray = new char[input.Length + 3 * 2 + 1];
+            var characterArray = new char[input.Length + 3 * 2 + 1];
 
-		    for (var i = 0; i < input.Length; i++) 
+            for (var i = 0; i < input.Length; i++)
             {
-			    characterArray[i] = input[i];
-		    }
+                characterArray[i] = input[i];
+            }
 
-		    ReplaceSpaces(characterArray, input.Length);	
-		    Console.WriteLine("{0} -> {1}", input, new string(characterArray));
+            ReplaceSpaces(characterArray, input.Length);
+            Console.WriteLine("{0} -> {1}", input, new string(characterArray));
         }
     }
 }

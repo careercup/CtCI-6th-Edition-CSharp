@@ -1,6 +1,4 @@
-﻿
-
-using ctci.Contracts;
+﻿using ctci.Contracts;
 using System;
 using System.Text;
 
@@ -8,10 +6,10 @@ namespace Chapter01
 {
     public class Q1_06_String_Compression : IQuestion
     {
-        int CountCompression(string str)
+        private int CountCompression(string str)
         {
-            if (string.IsNullOrEmpty(str)) 
-            { 
+            if (string.IsNullOrEmpty(str))
+            {
                 return 0;
             }
 
@@ -21,7 +19,7 @@ namespace Chapter01
 
             for (var i = 1; i < str.Length; i++)
             {
-                if (str[i] == last) 
+                if (str[i] == last)
                 {
                     count++;
                 }
@@ -38,10 +36,10 @@ namespace Chapter01
             return size;
         }
 
-        string CompressBetter(string str)
+        private string CompressBetter(string str)
         {
             var size = CountCompression(str);
-            
+
             if (size >= str.Length)
             {
                 return str;
@@ -73,7 +71,7 @@ namespace Chapter01
 
         public void Run()
         {
-		    const string original = "abbccccccde";
+            const string original = "abbccccccde";
             var compressed = CompressBetter(original);
             Console.WriteLine("Original  : {0}", original);
             Console.WriteLine("Compressed: {0}", compressed);

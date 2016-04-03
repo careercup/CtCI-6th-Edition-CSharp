@@ -9,20 +9,23 @@ namespace ctci.Library
         private readonly TrieNode _root;
 
         /* Takes a list of strings as an argument, and constructs a trie that stores these strings. */
+
         public Trie(List<string> list)
         {
             _root = new TrieNode();
-            foreach (string word in list) {
+            foreach (string word in list)
+            {
                 _root.AddWord(word);
             }
         }
 
-
         /* Takes a list of strings as an argument, and constructs a trie that stores these strings. */
+
         public Trie(string[] list)
         {
             _root = new TrieNode();
-            foreach (string word in list) {
+            foreach (string word in list)
+            {
                 _root.AddWord(word);
             }
         }
@@ -30,6 +33,7 @@ namespace ctci.Library
         /* Checks whether this trie contains a string with the prefix passed
          * in as argument.
          */
+
         public bool Contains(string prefix, bool exact)
         {
             TrieNode lastNode = _root;

@@ -1,12 +1,11 @@
-﻿
-using ctci.Contracts;
+﻿using ctci.Contracts;
 using System;
 
 namespace Chapter01
 {
     public class Q1_01_Is_Unique : IQuestion
     {
-        bool IsUniqueChars(string str)
+        private bool IsUniqueChars(string str)
         {
             if (str.Length > 256)
             {
@@ -24,11 +23,11 @@ namespace Chapter01
                 }
                 checker |= (1 << val);
             }
-            
+
             return true;
         }
 
-        bool IsUniqueChars2(String str)
+        private bool IsUniqueChars2(String str)
         {
             if (str.Length > 256)
             {
@@ -47,18 +46,18 @@ namespace Chapter01
                 }
                 charSet[val] = true;
             }
-            
+
             return true;
         }
 
         public void Run()
         {
-            string[] words = {"abcde", "hello", "apple", "kite", "padle"};
-            
+            string[] words = { "abcde", "hello", "apple", "kite", "padle" };
+
             foreach (var word in words)
             {
                 Console.WriteLine(word + ": " + IsUniqueChars(word) + " " + IsUniqueChars2(word));
-    		}
+            }
         }
     }
 }

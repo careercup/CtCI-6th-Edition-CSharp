@@ -1,5 +1,4 @@
-﻿
-using ctci.Contracts;
+﻿using ctci.Contracts;
 using ctci.Library;
 using System;
 
@@ -7,7 +6,7 @@ namespace Chapter01
 {
     public class Q1_08_Zero_Matrix : IQuestion
     {
-        void NullifyRow(int[][] matrix, int row)
+        private void NullifyRow(int[][] matrix, int row)
         {
             for (var j = 0; j < matrix[0].Length; j++)
             {
@@ -15,7 +14,7 @@ namespace Chapter01
             }
         }
 
-        void NullifyColumn(int[][] matrix, int col)
+        private void NullifyColumn(int[][] matrix, int col)
         {
             for (var i = 0; i < matrix.Length; i++)
             {
@@ -23,24 +22,24 @@ namespace Chapter01
             }
         }
 
-	    int[][] CloneMatrix(int[][] matrix) 
+        private int[][] CloneMatrix(int[][] matrix)
         {
-		    var clone = new int[matrix.Length][];
+            var clone = new int[matrix.Length][];
 
-		    for (var i = 0; i < matrix.Length; i++) 
+            for (var i = 0; i < matrix.Length; i++)
             {
-		        clone[i] = new int[matrix[0].Length];
-			
-                for (var j = 0; j < matrix[0].Length; j++) 
+                clone[i] = new int[matrix[0].Length];
+
+                for (var j = 0; j < matrix[0].Length; j++)
                 {
-				    clone[i][j] = matrix[i][j];
-			    }
-		    }
+                    clone[i][j] = matrix[i][j];
+                }
+            }
 
-		    return clone;
-	    }
+            return clone;
+        }
 
-        bool MatricesAreEqual(int[][] matrix1, int[][] matrix2)
+        private bool MatricesAreEqual(int[][] matrix1, int[][] matrix2)
         {
             if (matrix1.Length != matrix2.Length || matrix1[0].Length != matrix2[0].Length)
             {
@@ -61,7 +60,7 @@ namespace Chapter01
             return true;
         }
 
-        void SetZeros(int[][] matrix)
+        private void SetZeros(int[][] matrix)
         {
             var row = new bool[matrix.Length];
             var column = new bool[matrix[0].Length];
@@ -98,7 +97,7 @@ namespace Chapter01
             }
         }
 
-        void SetZeros2(int[][] matrix)
+        private void SetZeros2(int[][] matrix)
         {
             var rowHasZero = false;
             var colHasZero = false;
@@ -169,22 +168,22 @@ namespace Chapter01
 
         public void Run()
         {
-		    const int numberOfRows = 10;
-		    const int numberOfColumns = 15;
-		    var matrix1 = AssortedMethods.RandomMatrix(numberOfRows, numberOfColumns, 0, 100);
+            const int numberOfRows = 10;
+            const int numberOfColumns = 15;
+            var matrix1 = AssortedMethods.RandomMatrix(numberOfRows, numberOfColumns, 0, 100);
             var matrix2 = CloneMatrix(matrix1);
 
-		    AssortedMethods.PrintMatrix(matrix1);
+            AssortedMethods.PrintMatrix(matrix1);
 
             SetZeros(matrix1);
             SetZeros2(matrix2);
 
             Console.WriteLine();
-		
-		    AssortedMethods.PrintMatrix(matrix1);
+
+            AssortedMethods.PrintMatrix(matrix1);
             Console.WriteLine();
-		    AssortedMethods.PrintMatrix(matrix2);
-		
+            AssortedMethods.PrintMatrix(matrix2);
+
             Console.WriteLine(MatricesAreEqual(matrix1, matrix2) ? "Equal" : "Not Equal");
         }
     }

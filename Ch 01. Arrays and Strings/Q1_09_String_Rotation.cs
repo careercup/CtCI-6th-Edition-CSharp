@@ -1,5 +1,4 @@
-﻿
-using ctci.Contracts;
+﻿using ctci.Contracts;
 using System;
 
 namespace Chapter01
@@ -28,20 +27,20 @@ namespace Chapter01
 
         public void Run()
         {
-		    string[][] pairs =
+            string[][] pairs =
             {
-		        new string[]{"apple", "pleap"},
+                new string[]{"apple", "pleap"},
                 new string[]{"waterbottle", "erbottlewat"},
                 new string[]{"camera", "macera"}
-		    };
+            };
 
-		    foreach (var pair in pairs) 
+            foreach (var pair in pairs)
             {
-			    var word1 = pair[0];
-			    var word2 = pair[1];
+                var word1 = pair[0];
+                var word2 = pair[1];
                 var isRotation = IsRotation(word1, word2);
                 Console.WriteLine("{0}, {1}: {2}", word1, word2, isRotation);
-		    }
+            }
         }
     }
 }

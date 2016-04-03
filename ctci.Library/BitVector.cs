@@ -11,8 +11,8 @@ namespace ctci.Library
         public BitVector(int length)
         {
             Length = length;
-            _vector = length % DataSize == 0 
-                ? new int[length / DataSize] 
+            _vector = length % DataSize == 0
+                ? new int[length / DataSize]
                 : new int[length / DataSize + 1];
         }
 
@@ -33,17 +33,21 @@ namespace ctci.Library
 
         public void Print()
         {
-		    foreach (int k in _vector) {
-			    for (int i = 0; i < DataSize; i++) {
-				    if ((k >> i & 1) == 1) {
-					    Console.Write(1);
-				    } else {
-					    Console.Write(0);
-				    }
-			    }
-			    Console.WriteLine();
-		    }
-	    }
+            foreach (int k in _vector)
+            {
+                for (int i = 0; i < DataSize; i++)
+                {
+                    if ((k >> i & 1) == 1)
+                    {
+                        Console.Write(1);
+                    }
+                    else {
+                        Console.Write(0);
+                    }
+                }
+                Console.WriteLine();
+            }
+        }
 
         public void Set(int i, bool flag)
         {

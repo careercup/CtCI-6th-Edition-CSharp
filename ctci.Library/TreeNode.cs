@@ -6,136 +6,136 @@ namespace ctci.Library
     [DebuggerDisplay("{Data}")]
     public class TreeNode
     {
-        public int Data {get; set;}
-        public TreeNode Left {get; set;}
-	    public TreeNode Right {get; set;}
-	    public TreeNode Parent {get; set;}
-	    public int Size {get; set;}
+        public int Data { get; set; }
+        public TreeNode Left { get; set; }
+        public TreeNode Right { get; set; }
+        public TreeNode Parent { get; set; }
+        public int Size { get; set; }
 
-	    public TreeNode(int data) 
+        public TreeNode(int data)
         {
-		    Data = data;
-		    Size = 1;
-	    }
-	
-	    public void SetLeftChild(TreeNode left) 
-        {
-		    Left = left;
+            Data = data;
+            Size = 1;
+        }
 
-		    if (left != null) 
-            {
-			    left.Parent = this;
-		    }
-	    }
-	
-	    public void SetRightChild(TreeNode right) 
+        public void SetLeftChild(TreeNode left)
         {
-		    Right = right;
-            
-		    if (right != null) 
+            Left = left;
+
+            if (left != null)
             {
-			    right.Parent = this;
-		    }
-	    }
-	
-	    public void InsertInOrder(int data) 
+                left.Parent = this;
+            }
+        }
+
+        public void SetRightChild(TreeNode right)
         {
-		    if (data <= Data) 
+            Right = right;
+
+            if (right != null)
             {
-			    if (Left == null) 
+                right.Parent = this;
+            }
+        }
+
+        public void InsertInOrder(int data)
+        {
+            if (data <= Data)
+            {
+                if (Left == null)
                 {
-				    SetLeftChild(new TreeNode(data));
-			    } 
-                else 
+                    SetLeftChild(new TreeNode(data));
+                }
+                else
                 {
-				    Left.InsertInOrder(data);
-			    }
-		    } 
-            else 
+                    Left.InsertInOrder(data);
+                }
+            }
+            else
             {
-			    if (Right == null) 
+                if (Right == null)
                 {
-				    SetRightChild(new TreeNode(data));
-			    }
-                else 
+                    SetRightChild(new TreeNode(data));
+                }
+                else
                 {
-				    Right.InsertInOrder(data);
-			    }
-		    }
+                    Right.InsertInOrder(data);
+                }
+            }
 
-		    Size++;
-	    }
-	
-	    public bool IsBst() 
+            Size++;
+        }
+
+        public bool IsBst()
         {
-		    if (Left != null)
+            if (Left != null)
             {
-			    if (Data < Left.Data || !Left.IsBst()) 
+                if (Data < Left.Data || !Left.IsBst())
                 {
-				    return false;
-			    }
-		    }
-		
-		    if (Right != null) 
+                    return false;
+                }
+            }
+
+            if (Right != null)
             {
-			    if (Data >= Right.Data || !Right.IsBst()) 
+                if (Data >= Right.Data || !Right.IsBst())
                 {
-				    return false;
-			    }
-		    }		
-		
-		    return true;
-	    }
-	
-	    public int Height() 
-        {
-		    var leftHeight = Left != null ? Left.Height() : 0;
-		    var rightHeight = Right != null ? Right.Height() : 0;
+                    return false;
+                }
+            }
 
-		    return 1 + Math.Max(leftHeight, rightHeight);
-	    }
-	
-	    public TreeNode Find(int data) 
-        {
-		    if (data == Data) 
-            {
-			    return this;
-		    } 
-            else if (data <= Data) 
-            {
-			    return Left != null ? Left.Find(data) : null;
-		    } 
-            else if (data > Data) 
-            {
-			    return Right != null ? Right.Find(data) : null;
-		    }
+            return true;
+        }
 
-		    return null;
-	    }
-	
-	    private static TreeNode CreateMinimalBst(int[] array, int start, int end)
+        public int Height()
         {
-		    if (end < start) 
+            var leftHeight = Left != null ? Left.Height() : 0;
+            var rightHeight = Right != null ? Right.Height() : 0;
+
+            return 1 + Math.Max(leftHeight, rightHeight);
+        }
+
+        public TreeNode Find(int data)
+        {
+            if (data == Data)
             {
-			    return null;
-		    }
+                return this;
+            }
+            else if (data <= Data)
+            {
+                return Left != null ? Left.Find(data) : null;
+            }
+            else if (data > Data)
+            {
+                return Right != null ? Right.Find(data) : null;
+            }
 
-		    var mid = (start + end) / 2;
-		    var treeNode = new TreeNode(array[mid]);
-		    treeNode.SetLeftChild(CreateMinimalBst(array, start, mid - 1));
-		    treeNode.SetRightChild(CreateMinimalBst(array, mid + 1, end));
+            return null;
+        }
 
-		    return treeNode;
-	    }
-	
-	    public static TreeNode CreateMinimalBst(int[] array) 
+        private static TreeNode CreateMinimalBst(int[] array, int start, int end)
         {
-		    return CreateMinimalBst(array, 0, array.Length - 1);
-	    }
-	
-	    public void Print() 
+            if (end < start)
+            {
+                return null;
+            }
+
+            var mid = (start + end) / 2;
+            var treeNode = new TreeNode(array[mid]);
+            treeNode.SetLeftChild(CreateMinimalBst(array, start, mid - 1));
+            treeNode.SetRightChild(CreateMinimalBst(array, mid + 1, end));
+
+            return treeNode;
+        }
+
+        public static TreeNode CreateMinimalBst(int[] array)
+        {
+            return CreateMinimalBst(array, 0, array.Length - 1);
+        }
+
+        public void Print()
         {
             BTreePrinter.PrintNode(this);
-	    }
+        }
     }
 }

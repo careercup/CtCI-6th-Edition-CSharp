@@ -1,5 +1,4 @@
-﻿
-namespace ctci.Contracts
+﻿namespace ctci.Contracts
 {
     public interface IQuestion
     {

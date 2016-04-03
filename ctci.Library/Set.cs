@@ -208,7 +208,7 @@ namespace ctci.Library
             }
         }
 
-        #endregion
+        #endregion ICollection
 
         #region ISerializable
 
@@ -222,7 +222,7 @@ namespace ctci.Library
             _dictionary.GetObjectData(info, context);
         }
 
-        #endregion
+        #endregion ISerializable
 
         #region IDeserializationCallback
 
@@ -231,7 +231,7 @@ namespace ctci.Library
             _dictionary.OnDeserialization(sender);
         }
 
-        #endregion
+        #endregion IDeserializationCallback
 
         #region IEnumerable
 
@@ -245,6 +245,6 @@ namespace ctci.Library
             return GetEnumerator();
         }
 
-        #endregion
+        #endregion IEnumerable
     }
 }

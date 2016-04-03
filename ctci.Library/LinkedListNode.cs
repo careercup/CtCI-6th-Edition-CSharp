@@ -19,7 +19,7 @@ namespace ctci.Library
         }
 
         public LinkedListNode()
-        {}
+        { }
 
         public void SetNext(LinkedListNode n)
         {

@@ -1,4 +1,3 @@
-
 using ctci.Contracts;
 using System;
 
@@ -6,7 +5,6 @@ namespace Chapter01
 {
     public class Q1_04_Palindrome_Permutation : IQuestion
     {
-
         public static int GetCharNumber(char c)
         {
             var a = (int)char.GetNumericValue('a');
@@ -19,7 +17,6 @@ namespace Chapter01
             }
             return -1;
         }
-
 
         public static int[] BuildCharFrequencyTable(String phrase)
         {
@@ -60,7 +57,7 @@ namespace Chapter01
             return CheckMaxOneOdd(table);
         }
 
-        #endregion
+        #endregion Solution 1
 
         #region Solution 2
 
@@ -87,49 +84,59 @@ namespace Chapter01
             return countOdd <= 1;
         }
 
-        #endregion
+        #endregion Solution 2
 
         #region Solution 3
 
         /* Toggle the ith bit in the integer. */
-        public static int Toggle(int bitVector, int index) {
+
+        public static int Toggle(int bitVector, int index)
+        {
             if (index < 0) return bitVector;
 
             int mask = 1 << index;
-            if ((bitVector & mask) == 0) {
+            if ((bitVector & mask) == 0)
+            {
                 bitVector |= mask;
-            } else {
+            }
+            else {
                 bitVector &= ~mask;
             }
             return bitVector;
         }
-		
 
         /* Create bit vector for string. For each letter with value i,
          * toggle the ith bit. */
-        public static int CreateBitVector(String phrase) {
+
+        public static int CreateBitVector(String phrase)
+        {
             int bitVector = 0;
-            foreach (char c in phrase.ToCharArray()) {
+            foreach (char c in phrase.ToCharArray())
+            {
                 int x = GetCharNumber(c);
                 bitVector = Toggle(bitVector, x);
             }
             return bitVector;
         }
 
-        /* Check that exactly one bit is set by subtracting one from the 
+        /* Check that exactly one bit is set by subtracting one from the
          * integer and ANDing it with the original integer. */
-        public static bool CheckExactlyOneBitSet(int bitVector) {
+
+        public static bool CheckExactlyOneBitSet(int bitVector)
+        {
             return (bitVector & (bitVector - 1)) == 0;
         }
 
-        public static bool IsPermutationOfPalindrome3(String phrase) {
+        public static bool IsPermutationOfPalindrome3(String phrase)
+        {
             int bitVector = CreateBitVector(phrase);
             return bitVector == 0 || CheckExactlyOneBitSet(bitVector);
         }
 
-        #endregion
+        #endregion Solution 3
 
-        public void Run() {
+        public void Run()
+        {
             String[] strings = {"Rats live on no evil star",
                             "A man, a plan, a canal, panama",
                             "Lleve",
@@ -151,9 +158,6 @@ namespace Chapter01
                 }
                 Console.WriteLine();
             }
-
         }
-
     }
-
 }

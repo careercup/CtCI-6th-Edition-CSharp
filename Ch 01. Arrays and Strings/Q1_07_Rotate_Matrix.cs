@@ -1,5 +1,4 @@
-﻿
-using ctci.Contracts;
+﻿using ctci.Contracts;
 using ctci.Library;
 using System;
 
@@ -13,7 +12,7 @@ namespace Chapter01
             {
                 var first = layer;
                 var last = n - 1 - layer;
-                
+
                 for (var i = first; i < last; ++i)
                 {
                     var offset = i - first;
@@ -41,7 +40,7 @@ namespace Chapter01
             var matrix = AssortedMethods.RandomMatrix(size, size, 0, 9);
 
             AssortedMethods.PrintMatrix(matrix);
-            
+
             Rotate(matrix, size);
             Console.WriteLine();
             AssortedMethods.PrintMatrix(matrix);

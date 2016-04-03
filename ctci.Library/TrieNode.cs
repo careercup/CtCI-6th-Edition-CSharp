@@ -6,14 +6,15 @@ namespace ctci.Library
     {
         // The children of this node in the trie.
         private readonly LinkedList<TrieNode> _children;
+
         public bool Terminates { get; set; }
 
         // The character stored in this node as data.
         public char Character { get; set; }
 
         /// Constructs an empty trie node and initializes the list of its children to an empty list. Used
-        /// only to construct the root node of the trie. 
-        /// 
+        /// only to construct the root node of the trie.
+        ///
         /// Using a LinkedList will take less space than an array, since we allocate no more space than
         /// necessary. Another good option would be a hash table, to map from character to the TrieNode.
         /// This is faster, but will require more space.
@@ -73,8 +74,10 @@ namespace ctci.Library
         /// data. Return null if no such child node is present in the trie.
         public TrieNode GetChild(char c)
         {
-            foreach (TrieNode t in _children) {
-                if (t.Character == c) {
+            foreach (TrieNode t in _children)
+            {
+                if (t.Character == c)
+                {
                     return t;
                 }
             }

@@ -1,12 +1,12 @@
-﻿using System;
-using ctci.Contracts;
+﻿using ctci.Contracts;
 using ctci.Library;
+using System;
 
 namespace Introduction
 {
     public class SwapMinMax : IQuestion
     {
-        int GetMinIndex(int[] array)
+        private int GetMinIndex(int[] array)
         {
             int minIndex = 0;
             for (int i = 1; i < array.Length; i++)
@@ -19,7 +19,7 @@ namespace Introduction
             return minIndex;
         }
 
-        int GetMaxIndex(int[] array)
+        private int GetMaxIndex(int[] array)
         {
             int maxIndex = 0;
             for (int i = 1; i < array.Length; i++)
@@ -32,21 +32,21 @@ namespace Introduction
             return maxIndex;
         }
 
-        void Swap(int[] array, int m, int n)
+        private void Swap(int[] array, int m, int n)
         {
             int temp = array[m];
             array[m] = array[n];
             array[n] = temp;
         }
 
-        void SwapMinMaxBetter(int[] array)
+        private void SwapMinMaxBetter(int[] array)
         {
             int minIndex = GetMinIndex(array);
             int maxIndex = GetMaxIndex(array);
             Swap(array, minIndex, maxIndex);
         }
 
-        void DoSwapMinMax(int[] array)
+        private void DoSwapMinMax(int[] array)
         {
             int minIndex = 0;
             for (int i = 1; i < array.Length; i++)
@@ -73,9 +73,9 @@ namespace Introduction
 
         public void Run()
         {
-		    int[] array = AssortedMethods.RandomArray(10, -10, 10);
-		    Console.WriteLine(AssortedMethods.ArrayToString(array));
-		    SwapMinMaxBetter(array);
+            int[] array = AssortedMethods.RandomArray(10, -10, 10);
+            Console.WriteLine(AssortedMethods.ArrayToString(array));
+            SwapMinMaxBetter(array);
             Console.WriteLine(AssortedMethods.ArrayToString(array));
         }
     }
