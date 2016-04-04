@@ -1,6 +1,7 @@
 using Chapter01;
 using Chapter02;
 using Chapter05;
+using Chapter10;
 using ctci.Contracts;
 using Introduction;
 using System;
@@ -22,6 +23,10 @@ namespace ctci
                 new IQuestion[] { new Q2_01_Remove_Dups(), new Q2_02_Return_Kth_To_Last(), new Q2_03_Delete_Middle_Node(), new Q2_04_Partition(), new Q2_05_Sum_Lists(), new Q2_06_Palindrome(), new Q2_07_Intersection(), new Q2_08_Loop_Detection() },
 
                 new IQuestion[] { new Q5_01_Insertion(), new Q5_02_Binary_to_String(), new Q5_04_Next_Number(), new Q5_06_Conversion(), new Q5_06_Conversion(), new Q5_07_Pairwise_Swap(), new Q5_08_Draw_Line() },
+
+                new IQuestion[] { new Q10_01_Sorted_Merge(), new Q10_02_Group_Anagrams(), new Q10_03_Search_in_Rotated_Array(), new Q10_05_Sparse_Search(), new Q10_08_Find_Duplicates(), new Q10_09_Sorted_Matrix_Search(), new Q10_10_Rank_from_Stream(), new Q10_11_Peaks_and_Valleys() },
+
+                
             };
 
             foreach (var chapter in chapters)
@@ -37,7 +42,7 @@ namespace ctci
 
                 Console.WriteLine();
                 Console.WriteLine("Press Enter to continue..");
-                Console.ReadLine();
+                //Console.ReadLine();
             }
 
             Console.WriteLine(string.Format("{0}{1}", Environment.NewLine, Environment.NewLine));

@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F7867FE4-E80B-44DD-9666-C82E6D401B8A}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{90D56A57-CEAD-42F8-A978-BC2D33530E0E}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ctci</RootNamespace>
-    <AssemblyName>ctci</AssemblyName>
+    <RootNamespace>Chapter11</RootNamespace>
+    <AssemblyName>Chapter11</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -25,7 +24,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -35,37 +33,37 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Ch 01. Arrays and Strings\Ch 01. Arrays and Strings.csproj">
-      <Project>{3f2df0fa-d7a0-479b-b720-3ab7411e9539}</Project>
-      <Name>Ch 01. Arrays and Strings</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Ch 02. Linked Lists\Ch 02. Linked Lists.csproj">
-      <Project>{d1ace913-9486-4cdc-b980-a5f848a67108}</Project>
-      <Name>Ch 02. Linked Lists</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Ch 05. Bit Manipulation\Ch 05. Bit Manipulation.csproj">
-      <Project>{6515f74f-66c6-414d-b5ec-10260aad473c}</Project>
-      <Name>Ch 05. Bit Manipulation</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Ch 10. Sorting and Searching\Ch 10. Sorting and Searching.csproj">
-      <Project>{90d56a57-cead-42f8-a978-bc2d33530e0e}</Project>
-      <Name>Ch 10. Sorting and Searching</Name>
-    </ProjectReference>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Q10_02_Group_Anagrams.cs" />
+    <Compile Include="Q10_01_Sorted_Merge.cs" />
+    <Compile Include="Q10_03_Search_in_Rotated_Array.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\ctci.Contracts\ctci.Contracts.csproj">
       <Project>{d1b538b9-de81-4fff-93b2-a958ed2ce4da}</Project>
       <Name>ctci.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Introduction\Introduction.csproj">
-      <Project>{af745a68-20a9-4ff4-801c-86a3b0383c49}</Project>
-      <Name>Introduction</Name>
+    <ProjectReference Include="..\ctci.Library\ctci.Library.csproj">
+      <Project>{8dc982e1-042c-4652-bbc4-cd375223c852}</Project>
+      <Name>ctci.Library</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <Compile Include="Q10_05_Sparse_Search.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Q10_08_Find_Duplicates.cs" />
+    <Compile Include="Q10_11_Peaks_and_Valleys.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="Q10_10_Rank_from_Stream.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Q10_09_Sorted_Matrix_Search.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

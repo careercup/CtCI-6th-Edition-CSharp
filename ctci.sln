@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch 05. Bit Manipulation", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch 02. Linked Lists", "Ch 02. Linked Lists\Ch 02. Linked Lists.csproj", "{D1ACE913-9486-4CDC-B980-A5F848A67108}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch 10. Sorting and Searching", "Ch 10. Sorting and Searching\Ch 10. Sorting and Searching.csproj", "{90D56A57-CEAD-42F8-A978-BC2D33530E0E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{D1ACE913-9486-4CDC-B980-A5F848A67108}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1ACE913-9486-4CDC-B980-A5F848A67108}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1ACE913-9486-4CDC-B980-A5F848A67108}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90D56A57-CEAD-42F8-A978-BC2D33530E0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90D56A57-CEAD-42F8-A978-BC2D33530E0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90D56A57-CEAD-42F8-A978-BC2D33530E0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90D56A57-CEAD-42F8-A978-BC2D33530E0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,5 +73,6 @@ Global
 		{AF745A68-20A9-4FF4-801C-86A3B0383C49} = {8E563D72-A200-4BB7-8AB8-A93BEED3A5B7}
 		{6515F74F-66C6-414D-B5EC-10260AAD473C} = {8E563D72-A200-4BB7-8AB8-A93BEED3A5B7}
 		{D1ACE913-9486-4CDC-B980-A5F848A67108} = {8E563D72-A200-4BB7-8AB8-A93BEED3A5B7}
+		{90D56A57-CEAD-42F8-A978-BC2D33530E0E} = {8E563D72-A200-4BB7-8AB8-A93BEED3A5B7}
 	EndGlobalSection
 EndGlobal
