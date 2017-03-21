@@ -4,7 +4,7 @@ using System;
 
 namespace Chapter05
 {
-    public class Q5_06_Conversion : IQuestion
+    public class Q5_06_Conversion : Question
     {
         public static int BitSwapRequired(int number1, int number2)
         {
@@ -30,7 +30,7 @@ namespace Chapter05
             return count;
         }
 
-        public void Run()
+        public override void Run()
         {
             var a = 23432;
             var b = 512132;

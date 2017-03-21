@@ -3,7 +3,7 @@ using System;
 
 namespace Chapter01
 {
-    public class Q1_03_URLify : IQuestion
+    public class Q1_03_URLify : Question
     {
         private void ReplaceSpaces(char[] input, int length)
         {
@@ -39,7 +39,7 @@ namespace Chapter01
             }
         }
 
-        public void Run()
+        public override void Run()
         {
             const string input = "abc d e f";
             var characterArray = new char[input.Length + 3 * 2 + 1];

@@ -4,7 +4,7 @@ using System;
 
 namespace Chapter02
 {
-    public class Q2_07_Intersection : IQuestion
+    public class Q2_07_Intersection : Question
     {
         public class Result
         {
@@ -75,7 +75,7 @@ namespace Chapter02
             return longer;
         }
 
-        public void Run()
+        public override void Run()
         {
             /* Create linked list */
             int[] vals = { -1, -2, 0, 1, 2, 3, 4, 5, 6, 7, 8 };

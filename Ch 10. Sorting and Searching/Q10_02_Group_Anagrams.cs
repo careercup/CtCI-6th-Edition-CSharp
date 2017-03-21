@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace Chapter10
 {
-    public class Q10_02_Group_Anagrams : IQuestion
+    public class Q10_02_Group_Anagrams : Question
     {
         private class AnagramComparator : IComparer
         {
@@ -59,7 +59,7 @@ namespace Chapter10
             }
         }
 
-        public void Run()
+        public override void Run()
         {
             string[] array = { "apple", "banana", "carrot", "ele", "duck", "papel", "tarroc", "cudk", "eel", "lee" };
             Console.WriteLine(AssortedMethods.StringArrayToString(array));

@@ -3,7 +3,7 @@ using System;
 
 namespace Chapter01
 {
-    public class Q1_01_Is_Unique : IQuestion
+    public class Q1_01_Is_Unique : Question
     {
         private bool IsUniqueChars(string str)
         {
@@ -50,7 +50,7 @@ namespace Chapter01
             return true;
         }
 
-        public void Run()
+        public override void Run()
         {
             string[] words = { "abcde", "hello", "apple", "kite", "padle" };
 

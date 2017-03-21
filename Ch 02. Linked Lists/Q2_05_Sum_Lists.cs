@@ -4,7 +4,7 @@ using System;
 
 namespace Chapter02
 {
-    public class Q2_05_Sum_Lists : IQuestion
+    public class Q2_05_Sum_Lists : Question
     {
         #region First Part
 
@@ -167,7 +167,7 @@ namespace Chapter02
 
         #endregion Followup
 
-        public void Run()
+        public override void Run()
         {
             #region First Part
 

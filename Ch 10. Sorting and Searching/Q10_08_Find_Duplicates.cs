@@ -4,7 +4,7 @@ using System;
 
 namespace Chapter10
 {
-    public class Q10_08_Find_Duplicates : IQuestion
+    public class Q10_08_Find_Duplicates : Question
     {
         public class BitSet
         {
@@ -47,7 +47,7 @@ namespace Chapter10
             }
         }
 
-        public void Run()
+        public override void Run()
         {
             int[] array = AssortedMethods.RandomArray(30, 1, 30);
             Console.WriteLine(AssortedMethods.ArrayToString(array));

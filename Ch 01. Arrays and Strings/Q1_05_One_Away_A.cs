@@ -3,7 +3,7 @@ using System;
 
 namespace Chapter01
 {
-    public class Q1_05_One_Away_A : IQuestion
+    public class Q1_05_One_Away_A : Question
     {
         public static bool OneEditReplace(String s1, String s2)
         {
@@ -99,7 +99,7 @@ namespace Chapter01
             return true;
         }
 
-        public void Run()
+        public override void Run()
         {
             String a = "pse";
             String b = "pale";

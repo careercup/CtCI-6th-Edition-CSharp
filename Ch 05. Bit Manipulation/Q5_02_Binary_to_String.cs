@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Chapter05
 {
-    public class Q5_02_Binary_to_String : IQuestion
+    public class Q5_02_Binary_to_String : Question
     {
         private string PrintBinary(double number)
         {
@@ -74,7 +74,7 @@ namespace Chapter05
             return binary.ToString();
         }
 
-        public void Run()
+        public override void Run()
         {
             var binaryString = PrintBinary2(.125);
             Console.WriteLine(binaryString);

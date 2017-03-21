@@ -4,7 +4,7 @@ using System;
 
 namespace Chapter10
 {
-    public class Q10_09_Sorted_Matrix_Search : IQuestion
+    public class Q10_09_Sorted_Matrix_Search : Question
     {
         public class Coordinate : ICloneable
         {
@@ -124,7 +124,7 @@ namespace Chapter10
             Console.WriteLine("Found " + count + " unique elements.");
         }
 
-        public void Run()
+        public override void Run()
         {
             Run1();
             Run2();

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Chapter02
 {
-    public class Q2_06_Palindrome : IQuestion
+    public class Q2_06_Palindrome : Question
     {
         private class Result
         {
@@ -100,7 +100,7 @@ namespace Chapter02
             return true;
         }
 
-        public void Run()
+        public override void Run()
         {
             const int length = 10;
             var nodes = new LinkedListNode[length];

@@ -3,7 +3,7 @@ using System;
 
 namespace Chapter05
 {
-    public class Q5_01_Insertion : IQuestion
+    public class Q5_01_Insertion : Question
     {
         private static int UpdateBits(int n, int m, int i, int j)
         {
@@ -30,7 +30,7 @@ namespace Chapter05
             return nCleared | mShifted;// OR them, and we're done
         }
 
-        public void Run()
+        public override void Run()
         {
             Console.WriteLine(UpdateBits(100, 10, 2, 6));
         }

@@ -3,7 +3,7 @@ using System;
 
 namespace Introduction
 {
-    public class CompareBinaryToHex : IQuestion
+    public class CompareBinaryToHex : Question
     {
         private int DigitToValue(char c)
         {
@@ -52,7 +52,7 @@ namespace Introduction
             }
         }
 
-        public void Run()
+        public override void Run()
         {
             Console.WriteLine(CompareBinToHex("111001011", "1CB"));
         }

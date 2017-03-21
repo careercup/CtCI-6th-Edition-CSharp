@@ -3,7 +3,7 @@ using System;
 
 namespace Chapter01
 {
-    public class Q1_04_Palindrome_Permutation : IQuestion
+    public class Q1_04_Palindrome_Permutation : Question
     {
         public static int GetCharNumber(char c)
         {
@@ -135,7 +135,7 @@ namespace Chapter01
 
         #endregion Solution 3
 
-        public void Run()
+        public override void Run()
         {
             String[] strings = {"Rats live on no evil star",
                             "A man, a plan, a canal, panama",

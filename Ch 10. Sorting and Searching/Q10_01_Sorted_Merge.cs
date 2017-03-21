@@ -4,7 +4,7 @@ using System;
 
 namespace Chapter10
 {
-    public class Q10_01_Sorted_Merge : IQuestion
+    public class Q10_01_Sorted_Merge : Question
     {
         /// <summary>
         /// Merges array
@@ -36,7 +36,7 @@ namespace Chapter10
             }
         }
 
-        public void Run()
+        public override void Run()
         {
             int[] a = new int[] { 2, 3, 4, 5, 6, 8, 10, 100, 0, 0, 0, 0, 0, 0 };
             int[] b = new int[] { 1, 4, 7, 6, 7, 7 };

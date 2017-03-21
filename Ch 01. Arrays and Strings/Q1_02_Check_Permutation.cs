@@ -3,7 +3,7 @@ using System;
 
 namespace Chapter01
 {
-    public class Q1_02_Check_Permutation : IQuestion
+    public class Q1_02_Check_Permutation : Question
     {
         private bool IsPermutation(string original, string valueToTest)
         {
@@ -53,7 +53,7 @@ namespace Chapter01
             return true;
         }
 
-        public void Run()
+        public override void Run()
         {
             string[][] pairs =
             {

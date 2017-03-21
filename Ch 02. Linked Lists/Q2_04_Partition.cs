@@ -4,7 +4,7 @@ using System;
 
 namespace Chapter02
 {
-    public class Q2_04_Partition : IQuestion
+    public class Q2_04_Partition : Question
     {
         private LinkedListNode Partition(LinkedListNode node, int pivot)
         {
@@ -175,7 +175,7 @@ namespace Chapter02
             return listHead;
         }
 
-        public void Run()
+        public override void Run()
         {
             /* Create linked list */
             int[] vals = { 1, 3, 7, 5, 2, 9, 4 };
