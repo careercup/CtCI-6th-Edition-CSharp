@@ -5,38 +5,33 @@ namespace Chapter01
 {
     public class Q1_03_URLify : Question
     {
-        private void ReplaceSpaces(char[] input, int length)
+        int Count_the_number_of_spaces(char[] input)
         {
             var spaceCount = 0;
-
-            // count the number of spaces
             foreach (var character in input)
             {
                 if (character == ' ')
-                {
                     spaceCount++;
-                }
             }
+            return spaceCount;
+        }
 
+        private void ReplaceSpaces(char[] input, int length)
+        {
+            var space = new[] { '0', '2', '%' };
+            var spaceCount = Count_the_number_of_spaces(input);
             // calculate new string size
             var index = length + spaceCount * 2;
-
-            // copying the characters backwards and inserting %20
-            for (var i = length - 1; i >= 0; i--)
+            void SetCharsAndMoveIndex(params char[] chars)
             {
-                if (input[i] == ' ')
-                {
-                    input[index - 1] = '0';
-                    input[index - 2] = '2';
-                    input[index - 3] = '%';
-                    index -= 3;
-                }
-                else
-                {
-                    input[index - 1] = input[i];
-                    index--;
-                }
+                foreach (var c in chars)
+                    input[index--] = c;
             }
+            // copying the characters backwards and inserting %20
+            for (var indexSource = length - 1; indexSource >= 0; indexSource--)
+                if (input[indexSource] == ' ')
+                    SetCharsAndMoveIndex(space);
+                else SetCharsAndMoveIndex(input[indexSource]);
         }
 
         public override void Run()
