@@ -7,21 +7,18 @@ namespace Chapter01
     {
         public static int GetCharNumber(char c)
         {
-            var a = (int)char.GetNumericValue('a');
-            var z = (int)char.GetNumericValue('z');
-
-            var val = (int)char.GetNumericValue(c);
-            if (a <= val && val <= z)
+            var val = char.ToLower(c) - 'a';
+            if (0 <= val && val <= 25)
             {
-                return val - a;
+                return val;
             }
             return -1;
         }
 
         public static int[] BuildCharFrequencyTable(String phrase)
         {
-            int[] table = new int[(int)char.GetNumericValue('z') - (int)char.GetNumericValue('a') + 1];
-            foreach (char c in phrase.ToCharArray())
+            int[] table = new int[26];
+            foreach (char c in phrase)
             {
                 int x = GetCharNumber(c);
                 if (x != -1)
@@ -64,7 +61,7 @@ namespace Chapter01
         public static bool IsPermutationOfPalindrome2(String phrase)
         {
             int countOdd = 0;
-            int[] table = new int[(int)char.GetNumericValue('z') - (int)char.GetNumericValue('a') + 1];
+            int[] table = new int[26];
             foreach (char c in phrase.ToCharArray())
             {
                 int x = GetCharNumber(c);
@@ -108,7 +105,7 @@ namespace Chapter01
         /* Create bit vector for string. For each letter with value i,
          * toggle the ith bit. */
 
-        public static int CreateBitVector(String phrase)
+        public static int MarkBitForOddCharacterCount(String phrase)
         {
             int bitVector = 0;
             foreach (char c in phrase.ToCharArray())
@@ -129,7 +126,7 @@ namespace Chapter01
 
         public static bool IsPermutationOfPalindrome3(String phrase)
         {
-            int bitVector = CreateBitVector(phrase);
+            int bitVector = MarkBitForOddCharacterCount(phrase);
             return bitVector == 0 || CheckExactlyOneBitSet(bitVector);
         }
 
