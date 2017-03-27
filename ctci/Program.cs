@@ -2,6 +2,7 @@ using Chapter01;
 using Chapter02;
 using Chapter05;
 using Chapter10;
+using Chapter_16;
 using ctci.Contracts;
 using Introduction;
 using System;
@@ -62,6 +63,10 @@ namespace ctci
                     new Q10_11_Peaks_and_Valleys()
                 },
 
+                new Question[]
+                {
+                    new Q16_01_Number_Swapper()
+                }
 
             };
 

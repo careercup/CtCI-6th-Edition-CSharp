@@ -6,7 +6,7 @@ namespace Chapter10
 {
     public class Q10_09_Sorted_Matrix_Search : Question
     {
-        public class Coordinate : ICloneable
+        public class Coordinate
         {
             public int row;
             public int column;

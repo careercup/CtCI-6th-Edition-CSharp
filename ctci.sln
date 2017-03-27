@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ctci", "ctci\ctci.csproj", "{F7867FE4-E80B-44DD-9666-C82E6D401B8A}"
 EndProject
@@ -22,6 +22,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch 02. Linked Lists", "Ch 02. Linked Lists\Ch 02. Linked Lists.csproj", "{D1ACE913-9486-4CDC-B980-A5F848A67108}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch 10. Sorting and Searching", "Ch 10. Sorting and Searching\Ch 10. Sorting and Searching.csproj", "{90D56A57-CEAD-42F8-A978-BC2D33530E0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch 16. Moderate", "Ch 16. Moderate\Ch 16. Moderate.csproj", "{AE0D044B-1AE9-430F-B05D-ADAC72C407B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +63,10 @@ Global
 		{90D56A57-CEAD-42F8-A978-BC2D33530E0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90D56A57-CEAD-42F8-A978-BC2D33530E0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90D56A57-CEAD-42F8-A978-BC2D33530E0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE0D044B-1AE9-430F-B05D-ADAC72C407B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE0D044B-1AE9-430F-B05D-ADAC72C407B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE0D044B-1AE9-430F-B05D-ADAC72C407B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE0D044B-1AE9-430F-B05D-ADAC72C407B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,5 +80,6 @@ Global
 		{6515F74F-66C6-414D-B5EC-10260AAD473C} = {8E563D72-A200-4BB7-8AB8-A93BEED3A5B7}
 		{D1ACE913-9486-4CDC-B980-A5F848A67108} = {8E563D72-A200-4BB7-8AB8-A93BEED3A5B7}
 		{90D56A57-CEAD-42F8-A978-BC2D33530E0E} = {8E563D72-A200-4BB7-8AB8-A93BEED3A5B7}
+		{AE0D044B-1AE9-430F-B05D-ADAC72C407B8} = {8E563D72-A200-4BB7-8AB8-A93BEED3A5B7}
 	EndGlobalSection
 EndGlobal
