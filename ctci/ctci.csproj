@@ -12,6 +12,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Ch 01. Arrays and Strings\Ch 01. Arrays and Strings.csproj" />
     <ProjectReference Include="..\Ch 02. Linked Lists\Ch 02. Linked Lists.csproj" />
+    <ProjectReference Include="..\Ch 04. Trees\Ch 04. Trees.csproj" />
     <ProjectReference Include="..\Ch 05. Bit Manipulation\Ch 05. Bit Manipulation.csproj" />
     <ProjectReference Include="..\Ch 10. Sorting and Searching\Ch 10. Sorting and Searching.csproj" />
     <ProjectReference Include="..\Ch 16. Moderate\Ch 16. Moderate.csproj" />

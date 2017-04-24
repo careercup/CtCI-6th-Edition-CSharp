@@ -135,7 +135,7 @@ namespace ctci.Library
 
         public void Print()
         {
-            BTreePrinter.PrintNode(this);
+            BTreePrinter.Print(this);
         }
     }
 }

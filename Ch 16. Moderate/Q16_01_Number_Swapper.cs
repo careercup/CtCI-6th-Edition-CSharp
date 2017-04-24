@@ -1,7 +1,7 @@
 ﻿using ctci.Contracts;
 using System;
 
-namespace Chapter_16
+namespace Chapter16
 {
     public class Q16_01_Number_Swapper : Question
     {

@@ -1,8 +1,9 @@
 using Chapter01;
 using Chapter02;
+using Chapter04;
 using Chapter05;
 using Chapter10;
-using Chapter_16;
+using Chapter16;
 using ctci.Contracts;
 using Introduction;
 using System;
@@ -13,6 +14,7 @@ namespace ctci
     {
         private static void Main(string[] args)
         {
+            Console.OutputEncoding = System.Text.Encoding.Unicode;
             var chapters = new[]
             {
                 // Intro
@@ -40,6 +42,10 @@ namespace ctci
                     new Q2_06_Palindrome(),
                     new Q2_07_Intersection(),
                     new Q2_08_Loop_Detection()
+                },
+
+                new Question[] {
+                    new Q4_4_CheckBalanced(),
                 },
 
                 new Question[] {
