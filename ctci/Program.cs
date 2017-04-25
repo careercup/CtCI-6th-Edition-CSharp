@@ -71,7 +71,8 @@ namespace ctci
 
                 new Question[]
                 {
-                    new Q16_01_Number_Swapper()
+                    new Q16_01_Number_Swapper(),
+                    new Q16_19_Pond_Sizes()
                 }
 
             };
