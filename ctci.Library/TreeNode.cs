@@ -18,6 +18,15 @@ namespace ctci.Library
             Size = 1;
         }
 
+        public TreeNode(TreeNode node)
+        {
+            Data = node.Data;
+            Size = node.Size;
+            Left = node.Left;
+            Right = node.Right;
+            Parent = node.Parent;
+        }
+
         public void SetLeftChild(TreeNode left)
         {
             Left = left;
