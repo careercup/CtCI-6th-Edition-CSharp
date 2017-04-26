@@ -8,6 +8,7 @@ namespace ctci.Library
         // The root of this trie.
         private readonly TrieNode _root;
 
+        public TrieNode Root { get { return _root; } }
         /* Takes a list of strings as an argument, and constructs a trie that stores these strings. */
 
         public Trie(List<string> list)

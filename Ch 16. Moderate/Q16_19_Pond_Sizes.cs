@@ -21,6 +21,16 @@ namespace Chapter16
             if (column < 0 || column >= matrix.Width()) return true;
             return false;
         }
+
+        static public void PrintMatrix(this char[,] matrix)
+        {
+            for (var r = 0; r < matrix.Height(); r++)
+            {
+                for (var c = 0; c < matrix.Width(); c++)
+                    Console.Write(matrix[r, c]);
+                Console.WriteLine();
+            }
+        }
     }
     public class Q16_19_Pond_Sizes : Question
     {
@@ -35,7 +45,7 @@ namespace Chapter16
                     {'w','l','w','l'},
                 };
 
-            PrintMatrix(matrix);
+            matrix.PrintMatrix();
 
             var sizes = GetSizes(matrix, 'w');
             Console.WriteLine("Found w");
@@ -69,16 +79,6 @@ namespace Chapter16
                 for (var dc = -1; dc < 2; dc++)
                     size += GetSize(matrix, visited, r + dr, c + dc, type);
             return size;
-        }
-
-        private void PrintMatrix(char[,] matrix)
-        {
-            for (var r = 0; r < matrix.Height(); r++)
-            {
-                for (var c = 0; c < matrix.Width(); c++)
-                    Console.Write(matrix[r, c]);
-                Console.WriteLine();
-            }
         }
     }
 }

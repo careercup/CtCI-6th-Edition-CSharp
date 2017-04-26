@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ctci.Contracts\ctci.Contracts.csproj" />
+    <ProjectReference Include="..\ctci.Library\ctci.Library.csproj" />
   </ItemGroup>
 
 </Project>
