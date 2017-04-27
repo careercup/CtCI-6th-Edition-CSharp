@@ -50,6 +50,7 @@ namespace ctci
                     new Q4_04_CheckBalanced(),
                     new Q4_05_Validate_BST(),
                     new Q4_06_Successor(),
+                    new Q4_08_LowestCommonAncestorNotBST(),
                     new ReplaceNodeInImmutableTree()
                 },
 
