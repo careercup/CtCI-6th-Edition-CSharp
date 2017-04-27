@@ -4,7 +4,7 @@ using System;
 
 namespace Chapter04
 {
-    static class TreeNodeExtension
+    static partial class TreeNodeExtension
     {
         static public TreeNode Replace(this TreeNode node, int value)
         {
