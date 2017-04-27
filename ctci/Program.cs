@@ -77,6 +77,7 @@ namespace ctci
                     new Q16_02_Word_Frequence(),
                     new Q16_04_Tic_Tac_Toe_Win(),
                     new Q16_06_Smallest_Difference(),
+                    new Q16_08_English_Int(),
                     new Q16_19_Pond_Sizes(),
                     new Boggle()
                 }
