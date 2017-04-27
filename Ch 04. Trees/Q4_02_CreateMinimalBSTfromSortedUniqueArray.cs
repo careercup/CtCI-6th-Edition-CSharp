@@ -4,9 +4,9 @@ using System;
 
 namespace Chapter04
 {
-    public class Q4_2_CreateMinimalBSTfromSortedUniqueArray: Question
+    public class Q4_02_CreateMinimalBSTfromSortedUniqueArray: Question
     {
-        public static TreeNode Create(int[] sortedArray)
+        public static TreeNode Create(params int[] sortedArray)
         {
             return Create(sortedArray, 0, sortedArray.Length - 1);
         }
@@ -24,8 +24,7 @@ namespace Chapter04
 
         public override void Run()
         {
-            var sortedArray = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            var root = Create(sortedArray);
+            var root = Create(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
             BTreePrinter.Print(root);
         }
     }

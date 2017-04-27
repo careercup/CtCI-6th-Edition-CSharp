@@ -6,19 +6,19 @@ namespace Chapter02
 {
     public class Q2_07_Intersection : Question
     {
-        public class Result
+        public class TailAndSize
         {
             public LinkedListNode tail;
             public int size;
 
-            public Result(LinkedListNode tail, int size)
+            public TailAndSize(LinkedListNode tail, int size)
             {
                 this.tail = tail;
                 this.size = size;
             }
         }
 
-        public static Result getTailAndSize(LinkedListNode list)
+        public static TailAndSize getTailAndSize(LinkedListNode list)
         {
             if (list == null) return null;
 
@@ -29,7 +29,7 @@ namespace Chapter02
                 size++;
                 current = current.Next;
             }
-            return new Result(current, size);
+            return new TailAndSize(current, size);
         }
 
         public static LinkedListNode getKthNode(LinkedListNode head, int k)
@@ -48,8 +48,8 @@ namespace Chapter02
             if (list1 == null || list2 == null) return null;
 
             /* Get tail and sizes. */
-            Result result1 = getTailAndSize(list1);
-            Result result2 = getTailAndSize(list2);
+            TailAndSize result1 = getTailAndSize(list1);
+            TailAndSize result2 = getTailAndSize(list2);
 
             /* If different tail nodes, then there's no intersection. */
             if (result1.tail != result2.tail)

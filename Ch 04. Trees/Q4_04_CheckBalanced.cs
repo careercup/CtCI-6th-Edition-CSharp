@@ -4,7 +4,7 @@ using System;
 
 namespace Chapter04
 {
-    public class Q4_4_CheckBalanced: Question
+    public class Q4_04_CheckBalanced: Question
     {
         public static bool IsBalanced(TreeNode root)
         {

@@ -45,8 +45,9 @@ namespace ctci
                 },
 
                 new Question[] {
-                    new Q4_2_CreateMinimalBSTfromSortedUniqueArray(),
-                    new Q4_4_CheckBalanced(),
+                    new Q4_02_CreateMinimalBSTfromSortedUniqueArray(),
+                    new Q4_03_List_of_Depths(),
+                    new Q4_04_CheckBalanced(),
                     new ReplaceNodeInImmutableTree()
                 },
 
