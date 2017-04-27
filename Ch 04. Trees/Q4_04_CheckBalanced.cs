@@ -20,21 +20,59 @@ namespace Chapter04
             return Math.Max(Height(root.Left, height), Height(root.Right, height)) + 1;
         }
 
+        public static bool IsBalancedBook(TreeNode root)
+        {
+            return CheckHeight(root) != -1;
+        }
+
+        private static int CheckHeight(TreeNode root)
+        {
+            if (root == null) return 0;
+            var leftHeight = CheckHeight(root.Left);
+            if (leftHeight == -1) return -1;
+
+            var rightHeight = CheckHeight(root.Right);
+            if (rightHeight == -1) return -1;
+
+            if (Math.Abs(leftHeight - rightHeight) > 1) return -1;
+            else return (Math.Max(leftHeight, rightHeight) + 1);
+        }
+
         public override void Run()
         {
-            var root = new TreeNode(2);
+            var root = Q4_02_CreateMinimalBSTfromSortedUniqueArray.Create(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+            PrintTree(root);
+
+            root = new TreeNode(2);
             root.SetLeftChild(new TreeNode(1));
-            root.SetRightChild(new TreeNode(3));
+            root.Left.SetLeftChild(new TreeNode(3));
             PrintTree(root);
         }
 
         private static void PrintTree(TreeNode root)
         {
             BTreePrinter.Print(root);
-            if (IsBalanced(root))
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+            var isBalanced1 = IsBalanced(root);
+            watch.Stop();
+            var elapsedMs = watch.ElapsedMilliseconds;
+
+            if (isBalanced1)
                 Console.WriteLine("Tree is balanced");
             else
                 Console.WriteLine("Tree is not balalnced");
+            Console.WriteLine($"Elapsed milliconds {elapsedMs}");
+
+            watch = System.Diagnostics.Stopwatch.StartNew();
+            var isBalanced2 = IsBalancedBook(root);
+            watch.Stop();
+            elapsedMs = watch.ElapsedMilliseconds;
+
+            if (IsBalancedBook(root))
+                Console.WriteLine("Tree is balanced");
+            else
+                Console.WriteLine("Tree is not balalnced");
+            Console.WriteLine($"Elapsed milliconds {elapsedMs}");
         }
     }
 }
