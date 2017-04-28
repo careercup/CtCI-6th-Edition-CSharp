@@ -5,7 +5,7 @@ namespace ctci.Library
     public class TrieNode
     {
         // The children of this node in the trie.
-        private readonly LinkedList<TrieNode> _children;
+        private readonly Dictionary<char, TrieNode> _children;
 
         public bool Terminates { get; set; }
 
@@ -20,7 +20,7 @@ namespace ctci.Library
         /// This is faster, but will require more space.
         public TrieNode()
         {
-            _children = new LinkedList<TrieNode>();
+            _children = new Dictionary<char, TrieNode>();
             Terminates = false;
         }
 
@@ -53,7 +53,7 @@ namespace ctci.Library
             if (t == null)
             {
                 child = new TrieNode(firstChar);
-                _children.AddLast(child);
+                _children[child.Character] = child;
             }
             else
             {
@@ -74,13 +74,8 @@ namespace ctci.Library
         /// data. Return null if no such child node is present in the trie.
         public TrieNode GetChild(char c)
         {
-            foreach (TrieNode t in _children)
-            {
-                if (t.Character == c)
-                {
-                    return t;
-                }
-            }
+            if (_children.ContainsKey(c))
+                return _children[c];
             return null;
         }
     }

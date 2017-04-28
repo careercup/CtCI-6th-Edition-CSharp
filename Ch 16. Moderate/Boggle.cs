@@ -43,11 +43,11 @@ namespace Chapter16
 
         private void Solve(string prefix, char[,] matrix, bool[,] visited, int row, int column, TrieNode trie, HashSet<string> words)
         {
-            if (row < 0 || row >= matrix.Height()) return;
-            if (column < 0 || column >= matrix.Width()) return;
+            if (matrix.IsOutOfBounds(row, column)) return;
             if (visited[row, column]) return;
 
             if (trie.Terminates) words.Add(prefix);
+
             var trieChild = trie.GetChild(matrix[row, column]);
             if (trieChild == null) return;
 
