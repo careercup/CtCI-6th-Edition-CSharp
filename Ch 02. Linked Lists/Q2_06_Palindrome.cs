@@ -100,6 +100,72 @@ namespace Chapter02
             return true;
         }
 
+        /// <summary>
+        /// Another recursive approach.
+        /// 
+        /// We traverse the Linked List to the end while keeping a reference of the first node.
+        /// Palindrome check begins when we recurse to the end of the Linked List:
+        /// 1) Compare the two nodes (one from start and one from the back)
+        /// 2) Advance the "front" node because by recursing back we get the node before "back"
+        /// 3) Return isPalindrome
+        /// </summary>
+        /// <param name="head">First node of the Linked List</param>
+        /// <returns></returns>
+        private bool IsPalindrome3(LinkedListNode head)
+        {
+            return (head == null) || (head.Next == null) || IsPalindrome3Recurse(ref head, head.Next);
+        }
+
+        private bool IsPalindrome3Recurse(ref LinkedListNode front, LinkedListNode back)
+        {
+            bool isPalindrome = true;
+
+            if (back.Next != null)
+                isPalindrome = IsPalindrome3Recurse(ref front, back.Next);
+
+            isPalindrome &= front.Data == back.Data;
+            front = front.Next;
+            return isPalindrome;
+        }
+
+        /// <summary>
+        /// This solution takes advantage of the LIFO (Last In First Out) and FIFO (First In First Out) buffers.
+        /// 
+        /// The idea is that we fill both of the buffers with the same nodes
+        /// and then we take the nodes back from each and compare them. 
+        /// Since LIFO will return a node from the end of the list and
+        /// FIFO will return the node from the start, we are able to check if 
+        /// the Linked List is a palindrome.
+        /// 
+        /// Also this solution can be further improved by comparing only the half of the nodes from each buffer,
+        /// because right now we unnecessarily continue to compare nodes after we hit the middle of the Linked List.
+        /// </summary>
+        /// <param name="head">First node of the Linked List</param>
+        /// <returns></returns>
+        private bool IsPalindrome4(LinkedListNode head)
+        {
+            Stack<LinkedListNode> lifo = new Stack<LinkedListNode>();
+            Queue<LinkedListNode> fifo = new Queue<LinkedListNode>();
+
+            // Fill the buffers
+            while (head != null)
+            {
+                lifo.Push(head);
+                fifo.Enqueue(head);
+                head = head.Next;
+            }
+
+            // Each cycle compare a node from start with the node from the end
+            while (lifo.Count > 0 && fifo.Count > 0)
+            {
+                if (lifo.Pop().Data != fifo.Dequeue().Data)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         public void Run()
         {
             const int length = 10;
@@ -128,6 +194,8 @@ namespace Chapter02
             Console.WriteLine(head.PrintForward());
             Console.WriteLine(IsPalindrome(head));
             Console.WriteLine(IsPalindrome2(head));
+            Console.WriteLine(IsPalindrome3(head));
+            Console.WriteLine(IsPalindrome4(head));
         }
     }
 }
