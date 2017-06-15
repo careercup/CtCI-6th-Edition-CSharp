@@ -118,12 +118,12 @@ namespace Chapter02
 
         private bool IsPalindrome3Recurse(ref LinkedListNode front, LinkedListNode back)
         {
-            bool isPalindrome = false;
+            bool isPalindrome = true;
 
             if (back.Next != null)
                 isPalindrome = IsPalindrome3Recurse(ref front, back.Next);
 
-            isPalindrome = front.Data == back.Data;
+            isPalindrome &= front.Data == back.Data;
             front = front.Next;
             return isPalindrome;
         }
