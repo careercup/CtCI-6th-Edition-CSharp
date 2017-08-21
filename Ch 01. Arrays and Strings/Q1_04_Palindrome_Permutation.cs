@@ -7,20 +7,16 @@ namespace Chapter01
     {
         public static int GetCharNumber(char c)
         {
-            var a = (int)char.GetNumericValue('a');
-            var z = (int)char.GetNumericValue('z');
-
-            var val = (int)char.GetNumericValue(c);
-            if (a <= val && val <= z)
+            if ('a' <= c && c <= 'z')
             {
-                return val - a;
+                return c - 'a';
             }
             return -1;
         }
 
         public static int[] BuildCharFrequencyTable(String phrase)
         {
-            int[] table = new int[(int)char.GetNumericValue('z') - (int)char.GetNumericValue('a') + 1];
+            int[] table = new int['z' - 'a' + 1];
             foreach (char c in phrase.ToCharArray())
             {
                 int x = GetCharNumber(c);
