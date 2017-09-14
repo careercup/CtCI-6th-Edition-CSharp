@@ -3,7 +3,7 @@ using System;
 
 namespace Chapter01
 {
-    public class Q1_09_String_Rotation : IQuestion
+    public class Q1_09_String_Rotation : Question
     {
         public static bool IsSubstring(String big, String small)
         {
@@ -25,7 +25,7 @@ namespace Chapter01
             return false;
         }
 
-        public void Run()
+        public override void Run()
         {
             string[][] pairs =
             {

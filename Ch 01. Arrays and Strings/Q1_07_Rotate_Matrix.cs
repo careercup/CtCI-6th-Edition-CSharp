@@ -4,7 +4,7 @@ using System;
 
 namespace Chapter01
 {
-    public class Q1_07_Rotate_Matrix : IQuestion
+    public class Q1_07_Rotate_Matrix : Question
     {
         private void Rotate(int[][] matrix, int n)
         {
@@ -33,7 +33,7 @@ namespace Chapter01
             }
         }
 
-        public void Run()
+        public override void Run()
         {
             const int size = 3;
 

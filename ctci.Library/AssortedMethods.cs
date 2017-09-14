@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Text;
 
 namespace ctci.Library
@@ -193,16 +192,6 @@ namespace ctci.Library
             return buffer.ToString();
         }
 
-        public static string ListOfPointsToString(List<Point> list)
-        {
-            StringBuilder buffer = new StringBuilder();
-            foreach (Point p in list)
-            {
-                buffer.Append("(" + p.X + "," + p.Y + ")");
-            }
-            return buffer.ToString();
-        }
-
         public static TreeNode RandomBst(int N, int min, int max)
         {
             int d = RandomIntInRange(min, max);
@@ -344,6 +333,7 @@ namespace ctci.Library
                 "who",
                 "him",
                 "been",
+                "bee",
                 "has",
                 "more",
                 "if",

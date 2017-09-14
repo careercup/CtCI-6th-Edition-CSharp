@@ -3,104 +3,103 @@ using System.Collections.Generic;
 
 namespace ctci.Library
 {
-    public class BTreePrinter
+    public static class BTreePrinter
     {
-        public static void PrintNode(TreeNode root)
+        class NodeInfo
         {
-            int maxLevel = BTreePrinter.MaxLevel(root);
-
-            PrintNodeInternal(new List<TreeNode>() { root }, 1, maxLevel);
+            public TreeNode Node;
+            public string Text;
+            public int StartPos;
+            public int Size { get { return Text.Length; } }
+            public int EndPos { get { return StartPos + Size; } set { StartPos = value - Size; } }
+            public NodeInfo Parent, Left, Right;
         }
 
-        private static void PrintNodeInternal(List<TreeNode> nodes, int level, int maxLevel)
+        public static void Print(this TreeNode root, int topMargin = 2, int leftMargin = 2)
         {
-            if (nodes.Count == 0 || BTreePrinter.IsAllElementsNull(nodes))
-                return;
-
-            int floor = maxLevel - level;
-            int endgeLines = (int)Math.Pow(2, (Math.Max(floor - 1, 0)));
-            int firstSpaces = (int)Math.Pow(2, (floor)) - 1;
-            int betweenSpaces = (int)Math.Pow(2, (floor + 1)) - 1;
-
-            BTreePrinter.PrintWhitespaces(firstSpaces);
-
-            List<TreeNode> newNodes = new List<TreeNode>();
-            foreach (TreeNode node in nodes)
+            if (root == null) return;
+            int rootTop = Console.CursorTop + topMargin;
+            var last = new List<NodeInfo>();
+            var next = root;
+            for (int level = 0; next != null; level++)
             {
-                if (node != null)
+                var item = new NodeInfo { Node = next, Text = next.Data.ToString(" 0 ") };
+                if (level < last.Count)
                 {
-                    Console.Write(node.Data);
-                    newNodes.Add(node.Left);
-                    newNodes.Add(node.Right);
+                    item.StartPos = last[level].EndPos + 1;
+                    last[level] = item;
                 }
-                else {
-                    newNodes.Add(null);
-                    newNodes.Add(null);
-                    Console.Write(" ");
-                }
-
-                BTreePrinter.PrintWhitespaces(betweenSpaces);
-            }
-            Console.WriteLine();
-
-            for (int i = 1; i <= endgeLines; i++)
-            {
-                for (int j = 0; j < nodes.Count; j++)
+                else
                 {
-                    BTreePrinter.PrintWhitespaces(firstSpaces - i);
-                    if (nodes[j] == null)
+                    item.StartPos = leftMargin;
+                    last.Add(item);
+                }
+                if (level > 0)
+                {
+                    item.Parent = last[level - 1];
+                    if (next == item.Parent.Node.Left)
                     {
-                        BTreePrinter.PrintWhitespaces(endgeLines + endgeLines + i + 1);
-                        continue;
+                        item.Parent.Left = item;
+                        item.EndPos = Math.Max(item.EndPos, item.Parent.StartPos);
                     }
-
-                    if (nodes[j].Left != null)
-                        Console.Write("/");
                     else
-                        BTreePrinter.PrintWhitespaces(1);
-
-                    BTreePrinter.PrintWhitespaces(i + i - 1);
-
-                    if (nodes[j].Right != null)
-                        Console.Write("\\");
-                    else
-                        BTreePrinter.PrintWhitespaces(1);
-
-                    BTreePrinter.PrintWhitespaces(endgeLines + endgeLines - i);
+                    {
+                        item.Parent.Right = item;
+                        item.StartPos = Math.Max(item.StartPos, item.Parent.EndPos);
+                    }
                 }
-
-                Console.WriteLine();
+                next = next.Left ?? next.Right;
+                for (; next == null; item = item.Parent)
+                {
+                    Print(item, rootTop + 2 * level);
+                    if (--level < 0) break;
+                    if (item == item.Parent.Left)
+                    {
+                        item.Parent.StartPos = item.EndPos;
+                        next = item.Parent.Node.Right;
+                    }
+                    else
+                    {
+                        if (item.Parent.Left == null)
+                            item.Parent.EndPos = item.StartPos;
+                        else
+                            item.Parent.StartPos += (item.StartPos - item.Parent.EndPos) / 2;
+                    }
+                }
             }
-
-            PrintNodeInternal(newNodes, level + 1, maxLevel);
+            Console.SetCursorPosition(0, rootTop + 2 * last.Count - 1);
         }
 
-        private static void PrintWhitespaces(int count)
+        private static void Print(NodeInfo item, int top)
         {
-            string padding = string.Format("{0}", count);
-            padding = "{0," + padding + "}";
-            Console.Write(padding, " ");
-            //for (int i = 0; i < count; i++)
-            //    Console.Write(" ");
+            SwapColors();
+            Print(item.Text, top, item.StartPos);
+            SwapColors();
+            if (item.Left != null)
+                PrintLink(top + 1, "┌", "┘", item.Left.StartPos + item.Left.Size / 2, item.StartPos);
+            if (item.Right != null)
+                PrintLink(top + 1, "└", "┐", item.EndPos - 1, item.Right.StartPos + item.Right.Size / 2);
         }
 
-        private static int MaxLevel(TreeNode node)
+        private static void PrintLink(int top, string start, string end, int startPos, int endPos)
         {
-            if (node == null)
-                return 0;
-
-            return Math.Max(BTreePrinter.MaxLevel(node.Left), BTreePrinter.MaxLevel(node.Right)) + 1;
+            Print(start, top, startPos);
+            Print("─", top, startPos + 1, endPos);
+            Print(end, top, endPos);
         }
 
-        private static bool IsAllElementsNull<T>(IEnumerable<T> list)
+        private static void Print(string s, int top, int left, int right = -1)
         {
-            foreach (object o in list)
-            {
-                if (o != null)
-                    return false;
-            }
+            Console.SetCursorPosition(left, top);
+            if (right < 0) right = left + s.Length;
+            while (Console.CursorLeft < right) Console.Write(s);
+        }
 
-            return true;
+        private static void SwapColors()
+        {
+            var color = Console.ForegroundColor;
+            Console.ForegroundColor = Console.BackgroundColor;
+            Console.BackgroundColor = color;
         }
     }
 }

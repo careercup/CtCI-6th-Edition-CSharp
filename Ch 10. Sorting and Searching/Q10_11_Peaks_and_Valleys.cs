@@ -4,7 +4,7 @@ using System;
 
 namespace Chapter10
 {
-    public class Q10_11_Peaks_and_Valleys : IQuestion
+    public class Q10_11_Peaks_and_Valleys : Question
     {
         public static void Swap(int[] array, int left, int right)
         {
@@ -81,7 +81,7 @@ namespace Chapter10
             }
         }
 
-        public void Run()
+        public override void Run()
         {
             int[] array = { 48, 40, 31, 62, 28, 21, 64, 40, 23, 17 };
 

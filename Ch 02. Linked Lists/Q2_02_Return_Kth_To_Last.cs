@@ -4,7 +4,7 @@ using System;
 
 namespace Chapter02
 {
-    public class Q2_02_Return_Kth_To_Last : IQuestion
+    public class Q2_02_Return_Kth_To_Last : Question
     {
         private int NthToLastR1(LinkedListNode head, int n)
         {
@@ -108,7 +108,7 @@ namespace Chapter02
             return p1;
         }
 
-        public void Run()
+        public override void Run()
         {
             var head = AssortedMethods.RandomLinkedList(10, 0, 10);
             Console.WriteLine(head.PrintForward());

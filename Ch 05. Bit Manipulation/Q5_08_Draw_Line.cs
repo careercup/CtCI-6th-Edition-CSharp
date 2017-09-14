@@ -3,7 +3,7 @@ using System;
 
 namespace Chapter05
 {
-    public class Q5_08_Draw_Line : IQuestion
+    public class Q5_08_Draw_Line : Question
     {
         public static int ComputeByteNum(int width, int x, int y)
         {
@@ -83,7 +83,7 @@ namespace Chapter05
             }
         }
 
-        public void Run()
+        public override void Run()
         {
             const int width = 8 * 4;
             const int height = 15;

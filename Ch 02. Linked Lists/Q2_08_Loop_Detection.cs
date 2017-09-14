@@ -4,7 +4,7 @@ using System;
 
 namespace Chapter02
 {
-    public class Q2_08_Loop_Detection : IQuestion
+    public class Q2_08_Loop_Detection : Question
     {
         private LinkedListNode FindBeginning(LinkedListNode head)
         {
@@ -43,7 +43,7 @@ namespace Chapter02
             return fast;
         }
 
-        public void Run()
+        public override void Run()
         {
             const int listLength = 10;
             const int k = 3;

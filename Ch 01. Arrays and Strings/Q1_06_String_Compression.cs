@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Chapter01
 {
-    public class Q1_06_String_Compression : IQuestion
+    public class Q1_06_String_Compression : Question
     {
         private int CountCompression(string str)
         {
@@ -69,7 +69,7 @@ namespace Chapter01
             return sb.ToString();
         }
 
-        public void Run()
+        public override void Run()
         {
             const string original = "abbccccccde";
             var compressed = CompressBetter(original);

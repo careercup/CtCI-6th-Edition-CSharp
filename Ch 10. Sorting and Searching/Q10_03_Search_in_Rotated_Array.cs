@@ -3,7 +3,7 @@ using System;
 
 namespace Chapter10
 {
-    public class Q10_03_Search_in_Rotated_Array : IQuestion
+    public class Q10_03_Search_in_Rotated_Array : Question
     {
         /// <summary>
         /// As in the book, returns the correct index (tested)
@@ -74,7 +74,7 @@ namespace Chapter10
         /* Another way is to do a pivoted binary search, where you first identify the problematic area, basically start of the originally
          * sorted array. */
 
-        public void Run()
+        public override void Run()
         {
             int[] a = new int[] { 5, 6, 7, 8, 9, 1, 2, 3, 4 };
 

@@ -1,9 +1,10 @@
 ﻿using ctci.Contracts;
 using System;
+using System.Collections.Generic;
 
 namespace Chapter01
 {
-    public class Q1_02_Check_Permutation : IQuestion
+    public class Q1_02_Check_Permutation : Question
     {
         private bool IsPermutation(string original, string valueToTest)
         {
@@ -30,30 +31,33 @@ namespace Chapter01
                 return false;
             }
 
-            var letters = new int[256];
-            var originalAsArray = original.ToCharArray();
+            var letterCount = new Dictionary<char, int>();
 
-            foreach (var character in originalAsArray)
+            foreach (var character in original)
             {
-                letters[character]++;
+                if (letterCount.ContainsKey(character))
+                    letterCount[character]++;
+                else
+                    letterCount[character] = 1;
             }
 
-            var valueToTestAsArray = valueToTest.ToCharArray();
-
-            foreach (var character in valueToTestAsArray)
+            foreach (var character in valueToTest)
             {
-                letters[character]--;
-
-                if (letters[character] < 0)
+                if (letterCount.ContainsKey(character))
                 {
-                    return false;
+                    letterCount[character]--;
+                    if (letterCount[character] < 0)
+                    {
+                        return false;
+                    }
                 }
+                else return false;
             }
 
             return true;
         }
 
-        public void Run()
+        public override void Run()
         {
             string[][] pairs =
             {

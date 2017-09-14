@@ -4,7 +4,7 @@ using System;
 
 namespace Chapter01
 {
-    public class Q1_08_Zero_Matrix : IQuestion
+    public class Q1_08_Zero_Matrix : Question
     {
         private void NullifyRow(int[][] matrix, int row)
         {
@@ -166,7 +166,7 @@ namespace Chapter01
             }
         }
 
-        public void Run()
+        public override void Run()
         {
             const int numberOfRows = 10;
             const int numberOfColumns = 15;

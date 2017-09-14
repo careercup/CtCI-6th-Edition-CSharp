@@ -4,14 +4,14 @@ using System;
 
 namespace Chapter05
 {
-    public class Q5_07_Pairwise_Swap : IQuestion
+    public class Q5_07_Pairwise_Swap : Question
     {
         public static int SwapOddEvenBits(int x)
         {
             return (int)(((x & 0xaaaaaaaa) >> 1) | ((x & 0x55555555) << 1));
         }
 
-        public void Run()
+        public override void Run()
         {
             var a = 103217;
             Console.WriteLine(a + ": " + AssortedMethods.ToFullBinarystring(a));

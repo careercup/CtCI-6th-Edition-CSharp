@@ -4,7 +4,7 @@ using System;
 
 namespace Chapter10
 {
-    public class Q10_10_Rank_from_Stream : IQuestion
+    public class Q10_10_Rank_from_Stream : Question
     {
         private static RankNode root = null;
 
@@ -24,7 +24,7 @@ namespace Chapter10
             return root.GetRank(number);
         }
 
-        public void Run()
+        public override void Run()
         {
             int size = 100;
             int[] list = AssortedMethods.RandomArray(size, -100, 100);

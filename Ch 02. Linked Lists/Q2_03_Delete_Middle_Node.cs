@@ -4,7 +4,7 @@ using System;
 
 namespace Chapter02
 {
-    public class Q2_03_Delete_Middle_Node : IQuestion
+    public class Q2_03_Delete_Middle_Node : Question
     {
         private bool DeleteNode(LinkedListNode node)
         {
@@ -20,7 +20,7 @@ namespace Chapter02
             return true;
         }
 
-        public void Run()
+        public override void Run()
         {
             var head = AssortedMethods.RandomLinkedList(10, 0, 10);
             Console.WriteLine(head.PrintForward());

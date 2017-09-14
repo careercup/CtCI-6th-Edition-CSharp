@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Chapter02
 {
-    public class Q2_01_Remove_Dups : IQuestion
+    public class Q2_01_Remove_Dups : Question
     {
         private int _tapB = 0;
         private int _tapC = 0;
@@ -117,7 +117,7 @@ namespace Chapter02
             }
         }
 
-        public void Run()
+        public override void Run()
         {
             var first = new LinkedListNode(0, null, null);
             var originalList = first;

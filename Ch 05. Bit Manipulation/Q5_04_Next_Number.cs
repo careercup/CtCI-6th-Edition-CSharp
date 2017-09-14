@@ -4,7 +4,7 @@ using System;
 
 namespace Chapter05
 {
-    public class Q5_04_Next_Number : IQuestion
+    public class Q5_04_Next_Number : Question
     {
         public static int CountOnes(int number)
         {
@@ -290,7 +290,7 @@ namespace Chapter05
             Console.WriteLine(number + ": " + AssortedMethods.ToFullBinarystring(number));
         }
 
-        public void Run()
+        public override void Run()
         {
             // TODO: Fix this (ported from Java but does not seem to function properly)
             for (var i = 0; i < 200; i++)

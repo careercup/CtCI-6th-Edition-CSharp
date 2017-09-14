@@ -4,7 +4,7 @@ using System;
 
 namespace Introduction
 {
-    public class SwapMinMax : IQuestion
+    public class SwapMinMax : Question
     {
         private int GetMinIndex(int[] array)
         {
@@ -71,7 +71,7 @@ namespace Introduction
             array[maxIndex] = temp;
         }
 
-        public void Run()
+        public override void Run()
         {
             int[] array = AssortedMethods.RandomArray(10, -10, 10);
             Console.WriteLine(AssortedMethods.ArrayToString(array));

@@ -1,7 +1,9 @@
 ﻿namespace ctci.Contracts
 {
-    public interface IQuestion
+    public abstract class Question
     {
-        void Run();
+        abstract public void Run();
+
+        public string Name => GetType().ToString();
     }
 }

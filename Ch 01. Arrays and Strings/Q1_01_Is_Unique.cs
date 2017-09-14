@@ -1,9 +1,10 @@
 ﻿using ctci.Contracts;
 using System;
+using System.Collections.Generic;
 
 namespace Chapter01
 {
-    public class Q1_01_Is_Unique : IQuestion
+    public class Q1_01_Is_Unique : Question
     {
         private bool IsUniqueChars(string str)
         {
@@ -29,28 +30,17 @@ namespace Chapter01
 
         private bool IsUniqueChars2(String str)
         {
-            if (str.Length > 256)
+            var hashset = new HashSet<char>();
+            foreach(var c in str)
             {
-                return false;
-            }
-
-            var charSet = new bool[256];
-
-            for (var i = 0; i < str.Length; i++)
-            {
-                int val = str[i];
-
-                if (charSet[val])
-                {
-                    return false;
-                }
-                charSet[val] = true;
+                if (hashset.Contains(c)) return false;
+                hashset.Add(c);
             }
 
             return true;
         }
 
-        public void Run()
+        public override void Run()
         {
             string[] words = { "abcde", "hello", "apple", "kite", "padle" };
 

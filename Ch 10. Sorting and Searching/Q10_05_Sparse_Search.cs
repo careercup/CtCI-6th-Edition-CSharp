@@ -3,7 +3,7 @@ using System;
 
 namespace Chapter10
 {
-    public class Q10_05_Sparse_Search : IQuestion
+    public class Q10_05_Sparse_Search : Question
     {
         public static int Search(String[] strings, String str, int first, int last)
         {
@@ -172,7 +172,7 @@ namespace Chapter10
             return SearchR(strings, str, 0, strings.Length - 1);
         }
 
-        public void Run()
+        public override void Run()
         {
             String[] stringList = { "apple", "", "", "banana", "", "", "", "carrot", "duck", "", "", "eel", "", "flower" };
 
