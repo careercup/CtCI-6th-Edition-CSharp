@@ -161,7 +161,8 @@ namespace ctci.Library
                     {
                         Console.Write("1");
                     }
-                    else {
+                    else
+                    {
                         Console.Write("0");
                     }
                 }
@@ -176,6 +177,14 @@ namespace ctci.Library
                 Console.Write(array[i] + " ");
             }
             Console.WriteLine("");
+        }
+
+        public static void PrintIntList(IEnumerable<int> list)
+        {
+            Console.Write("{");
+            foreach (var v in list)
+                Console.Write($"{v}, ");
+            Console.WriteLine("\b\b}");
         }
 
         public static string CharArrayToString(char[] array)
