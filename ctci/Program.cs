@@ -50,6 +50,7 @@ namespace ctci
                     new Q4_04_CheckBalanced(),
                     new Q4_05_Validate_BST(),
                     new Q4_06_Successor(),
+                    new Q4_07_Build_Order(),
                     new Q4_08_LowestCommonAncestorNotBST(),
                     new Q4_09_BST_Sequence(),
                     new Q4_10_Check_SubTree(),

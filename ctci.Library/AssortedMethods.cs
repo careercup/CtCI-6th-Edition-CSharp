@@ -179,7 +179,7 @@ namespace ctci.Library
             Console.WriteLine("");
         }
 
-        public static void PrintIntList(IEnumerable<int> list)
+        public static void PrintList<T>(IEnumerable<T> list)
         {
             Console.Write("{");
             foreach (var v in list)
