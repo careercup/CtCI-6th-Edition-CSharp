@@ -12,23 +12,22 @@ namespace Chapter01
             {
                 var first = layer;
                 var last = n - 1 - layer;
-
                 for (var i = first; i < last; ++i)
                 {
                     var offset = i - first;
-                    var top = matrix[first][i]; // save top
+                    var top = matrix[first][i]; // save top, left
 
-                    // left -> top
+                    // top, left <- bottom, left 
                     matrix[first][i] = matrix[last - offset][first];
 
-                    // bottom -> left
+                    // bottom, left <- bottom, right
                     matrix[last - offset][first] = matrix[last][last - offset];
 
-                    // right -> bottom
+                    // bottom, right <- top, right
                     matrix[last][last - offset] = matrix[i][last];
 
-                    // top -> right
-                    matrix[i][last] = top; // right <- saved top
+                    // top, right <- top
+                    matrix[i][last] = top;
                 }
             }
         }
