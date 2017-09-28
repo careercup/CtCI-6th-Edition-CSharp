@@ -4,7 +4,7 @@ using System;
 
 namespace Chapter04
 {
-    public class Q4_04_CheckBalanced: Question
+    public class Q4_04_CheckBalanced : Question
     {
         public static bool IsBalanced(TreeNode root)
         {
@@ -52,27 +52,19 @@ namespace Chapter04
         private static void PrintTree(TreeNode root)
         {
             BTreePrinter.Print(root);
-            var watch = System.Diagnostics.Stopwatch.StartNew();
             var isBalanced1 = IsBalanced(root);
-            watch.Stop();
-            var elapsedMs = watch.ElapsedMilliseconds;
 
             if (isBalanced1)
                 Console.WriteLine("Tree is balanced");
             else
                 Console.WriteLine("Tree is not balalnced");
-            Console.WriteLine($"Elapsed milliconds {elapsedMs}");
 
-            watch = System.Diagnostics.Stopwatch.StartNew();
             var isBalanced2 = IsBalancedBook(root);
-            watch.Stop();
-            elapsedMs = watch.ElapsedMilliseconds;
 
             if (IsBalancedBook(root))
                 Console.WriteLine("Tree is balanced");
             else
                 Console.WriteLine("Tree is not balalnced");
-            Console.WriteLine($"Elapsed milliconds {elapsedMs}");
         }
     }
 }
