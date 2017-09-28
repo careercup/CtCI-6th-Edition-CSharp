@@ -6,51 +6,52 @@ namespace Chapter01
 {
     public class Q1_08_Zero_Matrix : Question
     {
-        private void NullifyRow(int[][] matrix, int row)
+        private void NullifyRow(int[,] matrix, int row)
         {
-            for (var j = 0; j < matrix[0].Length; j++)
+            var width = matrix.GetLength(1);
+            for (var column = 0; column < width; column++)
             {
-                matrix[row][j] = 0;
+                matrix[row, column] = 0;
             }
         }
 
-        private void NullifyColumn(int[][] matrix, int col)
+        private void NullifyColumn(int[,] matrix, int col)
         {
-            for (var i = 0; i < matrix.Length; i++)
+            var height = matrix.GetLength(0);
+            for (var row = 0; row < height; row++)
             {
-                matrix[i][col] = 0;
+                matrix[row, col] = 0;
             }
         }
 
-        private int[][] CloneMatrix(int[][] matrix)
+        private int[,] CloneMatrix(int[,] matrix)
         {
-            var clone = new int[matrix.Length][];
+            var height = matrix.GetLength(0);
+            var width = matrix.GetLength(1);
 
-            for (var i = 0; i < matrix.Length; i++)
+            var clone = new int[height, width];
+            for (var row = 0; row < height; row++)
             {
-                clone[i] = new int[matrix[0].Length];
-
-                for (var j = 0; j < matrix[0].Length; j++)
+                for (var column = 0; column < width; column++)
                 {
-                    clone[i][j] = matrix[i][j];
+                    clone[row, column] = matrix[row, column];
                 }
             }
-
             return clone;
         }
 
-        private bool MatricesAreEqual(int[][] matrix1, int[][] matrix2)
+        private bool MatricesAreEqual(int[,] matrix1, int[,] matrix2)
         {
-            if (matrix1.Length != matrix2.Length || matrix1[0].Length != matrix2[0].Length)
+            if (matrix1.GetLength(0) != matrix2.GetLength(0) || matrix1.GetLength(1) != matrix2.GetLength(1))
             {
                 return false;
             }
 
-            for (var k = 0; k < matrix1.Length; k++)
+            for (var row = 0; row < matrix1.GetLength(0); row++)
             {
-                for (var j = 0; j < matrix1[0].Length; j++)
+                for (var column = 0; column < matrix1.GetLength(1); column++)
                 {
-                    if (matrix1[k][j] != matrix2[k][j])
+                    if (matrix1[row, column] != matrix2[row, column])
                     {
                         return false;
                     }
@@ -60,109 +61,43 @@ namespace Chapter01
             return true;
         }
 
-        private void SetZeros(int[][] matrix)
+        private void SetZeros(int[,] matrix)
         {
-            var row = new bool[matrix.Length];
-            var column = new bool[matrix[0].Length];
+            var height = matrix.GetLength(0);
+            var width = matrix.GetLength(1);
+
+            var rowArray = new bool[height];
+            var columnArray = new bool[width];
 
             // Store the row and column index with value 0
-            for (var i = 0; i < matrix.Length; i++)
+            for (var row = 0; row < height; row++)
             {
-                for (var j = 0; j < matrix[0].Length; j++)
+                for (var column = 0; column < width; column++)
                 {
-                    if (matrix[i][j] == 0)
+                    if (matrix[row, column] == 0)
                     {
-                        row[i] = true;
-                        column[j] = true;
+                        rowArray[row] = true;
+                        columnArray[column] = true;
                     }
                 }
             }
 
             // Nullify rows
-            for (var i = 0; i < row.Length; i++)
+            for (var i = 0; i < rowArray.Length; i++)
             {
-                if (row[i])
+                if (rowArray[i])
                 {
                     NullifyRow(matrix, i);
                 }
             }
 
             // Nullify columns
-            for (var j = 0; j < column.Length; j++)
+            for (var j = 0; j < columnArray.Length; j++)
             {
-                if (column[j])
+                if (columnArray[j])
                 {
                     NullifyColumn(matrix, j);
                 }
-            }
-        }
-
-        private void SetZeros2(int[][] matrix)
-        {
-            var rowHasZero = false;
-            var colHasZero = false;
-
-            // Check if first row has a zero
-            for (var j = 0; j < matrix[0].Length; j++)
-            {
-                if (matrix[0][j] == 0)
-                {
-                    rowHasZero = true;
-                    break;
-                }
-            }
-
-            // Check if first column has a zero
-            for (var i = 0; i < matrix.Length; i++)
-            {
-                if (matrix[i][0] == 0)
-                {
-                    colHasZero = true;
-                    break;
-                }
-            }
-
-            // Check for zeros in the rest of the array
-            for (var i = 1; i < matrix.Length; i++)
-            {
-                for (var j = 1; j < matrix[0].Length; j++)
-                {
-                    if (matrix[i][j] == 0)
-                    {
-                        matrix[i][0] = 0;
-                        matrix[0][j] = 0;
-                    }
-                }
-            }
-
-            // Nullify rows based on values in first column
-            for (var i = 1; i < matrix.Length; i++)
-            {
-                if (matrix[i][0] == 0)
-                {
-                    NullifyRow(matrix, i);
-                }
-            }
-
-            // Nullify columns based on values in first row
-            for (var j = 1; j < matrix[0].Length; j++)
-            {
-                if (matrix[0][j] == 0)
-                {
-                    NullifyColumn(matrix, j);
-                }
-            }
-
-            // Nullify first row
-            if (rowHasZero)
-            {
-                NullifyRow(matrix, 0);
-            }
-
-            // Nullify first column
-            if (colHasZero)
-            {
-                NullifyColumn(matrix, 0);
             }
         }
 
@@ -171,20 +106,10 @@ namespace Chapter01
             const int numberOfRows = 10;
             const int numberOfColumns = 15;
             var matrix1 = AssortedMethods.RandomMatrix(numberOfRows, numberOfColumns, 0, 100);
-            var matrix2 = CloneMatrix(matrix1);
-
             AssortedMethods.PrintMatrix(matrix1);
-
             SetZeros(matrix1);
-            SetZeros2(matrix2);
-
             Console.WriteLine();
-
             AssortedMethods.PrintMatrix(matrix1);
-            Console.WriteLine();
-            AssortedMethods.PrintMatrix(matrix2);
-
-            Console.WriteLine(MatricesAreEqual(matrix1, matrix2) ? "Equal" : "Not Equal");
         }
     }
 }

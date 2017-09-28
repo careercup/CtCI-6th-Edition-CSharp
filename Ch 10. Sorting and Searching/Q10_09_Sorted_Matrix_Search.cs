@@ -17,12 +17,12 @@ namespace Chapter10
                 column = c;
             }
 
-            public bool Inbounds(int[][] matrix)
+            public bool Inbounds(int[,] matrix)
             {
                 return row >= 0 &&
                         column >= 0 &&
-                        row < matrix.Length &&
-                        column < matrix[0].Length;
+                        row < matrix.GetLength(0) &&
+                        column < matrix.GetLength(1);
             }
 
             public bool IsBefore(Coordinate p)
@@ -48,21 +48,22 @@ namespace Chapter10
             }
         }
 
-        public static bool FindElement(int[][] matrix, int elem)
+        public static bool FindElement(int[,] matrix, int elem)
         {
             int row = 0;
-            int col = matrix[0].Length - 1;
-            while (row < matrix.Length && col >= 0)
+            int col = matrix.GetLength(1) - 1;
+            while (row < matrix.GetLength(0) && col >= 0)
             {
-                if (matrix[row][col] == elem)
+                if (matrix[row, col] == elem)
                 {
                     return true;
                 }
-                else if (matrix[row][col] > elem)
+                else if (matrix[row, col] > elem)
                 {
                     col--;
                 }
-                else {
+                else
+                {
                     row++;
                 }
             }
@@ -73,13 +74,12 @@ namespace Chapter10
         {
             int M = 10;
             int N = 5;
-            var matrix = new int[M][];
+            var matrix = new int[M, N];
             for (int i = 0; i < M; i++)
             {
-                matrix[i] = new int[N];
                 for (int j = 0; j < N; j++)
                 {
-                    matrix[i][j] = 10 * i + j;
+                    matrix[i, j] = 10 * i + j;
                 }
             }
 
@@ -97,21 +97,21 @@ namespace Chapter10
 
         public void Run2()
         {
-            int[][] matrix = new[] {
-                            new [] {15, 30,  50,  70,  73},
-                            new [] {35, 40, 100, 102, 120},
-                            new [] {36, 42, 105, 110, 125},
-                            new [] {46, 51, 106, 111, 130},
-                            new [] {48, 55, 109, 140, 150}
+            int[,] matrix = new[,] {
+                            {15, 30,  50,  70,  73},
+                            {35, 40, 100, 102, 120},
+                            {36, 42, 105, 110, 125},
+                            {46, 51, 106, 111, 130},
+                            {48, 55, 109, 140, 150}
             };
 
             AssortedMethods.PrintMatrix(matrix);
 
-            int m = matrix.Length;
-            int n = matrix[0].Length;
+            int rows = matrix.GetLength(0);
+            int columns = matrix.GetLength(1);
 
             int count = 0;
-            int littleOverTheMax = matrix[m - 1][n - 1] + 10;
+            int littleOverTheMax = matrix[rows - 1, columns - 1] + 10;
             for (int i = 0; i < littleOverTheMax; i++)
             {
                 Coordinate c = FindElement2(matrix, i);
@@ -132,7 +132,7 @@ namespace Chapter10
 
         #region Solution B
 
-        public static Coordinate PartitionAndSearch(int[][] matrix, Coordinate origin, Coordinate dest, Coordinate pivot, int x)
+        public static Coordinate PartitionAndSearch(int[,] matrix, Coordinate origin, Coordinate dest, Coordinate pivot, int x)
         {
             Coordinate lowerLeftOrigin = new Coordinate(pivot.row, origin.column);
             Coordinate lowerLeftDest = new Coordinate(dest.row, pivot.column - 1);
@@ -147,13 +147,13 @@ namespace Chapter10
             return lowerLeft;
         }
 
-        public static Coordinate FindElement2(int[][] matrix, Coordinate origin, Coordinate dest, int x)
+        public static Coordinate FindElement2(int[,] matrix, Coordinate origin, Coordinate dest, int x)
         {
             if (!origin.Inbounds(matrix) || !dest.Inbounds(matrix))
             {
                 return null;
             }
-            if (matrix[origin.row][origin.column] == x)
+            if (matrix[origin.row, origin.column] == x)
             {
                 return origin;
             }
@@ -174,12 +174,13 @@ namespace Chapter10
             while (start.IsBefore(end))
             {
                 p.SetToAverage(start, end);
-                if (x > matrix[p.row][p.column])
+                if (x > matrix[p.row, p.column])
                 {
                     start.row = p.row + 1;
                     start.column = p.column + 1;
                 }
-                else {
+                else
+                {
                     end.row = p.row - 1;
                     end.column = p.column - 1;
                 }
@@ -189,10 +190,10 @@ namespace Chapter10
             return PartitionAndSearch(matrix, origin, dest, start, x);
         }
 
-        public static Coordinate FindElement2(int[][] matrix, int x)
+        public static Coordinate FindElement2(int[,] matrix, int x)
         {
             Coordinate origin = new Coordinate(0, 0);
-            Coordinate dest = new Coordinate(matrix.Length - 1, matrix[0].Length - 1);
+            Coordinate dest = new Coordinate(matrix.GetLength(0) - 1, matrix.GetLength(1) - 1);
             return FindElement2(matrix, origin, dest, x);
         }
 
