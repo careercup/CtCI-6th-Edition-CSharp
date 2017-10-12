@@ -2,6 +2,7 @@ using Chapter01;
 using Chapter02;
 using Chapter04;
 using Chapter05;
+using Chapter09;
 using Chapter10;
 using Chapter16;
 using ctci.Contracts;
@@ -64,6 +65,10 @@ namespace ctci
                     new Q5_06_Conversion(),
                     new Q5_07_Pairwise_Swap(),
                     new Q5_08_Draw_Line()
+                },
+
+                new Question[] {
+                    new Q9_02_Social_Network()
                 },
 
                 new Question[] {
