@@ -1,29 +1,39 @@
-// package Q9_02_Social_Network;
+using System.Collections.Generic;
 
-// import java.util.HashMap;
+namespace Chapter09
+{
+    public class Server
+    {
+        Dictionary<int, Machine> _machines = new Dictionary<int, Machine>();
+        Dictionary<int, int> _personToMachineMap = new Dictionary<int, int>();
 
-// public class Server {
-// 	HashMap<Integer, Machine> machines = new HashMap<Integer, Machine>();
-// 	HashMap<Integer, Integer> personToMachineMap = new HashMap<Integer, Integer>();
-	
-// 	public Machine getMachineWithId(int machineID) {
-// 		return machines.get(machineID);
-// 	}
-	
-// 	public int getMachineIDForUser(int personID) {
-// 		Integer machineID = personToMachineMap.get(personID);
-// 		return machineID == null ? -1 : machineID;
-// 	}
-	
-// 	public Person getPersonWithID(int personID) {
-// 		Integer machineID = personToMachineMap.get(personID);
-// 		if (machineID == null) {
-// 			return null;
-// 		}
-// 		Machine machine = getMachineWithId(machineID);
-// 		if (machine == null) {
-// 			return null;
-// 		}
-// 		return machine.getPersonWithID(personID);
-// 	}
-// }
+        public Machine GetMachineWithId(int machineId)
+        {
+            if (_machines.ContainsKey(machineId)) 
+                return _machines[machineId];
+
+            return null;
+        }
+
+        public int GetMachineIdForUser(int personId)
+        {
+            if (_personToMachineMap.ContainsKey(personId))
+                return _personToMachineMap[personId];
+            
+            return -1;
+        }
+
+        public Person GetPersonWithId(int personId)
+        {
+            var machineId = GetMachineIdForUser(personId);
+            if (machineId == -1)
+                return null;
+
+            Machine machine = GetMachineWithId(machineId);
+            if (machine == null)
+                return null;
+    
+            return machine.People[personId];
+        }
+    }
+}

@@ -1,12 +1,16 @@
-// package Q9_02_Social_Network;
+using System.Collections.Generic;
 
-// import java.util.HashMap;
+namespace Chapter09
+{ 
+    public class Machine
+    {
+        public Dictionary<int, Person> People { get; set; }
+        public int MachineID { get; set; }
 
-// public class Machine {
-// 	public HashMap<Integer, Person> persons = new HashMap<Integer, Person>();
-// 	public int machineID;
-	
-// 	public Person getPersonWithID(int personID) {
-// 		return persons.get(personID);
-// 	}	
-// }
+        public Machine()
+        {
+            People = new Dictionary<int, Person>();    
+        }
+    }
+}
+

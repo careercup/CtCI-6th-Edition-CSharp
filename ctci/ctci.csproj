@@ -18,6 +18,7 @@
     <ProjectReference Include="..\Ch 10. Sorting and Searching\Ch 10. Sorting and Searching.csproj" />
     <ProjectReference Include="..\Ch 16. Moderate\Ch 16. Moderate.csproj" />
     <ProjectReference Include="..\Introduction\Introduction.csproj" />
+    <ProjectReference Include="..\Ch 07. Object-Oriented Design\Ch 07. Object-Oriented Design.csproj" />
   </ItemGroup>
 
 </Project>

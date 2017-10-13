@@ -50,8 +50,8 @@ namespace Chapter09
             }
             
             int[][] edges = {new[]{1, 4}, new[]{1, 2}, new[]{1, 3}, new[]{3, 2}, new[]{4, 6}, new[]{3, 7}, new[]{6, 9}, new[]{9, 10}, new[]{5, 10}, new[]{2, 5}, new[]{3, 7}};
-            //int[][] edges = {{1, 4}, {1, 2}, {4, 6}, {6, 9}, {9, 10}, {5, 10}, {2, 5}};
-            //int[][] edges = {{1, 2}, {1, 4}, {2, 3}, {3, 4}, {4, 6}, {5, 6}, {4, 5}}; 
+            //int[][] edges = {new[]{1, 4}, new[]{1, 2}, new[]{4, 6}, new[]{6, 9}, new[]{9, 10}, new[]{5, 10}, new[]{2, 5}};
+            //int[][] edges = {new[]{1, 2}, new[]{1, 4}, new[]{2, 3}, new[]{3, 4}, new[]{4, 6}, new[]{5, 6}, new[]{4, 5}}; 
             foreach (var edge in edges) {
                 Person source = people[edge[0]];
                 source.AddFriend(edge[1]);
@@ -60,14 +60,14 @@ namespace Chapter09
                 destination.AddFriend(edge[0]);
             }
             
-            /*int i = 1;
-            int j = 10;
-            LinkedList<Person> path1 = findPathBFS(people, i, j);
-            LinkedList<Person> path2 = findPathBiBFS(people, i, j);
-            System.out.println("Path 1");
-            printPeople(path1);
-            System.out.println("Path 2");
-            printPeople(path2);*/
+            //int j = 4;
+            //int z = 9;
+            //LinkedList<Person> path1 = QuestionA.FindPathBFS(people, j, z);
+            //LinkedList<Person> path2 = QuestionB.FindPathBiBFS(people, j, z);
+            //Console.WriteLine("Path 1");
+            //PrintPeople(path1);
+            //Console.WriteLine("Path 2");
+            //PrintPeople(path2);
             
             for (int i = 0; i < nPeople; i++) {
                 for (int j = 0; j < nPeople; j++) {
