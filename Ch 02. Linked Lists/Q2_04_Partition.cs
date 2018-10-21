@@ -178,7 +178,7 @@ namespace Chapter02
         public override void Run()
         {
             /* Create linked list */
-            int[] vals = { 1, 3, 7, 5, 2, 9, 4 };
+            int[] vals = { 3, 5, 8, 5, 10, 2, 1 };
             var head = new LinkedListNode(vals[0], null, null);
             var current = head;
 

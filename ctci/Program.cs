@@ -4,6 +4,7 @@ using Chapter04;
 using Chapter05;
 using Chapter10;
 using Chapter16;
+using Chapter17;
 using ctci.Contracts;
 using Introduction;
 using System;
@@ -87,6 +88,11 @@ namespace ctci
                     new Q16_08_English_Int(),
                     new Q16_19_Pond_Sizes(),
                     new Boggle()
+                },
+
+                new Question[]
+                {
+                    new Q17_12_BiNode(),
                 }
 
             };
