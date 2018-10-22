@@ -10,14 +10,22 @@ namespace Chapter17
         {
             var root = Create(0, 1, 2, 3, 4, 5, 6);
             BTreePrinter.Print(root);
+            Console.WriteLine("Solution 1");
             var sol1 = new Solution1();
             var result = sol1.Convert(root);
             Display(result.Head);
 
+            Console.WriteLine("Solution 2");
             root = Create(0, 1, 2, 3, 4, 5, 6);
             var sol2 = new Solution2();
-            var result1 = sol2.Convert(root);
-            Display(result1);
+            var result2 = sol2.Convert(root);
+            Display(result2);
+
+            Console.WriteLine("Solution 3");
+            root = Create(0, 1, 2, 3, 4, 5, 6);
+            var sol3 = new Solution3();
+            var result3 = sol3.Convert(root);
+            Display(result3);
         }
 
         private static void Display(TreeNode curr)
@@ -121,6 +129,67 @@ namespace Chapter17
                 if (part1 == null) return null;
                 while (part1.Right != null) part1 = part1.Right;
                 return part1;
+            }
+
+            private void Concat(TreeNode x, TreeNode y)
+            {
+                x.Right = y;
+                y.Left = x;
+            }
+        }
+
+        public class Solution3
+        {
+            public TreeNode Convert(TreeNode root)
+            {
+                TreeNode head = ConvertToCircular(root);
+                head.Left.Right = null;
+                head.Left = null;
+                return head;
+            }
+
+            private TreeNode ConvertToCircular(TreeNode root)
+            {
+                if (root == null) return null;
+                var part1 = ConvertToCircular(root.Left);
+                var part3 = ConvertToCircular(root.Right);
+
+                if (part1 == null && part3 == null)
+                {
+                    root.Left = root;
+                    root.Right = root;
+                    return root;
+                }
+
+                var tail3 = part3 == null ? null : part3.Left;
+
+                // Join left to root.
+                if (part1 == null)
+                {
+                    Concat(part3.Left, root);
+                }
+                else
+                {
+                    Concat(part1.Left, root);
+                }
+
+                // Join right to root.
+                if (part3 == null)
+                {
+                    Concat(root, part1);
+                }
+                else
+                {
+                    Concat(root, part3);
+                }
+
+                // join right to left
+                if (part1 != null && part3 != null)
+                {
+                    Concat(tail3, part1);
+                }
+
+                return part1 == null ? root : part1;
             }
 
             private void Concat(TreeNode x, TreeNode y)
