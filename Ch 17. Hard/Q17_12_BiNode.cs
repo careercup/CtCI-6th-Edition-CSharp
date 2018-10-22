@@ -12,9 +12,16 @@ namespace Chapter17
             BTreePrinter.Print(root);
             var sol1 = new Solution1();
             var result = sol1.Convert(root);
+            Display(result.Head);
 
-            var curr = result.Head;
+            root = Create(0, 1, 2, 3, 4, 5, 6);
+            var sol2 = new Solution2();
+            var result1 = sol2.Convert(root);
+            Display(result1);
+        }
 
+        private static void Display(TreeNode curr)
+        {
             while (curr.Right != null)
             {
                 Console.Write($"{curr.Data} ");
@@ -84,6 +91,42 @@ namespace Chapter17
                     this.Tail = tail;
                 }
 
+            }
+        }
+
+        public class Solution2
+        {
+            public TreeNode Convert(TreeNode root)
+            {
+                if (root == null) return null;
+
+                var part1 = Convert(root.Left);
+                var part2 = Convert(root.Right);
+
+                if (part1 != null)
+                {
+                    Concat(GetTail(part1), root);
+                }
+
+                if (part2 != null)
+                {
+                    Concat(root, part2);
+                }
+
+                return part1 == null ? root : part1;
+            }
+
+            private TreeNode GetTail(TreeNode part1)
+            {
+                if (part1 == null) return null;
+                while (part1.Right != null) part1 = part1.Right;
+                return part1;
+            }
+
+            private void Concat(TreeNode x, TreeNode y)
+            {
+                x.Right = y;
+                y.Left = x;
             }
         }
     }
