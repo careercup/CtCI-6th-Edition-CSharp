@@ -7,7 +7,7 @@ namespace Chapter01
 {
     public class Q1_01_Is_Unique : Question
     {
-        private bool IsUniqueChars(string str)
+        public bool IsUniqueChars(string str)
         {
             if (str.Length > 256)
                 throw new ArgumentException("String has to be less than 256 characters");
@@ -23,7 +23,7 @@ namespace Chapter01
             return true;
         }
 
-        private bool IsUniqueChars2(String str)
+        public bool IsUniqueChars2(String str)
         {
             var hashset = new HashSet<char>();
             foreach (var c in str)
