@@ -20,7 +20,7 @@ namespace Chapter04
             BTreePrinter.Print(root);
             var results = AllSequences(root);
             foreach (var list in results)
-                AssortedMethods.PrintIntList(list);
+                AssortedMethods.PrintList(list);
         }
 
         public List<List<int>> AllSequences(TreeNode node)

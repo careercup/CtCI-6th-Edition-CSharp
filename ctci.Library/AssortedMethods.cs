@@ -28,15 +28,14 @@ namespace ctci.Library
             return RandomIntInRange(1, 100) <= percentTrue;
         }
 
-        public static int[][] RandomMatrix(int m, int n, int min, int max)
+        public static int[,] RandomMatrix(int rows, int columns, int min, int max)
         {
-            int[][] matrix = new int[m][];
-            for (int i = 0; i < m; i++)
+            int[,] matrix = new int[rows, columns];
+            for (int i = 0; i < rows; i++)
             {
-                matrix[i] = new int[n];
-                for (int j = 0; j < n; j++)
+                for (int j = 0; j < columns; j++)
                 {
-                    matrix[i][j] = RandomIntInRange(min, max);
+                    matrix[i, j] = RandomIntInRange(min, max);
                 }
             }
             return matrix;
@@ -127,59 +126,36 @@ namespace ctci.Library
             return s;
         }
 
-        public static void PrintMatrix(int[][] matrix)
+        public static void PrintMatrix(int[,] matrix)
         {
-            for (int i = 0; i < matrix.Length; i++)
+            var height = matrix.GetLength(0);
+            var width = matrix.GetLength(1);
+            for (int i = 0; i < height; i++)
             {
-                for (int j = 0; j < matrix[i].Length; j++)
+                for (int j = 0; j < width; j++)
                 {
-                    if (matrix[i][j] < 10 && matrix[i][j] > -10)
-                    {
-                        Console.Write(" ");
-                    }
-                    if (matrix[i][j] < 100 && matrix[i][j] > -100)
-                    {
-                        Console.Write(" ");
-                    }
-                    if (matrix[i][j] >= 0)
-                    {
-                        Console.Write(" ");
-                    }
-                    Console.Write(" " + matrix[i][j]);
+                    Console.Write($" {matrix[i, j],3}");
                 }
                 Console.WriteLine();
             }
         }
 
-        public static void PrintMatrix(bool[][] matrix)
+        public static void PrintMatrix(bool[,] matrix)
         {
-            for (int i = 0; i < matrix.Length; i++)
+            var height = matrix.GetLength(0);
+            var width = matrix.GetLength(1);
+            for (int i = 0; i < height; i++)
             {
-                for (int j = 0; j < matrix[i].Length; j++)
+                for (int j = 0; j < width; j++)
                 {
-                    if (matrix[i][j])
-                    {
-                        Console.Write("1");
-                    }
-                    else
-                    {
-                        Console.Write("0");
-                    }
+                    Console.Write(matrix[i, j] ? "1" : "0");
                 }
                 Console.WriteLine();
             }
         }
 
-        public static void PrintIntArray(int[] array)
-        {
-            for (int i = 0; i < array.Length; i++)
-            {
-                Console.Write(array[i] + " ");
-            }
-            Console.WriteLine("");
-        }
 
-        public static void PrintIntList(IEnumerable<int> list)
+        public static void PrintList<T>(IEnumerable<T> list)
         {
             Console.Write("{");
             foreach (var v in list)

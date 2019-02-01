@@ -4,6 +4,7 @@ using Chapter04;
 using Chapter05;
 using Chapter10;
 using Chapter16;
+using Chapter17;
 using ctci.Contracts;
 using Introduction;
 using System;
@@ -26,7 +27,7 @@ namespace ctci
                     new Q1_02_Check_Permutation(),
                     new Q1_03_URLify(),
                     new Q1_04_Palindrome_Permutation(),
-                    new Q1_05_One_Away_A(),
+                    new Q1_05_One_Edit_Away(),
                     new Q1_06_String_Compression(),
                     new Q1_07_Rotate_Matrix(),
                     new Q1_08_Zero_Matrix(),
@@ -50,6 +51,7 @@ namespace ctci
                     new Q4_04_CheckBalanced(),
                     new Q4_05_Validate_BST(),
                     new Q4_06_Successor(),
+                    new Q4_07_Build_Order(),
                     new Q4_08_LowestCommonAncestorNotBST(),
                     new Q4_09_BST_Sequence(),
                     new Q4_10_Check_SubTree(),
@@ -86,6 +88,11 @@ namespace ctci
                     new Q16_08_English_Int(),
                     new Q16_19_Pond_Sizes(),
                     new Boggle()
+                },
+
+                new Question[]
+                {
+                    new Q17_12_BiNode(),
                 }
 
             };
