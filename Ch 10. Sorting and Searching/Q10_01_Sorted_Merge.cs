@@ -39,7 +39,7 @@ namespace Chapter10
         public override void Run()
         {
             int[] a = new int[] { 2, 3, 4, 5, 6, 8, 10, 100, 0, 0, 0, 0, 0, 0 };
-            int[] b = new int[] { 1, 4, 7, 6, 7, 7 };
+            int[] b = new int[] { 1, 4, 6, 7, 7, 7 };
             Merge(a, b, 8, 6);
             Console.WriteLine(AssortedMethods.ArrayToString(a));
         }
