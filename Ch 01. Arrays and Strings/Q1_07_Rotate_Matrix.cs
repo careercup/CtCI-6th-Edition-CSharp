@@ -6,29 +6,59 @@ namespace Chapter01
 {
     public class Q1_07_Rotate_Matrix : Question
     {
-        private void Rotate(int[][] matrix, int n)
+        private bool IsSquareMatrix(int[][] matrix)
         {
-            for (var layer = 0; layer < n / 2; ++layer)
+            int matrixSize = matrix.Length;  // The 'amount of rows in the matrix' is the 'matrixSize'.
+            int minNumberOfRowsNeededForSquareMatrix = 2;
+            if (matrixSize < minNumberOfRowsNeededForSquareMatrix)
             {
-                var first = layer;
-                var last = n - 1 - layer;
-
-                for (var i = first; i < last; ++i)
+                return false;
+            }
+            
+            // Now, check the length of all the rows to make sure we have a 
+            // square matrix, as 1 or more rows may be too small or too big.
+            for (int row = 0; row < matrix[row].Length; row++)
+            {
+                if (matrixSize != matrix[row].Length)
                 {
-                    var offset = i - first;
-                    var top = matrix[first][i]; // save top
+                    return false;
+                }
+            }
+            return true;  // No errors so far, so we must have a square matrix.
+        }
+        
+        private void Rotate(int[][] matrix)
+        {
+            if (!IsSquareMatrix(matrix))  // Edge case + error checking.
+            {
+                return false;
+            }
+            
+            int matrixSize = matrix.Length
+            for (int layer = 0; layer < matrixSize / 2; layer++)
+            {
+                int startIndex = layer;
+                int lastIndex = (matrixSize - 1) - layer;
+
+                for (int elementIndex = startIndex; elementIndex < lastIndex; elementIndex++)
+                {
+                    // Need this offset so we don't reference the incorrect rows and columns when more layers occur.
+                    int offset = elementIndex - layer;
+                    
+                    // Write a diagram to help visualise and understand what occurs below:
+                    int topRowElement = matrix[startIndex][elementIndex]; // save top
 
                     // left -> top
-                    matrix[first][i] = matrix[last - offset][first];
+                    matrix[startIndex][elementIndex] = matrix[lastIndex - offset][startIndex];
 
                     // bottom -> left
-                    matrix[last - offset][first] = matrix[last][last - offset];
+                    matrix[lastIndex - offset][startIndex] = matrix[lastIndex][lastIndex - offset];
 
                     // right -> bottom
-                    matrix[last][last - offset] = matrix[i][last];
+                    matrix[lastIndex][lastIndex - offset] = matrix[elementIndex][lastIndex];
 
                     // top -> right
-                    matrix[i][last] = top; // right <- saved top
+                    matrix[elementIndex][lastIndex] = topRowElement; // right <- saved top
                 }
             }
         }
