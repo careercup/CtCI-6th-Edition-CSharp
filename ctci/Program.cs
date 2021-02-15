@@ -50,6 +50,7 @@ namespace ctci
                     new Q4_04_CheckBalanced(),
                     new Q4_05_Validate_BST(),
                     new Q4_06_Successor(),
+                    new Q4_07_BuildOrder(),
                     new Q4_08_LowestCommonAncestorNotBST(),
                     new Q4_09_BST_Sequence(),
                     new Q4_10_Check_SubTree(),
@@ -101,6 +102,7 @@ namespace ctci
                     q.Run();
                 }
             }
+            (new Q4_07_BuildOrder()).Run();
 
             Console.WriteLine(string.Format("{0}{1}", Environment.NewLine, Environment.NewLine));
             Console.WriteLine("Press [Enter] to quit");
