@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26228.4
@@ -27,10 +27,18 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch 16. Moderate", "Ch 16. M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch 04. Trees", "Ch 04. Trees\Ch 04. Trees.csproj", "{AF583937-1A80-407F-B683-3FEED7F3BC16}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch 09. System Design and Scalability", "Ch 09. System Design and Scalability\Ch 09. System Design and Scalability.csproj", "{CF5BD090-6644-4047-928A-86E0E4ADA0C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch 07. Object-Oriented Design", "Ch 07. Object-Oriented Design\Ch 07. Object-Oriented Design.csproj", "{54CA6ED0-2C57-4D68-AD90-0655103960FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{F7867FE4-E80B-44DD-9666-C82E6D401B8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -73,6 +81,30 @@ Global
 		{AF583937-1A80-407F-B683-3FEED7F3BC16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF583937-1A80-407F-B683-3FEED7F3BC16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF583937-1A80-407F-B683-3FEED7F3BC16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF5BD090-6644-4047-928A-86E0E4ADA0C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF5BD090-6644-4047-928A-86E0E4ADA0C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF5BD090-6644-4047-928A-86E0E4ADA0C7}.Debug|x64.ActiveCfg = Debug|x64
+		{CF5BD090-6644-4047-928A-86E0E4ADA0C7}.Debug|x64.Build.0 = Debug|x64
+		{CF5BD090-6644-4047-928A-86E0E4ADA0C7}.Debug|x86.ActiveCfg = Debug|x86
+		{CF5BD090-6644-4047-928A-86E0E4ADA0C7}.Debug|x86.Build.0 = Debug|x86
+		{CF5BD090-6644-4047-928A-86E0E4ADA0C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF5BD090-6644-4047-928A-86E0E4ADA0C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF5BD090-6644-4047-928A-86E0E4ADA0C7}.Release|x64.ActiveCfg = Release|x64
+		{CF5BD090-6644-4047-928A-86E0E4ADA0C7}.Release|x64.Build.0 = Release|x64
+		{CF5BD090-6644-4047-928A-86E0E4ADA0C7}.Release|x86.ActiveCfg = Release|x86
+		{CF5BD090-6644-4047-928A-86E0E4ADA0C7}.Release|x86.Build.0 = Release|x86
+		{54CA6ED0-2C57-4D68-AD90-0655103960FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54CA6ED0-2C57-4D68-AD90-0655103960FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54CA6ED0-2C57-4D68-AD90-0655103960FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54CA6ED0-2C57-4D68-AD90-0655103960FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54CA6ED0-2C57-4D68-AD90-0655103960FD}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{54CA6ED0-2C57-4D68-AD90-0655103960FD}.Debug|x64.Build.0 = Debug|Any CPU
+		{54CA6ED0-2C57-4D68-AD90-0655103960FD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{54CA6ED0-2C57-4D68-AD90-0655103960FD}.Debug|x86.Build.0 = Debug|Any CPU
+		{54CA6ED0-2C57-4D68-AD90-0655103960FD}.Release|x64.ActiveCfg = Release|Any CPU
+		{54CA6ED0-2C57-4D68-AD90-0655103960FD}.Release|x64.Build.0 = Release|Any CPU
+		{54CA6ED0-2C57-4D68-AD90-0655103960FD}.Release|x86.ActiveCfg = Release|Any CPU
+		{54CA6ED0-2C57-4D68-AD90-0655103960FD}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -88,5 +120,7 @@ Global
 		{90D56A57-CEAD-42F8-A978-BC2D33530E0E} = {8E563D72-A200-4BB7-8AB8-A93BEED3A5B7}
 		{AE0D044B-1AE9-430F-B05D-ADAC72C407B8} = {8E563D72-A200-4BB7-8AB8-A93BEED3A5B7}
 		{AF583937-1A80-407F-B683-3FEED7F3BC16} = {8E563D72-A200-4BB7-8AB8-A93BEED3A5B7}
+		{CF5BD090-6644-4047-928A-86E0E4ADA0C7} = {8E563D72-A200-4BB7-8AB8-A93BEED3A5B7}
+		{54CA6ED0-2C57-4D68-AD90-0655103960FD} = {8E563D72-A200-4BB7-8AB8-A93BEED3A5B7}
 	EndGlobalSection
 EndGlobal
