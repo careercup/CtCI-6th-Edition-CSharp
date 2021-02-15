@@ -24,12 +24,12 @@ namespace Chapter02
 
         private void DeleteDupsA(LinkedListNode node)
         {
-            var table = new Dictionary<int, bool>();
+            var table = new HashSet<int>();
             LinkedListNode previous = null;
 
             while (node != null)
             {
-                if (table.ContainsKey(node.Data))
+                if (table.Contains(node.Data))
                 {
                     if (previous != null)
                     {
@@ -38,7 +38,7 @@ namespace Chapter02
                 }
                 else
                 {
-                    table.Add(node.Data, true);
+                    table.Add(node.Data);
                     previous = node;
                 }
 
