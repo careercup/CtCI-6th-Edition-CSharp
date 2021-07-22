@@ -52,19 +52,16 @@ namespace Chapter04
         private static void PrintTree(TreeNode root)
         {
             BTreePrinter.Print(root);
-            var isBalanced1 = IsBalanced(root);
 
-            if (isBalanced1)
+            if (IsBalanced(root))
                 Console.WriteLine("Tree is balanced");
             else
-                Console.WriteLine("Tree is not balalnced");
-
-            var isBalanced2 = IsBalancedBook(root);
+                Console.WriteLine("Tree is not balanced");
 
             if (IsBalancedBook(root))
                 Console.WriteLine("Tree is balanced");
             else
-                Console.WriteLine("Tree is not balalnced");
+                Console.WriteLine("Tree is not balanced");
         }
     }
 }

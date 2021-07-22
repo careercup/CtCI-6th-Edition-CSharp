@@ -11,9 +11,9 @@ namespace Chapter01
             String b = "pale";
             var c = "ple";
             var d = "pele";
-            Console.WriteLine($"{a}, {b}: {OneEditAway(a, b)} / {OneEditAway2(a, b)}");
-            Console.WriteLine($"{b}, {c}: {OneEditAway(b, c)} / {OneEditAway2(b, c)}");
-            Console.WriteLine($"{b}, {d}: {OneEditAway(b, d)} / {OneEditAway2(b, d)}");
+            Console.WriteLine($"{a}, {b}: {OneEditAway(a, b)} / {OneEditAwayBook(a, b)}");
+            Console.WriteLine($"{b}, {c}: {OneEditAway(b, c)} / {OneEditAwayBook(b, c)}");
+            Console.WriteLine($"{b}, {d}: {OneEditAway(b, d)} / {OneEditAwayBook(b, d)}");
 
 
         }
@@ -77,7 +77,7 @@ namespace Chapter01
             return false;
         }
 
-        public static bool OneEditAway2(String first, String second)
+        public static bool OneEditAwayBook(String first, String second)
         {
             /* Length checks. */
             if (Math.Abs(first.Length - second.Length) > 1)
@@ -86,29 +86,29 @@ namespace Chapter01
             }
 
             /* Get shorter and longer string.*/
-            String s1 = first.Length < second.Length ? first : second;
-            String s2 = first.Length < second.Length ? second : first;
+            String shorter = first.Length < second.Length ? first : second;
+            String longer = first.Length < second.Length ? second : first;
 
-            int index1 = 0;
-            int index2 = 0;
+            int indexS = 0;
+            int indexL = 0;
             bool foundDifference = false;
-            while (index2 < s2.Length && index1 < s1.Length)
+            while (indexL < longer.Length && indexS < shorter.Length)
             {
-                if (s1[index1] != s2[index2])
+                if (shorter[indexS] != longer[indexL])
                 {
                     /* Ensure that this is the first difference found.*/
                     if (foundDifference) return false;
                     foundDifference = true;
-                    if (s1.Length == s2.Length)
+                    if (shorter.Length == longer.Length)
                     { // On replace, move shorter pointer
-                        index1++;
+                        indexS++;
                     }
                 }
                 else
                 {
-                    index1++; // If matching, move shorter pointer
+                    indexS++; // If matching, move shorter pointer
                 }
-                index2++; // Always move pointer for longer string
+                indexL++; // Always move pointer for longer string
             }
             return true;
         }

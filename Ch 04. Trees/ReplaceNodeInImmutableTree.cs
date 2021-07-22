@@ -1,6 +1,5 @@
 ﻿using ctci.Contracts;
 using ctci.Library;
-using System;
 
 namespace Chapter04
 {
@@ -9,8 +8,10 @@ namespace Chapter04
         static public TreeNode Replace(this TreeNode node, int value)
         {
             if (node == null) return null;
-            var newNode = new TreeNode(node);
-            newNode.Data = value;
+            var newNode = new TreeNode(node)
+            {
+                Data = value
+            };
             var newRoot = newNode;
             while (node.Parent != null)
             {
