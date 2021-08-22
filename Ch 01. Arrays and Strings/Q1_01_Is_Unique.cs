@@ -6,9 +6,22 @@ namespace Chapter01
 {
     public class Q1_01_Is_Unique : Question
     {
-        private bool IsUniqueChars(string str)
+        private bool IsUniqueCharsA(string str)
         {
-            if (str.Length > 256)
+            var hashset = new HashSet<char>();
+            foreach (var c in str)
+            {
+                if (hashset.Contains(c)) return false;
+                hashset.Add(c);
+            }
+
+            return true;
+        }
+
+        /* Assumes only letters a through z. */
+        private bool IsUniqueCharsB(string str)
+        {
+            if (str.Length > 26) return false; // Only 26 characters
             {
                 return false;
             }
@@ -28,17 +41,7 @@ namespace Chapter01
             return true;
         }
 
-        private bool IsUniqueChars2(String str)
-        {
-            var hashset = new HashSet<char>();
-            foreach(var c in str)
-            {
-                if (hashset.Contains(c)) return false;
-                hashset.Add(c);
-            }
-
-            return true;
-        }
+        
 
         public override void Run()
         {
@@ -46,7 +49,7 @@ namespace Chapter01
 
             foreach (var word in words)
             {
-                Console.WriteLine(word + ": " + IsUniqueChars(word) + " " + IsUniqueChars2(word));
+                Console.WriteLine(word + ": " + IsUniqueCharsB(word) + " " + IsUniqueCharsA(word));
             }
         }
     }

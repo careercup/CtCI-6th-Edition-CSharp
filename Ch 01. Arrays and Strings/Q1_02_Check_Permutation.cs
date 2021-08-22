@@ -1,60 +1,39 @@
 ﻿using ctci.Contracts;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Chapter01
 {
     public class Q1_02_Check_Permutation : Question
     {
-        private bool IsPermutation(string original, string valueToTest)
+        private bool IsPermutationA(string original, string valueToTest)
         {
             if (original.Length != valueToTest.Length)
             {
                 return false;
             }
 
-            var originalAsArray = original.ToCharArray();
-            Array.Sort(originalAsArray);
-            original = new string(originalAsArray);
-
-            var valueToTestAsArray = valueToTest.ToCharArray();
-            Array.Sort(valueToTestAsArray);
-            valueToTest = new string(valueToTestAsArray);
-
-            return original.Equals(valueToTest);
+            else return new string(original.OrderBy(c => c).ToArray()) == new string(valueToTest.OrderBy(c => c).ToArray());
         }
 
-        private bool IsPermutation2(string original, string valueToTest)
+        private bool IsPermutationB(string original, string valueToTest)
         {
-            if (original.Length != valueToTest.Length)
+            if (original.Length != valueToTest.Length) return false;// Permutations must be same length
+            else
             {
-                return false;
-            }
-
-            var letterCount = new Dictionary<char, int>();
-
-            foreach (var character in original)
-            {
-                if (letterCount.ContainsKey(character))
-                    letterCount[character]++;
-                else
-                    letterCount[character] = 1;
-            }
-
-            foreach (var character in valueToTest)
-            {
-                if (letterCount.ContainsKey(character))
+                int[] originalTable = new int[128];// Assumption: ASCII
+                foreach (var c in original)
                 {
-                    letterCount[character]--;
-                    if (letterCount[character] < 0)
-                    {
-                        return false;
-                    }
+                    originalTable[c]++;
                 }
-                else return false;
+                foreach (var c in valueToTest)
+                {
+                    originalTable[c]--;
+                    if (originalTable[c] < 0) return false;
+                }
+                return true; // letters array has no negative values, and therefore no positive values either
             }
-
-            return true;
         }
 
         public override void Run()
@@ -70,8 +49,8 @@ namespace Chapter01
             {
                 var word1 = pair[0];
                 var word2 = pair[1];
-                var result1 = IsPermutation(word1, word2);
-                var result2 = IsPermutation2(word1, word2);
+                var result1 = IsPermutationA(word1, word2);
+                var result2 = IsPermutationB(word1, word2);
                 Console.WriteLine("{0}, {1}: {2} / {3}", word1, word2, result1, result2);
             }
         }

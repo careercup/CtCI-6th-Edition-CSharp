@@ -15,7 +15,7 @@ namespace Chapter01
             return -1;
         }
 
-        public static int[] BuildCharFrequencyTable(String phrase)
+        public static int[] BuildCharFrequencyTable(string phrase)
         {
             int[] table = new int[26];
             foreach (char c in phrase)
@@ -48,7 +48,7 @@ namespace Chapter01
             return true;
         }
 
-        public static bool IsPermutationOfPalindrome(String phrase)
+        public static bool IsPermutationOfPalindromeA(string phrase)
         {
             int[] table = BuildCharFrequencyTable(phrase);
             return CheckMaxOneOdd(table);
@@ -58,7 +58,7 @@ namespace Chapter01
 
         #region Solution 2
 
-        public static bool IsPermutationOfPalindrome2(String phrase)
+        public static bool IsPermutationOfPalindromeB(string phrase)
         {
             int countOdd = 0;
             int[] table = new int[26];
@@ -105,7 +105,7 @@ namespace Chapter01
         /* Create bit vector for string. For each letter with value i,
          * toggle the ith bit. */
 
-        public static int MarkBitForOddCharacterCount(String phrase)
+        public static int MarkBitForOddCharacterCount(string phrase)
         {
             int bitVector = 0;
             foreach (char c in phrase.ToCharArray())
@@ -124,7 +124,7 @@ namespace Chapter01
             return (bitVector & (bitVector - 1)) == 0;
         }
 
-        public static bool IsPermutationOfPalindrome3(String phrase)
+        public static bool IsPermutationOfPalindromeC(string phrase)
         {
             int bitVector = MarkBitForOddCharacterCount(phrase);
             return bitVector == 0 || CheckExactlyOneBitSet(bitVector);
@@ -142,9 +142,9 @@ namespace Chapter01
 
             foreach (String s in strings)
             {
-                bool a = IsPermutationOfPalindrome(s);
-                bool b = IsPermutationOfPalindrome2(s);
-                bool c = IsPermutationOfPalindrome3(s);
+                bool a = IsPermutationOfPalindromeA(s);
+                bool b = IsPermutationOfPalindromeB(s);
+                bool c = IsPermutationOfPalindromeC(s);
                 Console.WriteLine(s);
                 if (a == b && b == c)
                 {

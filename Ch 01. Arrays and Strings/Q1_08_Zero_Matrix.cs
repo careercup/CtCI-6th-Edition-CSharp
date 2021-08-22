@@ -60,7 +60,7 @@ namespace Chapter01
             return true;
         }
 
-        private void SetZeros(int[][] matrix)
+        private void SetZerosA(int[][] matrix)
         {
             var row = new bool[matrix.Length];
             var column = new bool[matrix[0].Length];
@@ -97,7 +97,7 @@ namespace Chapter01
             }
         }
 
-        private void SetZeros2(int[][] matrix)
+        private void SetZerosB(int[][] matrix)
         {
             var rowHasZero = false;
             var colHasZero = false;
@@ -175,8 +175,8 @@ namespace Chapter01
 
             AssortedMethods.PrintMatrix(matrix1);
 
-            SetZeros(matrix1);
-            SetZeros2(matrix2);
+            SetZerosA(matrix1);
+            SetZerosB(matrix2);
 
             Console.WriteLine();
 

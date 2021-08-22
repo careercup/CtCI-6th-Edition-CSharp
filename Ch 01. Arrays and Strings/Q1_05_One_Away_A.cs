@@ -47,7 +47,7 @@ namespace Chapter01
             return true;
         }
 
-        public static bool OneEditAway(String first, String second)
+        public static bool OneEditAwayA(String first, String second)
         {
             if (first.Length == second.Length)
             {
@@ -64,7 +64,7 @@ namespace Chapter01
             return false;
         }
 
-        public static bool OneEditAway2(String first, String second)
+        public static bool OneEditAwayB(String first, String second)
         {
             /* Length checks. */
             if (Math.Abs(first.Length - second.Length) > 1)
@@ -103,10 +103,10 @@ namespace Chapter01
         {
             String a = "pse";
             String b = "pale";
-            bool isOneEdit = OneEditAway(a, b);
+            bool isOneEdit = OneEditAwayA(a, b);
             Console.WriteLine("{0}, {1}: {2}", a, b, isOneEdit);
 
-            bool isOneEdit2 = OneEditAway2(a, b);
+            bool isOneEdit2 = OneEditAwayB(a, b);
             Console.WriteLine("{0}, {1}: {2}", a, b, isOneEdit2);
         }
     }

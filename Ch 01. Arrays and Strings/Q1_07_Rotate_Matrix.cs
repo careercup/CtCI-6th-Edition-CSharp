@@ -6,64 +6,40 @@ namespace Chapter01
 {
     public class Q1_07_Rotate_Matrix : Question
     {
-        private bool IsSquareMatrix(int[][] matrix)
-        {
-            int matrixSize = matrix.Length;  // The 'amount of rows in the matrix' is the 'matrixSize'.
-            int minNumberOfRowsNeededForSquareMatrix = 2;
-            if (matrixSize < minNumberOfRowsNeededForSquareMatrix)
+		public static bool Rotate(int[][] matrix)
+		{
+			if (matrix.Length == 0 || matrix.Length != matrix[0].Length) return false; // Not a square
+			else
             {
-                return false;
-            }
-            
-            // Now, check the length of all the rows to make sure we have a 
-            // square matrix, as 1 or more rows may be too small or too big.
-            for (int row = 0; row < matrix[row].Length; row++)
-            {
-                if (matrixSize != matrix[row].Length)
-                {
-                    return false;
-                }
-            }
-            return true;  // No errors so far, so we must have a square matrix.
-        }
-        
-        private void Rotate(int[][] matrix)
-        {
-            if (!IsSquareMatrix(matrix))  // Edge case + error checking.
-            {
-                return false;
-            }
-            
-            int matrixSize = matrix.Length
-            for (int layer = 0; layer < matrixSize / 2; layer++)
-            {
-                int startIndex = layer;
-                int lastIndex = (matrixSize - 1) - layer;
+				int n = matrix.Length;
 
-                for (int elementIndex = startIndex; elementIndex < lastIndex; elementIndex++)
-                {
-                    // Need this offset so we don't reference the incorrect rows and columns when more layers occur.
-                    int offset = elementIndex - layer;
-                    
-                    // Write a diagram to help visualise and understand what occurs below:
-                    int topRowElement = matrix[startIndex][elementIndex]; // save top
+				for (int layer = 0; layer < n / 2; layer++)
+				{
+					int first = layer;
+					int last = n - 1 - layer;
+					for (int i = first; i < last; i++)
+					{
+						int offset = i - first;
+						int top = matrix[first][i]; // save top
 
-                    // left -> top
-                    matrix[startIndex][elementIndex] = matrix[lastIndex - offset][startIndex];
+						// left -> top
+						matrix[first][i] = matrix[last - offset][first];
 
-                    // bottom -> left
-                    matrix[lastIndex - offset][startIndex] = matrix[lastIndex][lastIndex - offset];
+						// bottom -> left
+						matrix[last - offset][first] = matrix[last][last - offset];
 
-                    // right -> bottom
-                    matrix[lastIndex][lastIndex - offset] = matrix[elementIndex][lastIndex];
+						// right -> bottom
+						matrix[last][last - offset] = matrix[i][last];
 
-                    // top -> right
-                    matrix[elementIndex][lastIndex] = topRowElement; // right <- saved top
-                }
-            }
-        }
+						// top -> right
+						matrix[i][last] = top; // right <- saved top
+					}
+				}
+				return true;
+			}
+		}
 
-        public override void Run()
+		public override void Run()
         {
             const int size = 3;
 
@@ -71,7 +47,7 @@ namespace Chapter01
 
             AssortedMethods.PrintMatrix(matrix);
 
-            Rotate(matrix, size);
+            Rotate(matrix);
             Console.WriteLine();
             AssortedMethods.PrintMatrix(matrix);
         }
