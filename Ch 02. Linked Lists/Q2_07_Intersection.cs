@@ -18,7 +18,7 @@ namespace Chapter02
             }
         }
 
-        public static TailAndSize getTailAndSize(LinkedListNode list)
+        public static TailAndSize GetTailAndSize(LinkedListNode list)
         {
             if (list == null) return null;
 
@@ -32,7 +32,7 @@ namespace Chapter02
             return new TailAndSize(current, size);
         }
 
-        public static LinkedListNode getKthNode(LinkedListNode head, int k)
+        public static LinkedListNode GetKthNode(LinkedListNode head, int k)
         {
             LinkedListNode current = head;
             while (k > 0 && current != null)
@@ -43,13 +43,15 @@ namespace Chapter02
             return current;
         }
 
-        public static LinkedListNode findIntersection(LinkedListNode list1, LinkedListNode list2)
+        public static LinkedListNode FindIntersection(LinkedListNode list1, LinkedListNode list2)
         {
+            // Time complexity: O(l1+l2)
+            // Space complexity: O(1)
             if (list1 == null || list2 == null) return null;
 
             /* Get tail and sizes. */
-            TailAndSize result1 = getTailAndSize(list1);
-            TailAndSize result2 = getTailAndSize(list2);
+            TailAndSize result1 = GetTailAndSize(list1);
+            TailAndSize result2 = GetTailAndSize(list2);
 
             /* If different tail nodes, then there's no intersection. */
             if (result1.tail != result2.tail)
@@ -62,7 +64,7 @@ namespace Chapter02
             LinkedListNode longer = result1.size < result2.size ? list2 : list1;
 
             /* Advance the pointer for the longer linked list by the difference in lengths. */
-            longer = getKthNode(longer, Math.Abs(result1.size - result2.size));
+            longer = GetKthNode(longer, Math.Abs(result1.size - result2.size));
 
             /* Move both pointers until you have a collision. */
             while (shorter != longer)
@@ -89,7 +91,7 @@ namespace Chapter02
             Console.WriteLine(list1.PrintForward());
             Console.WriteLine(list2.PrintForward());
 
-            LinkedListNode intersection = findIntersection(list1, list2);
+            LinkedListNode intersection = FindIntersection(list1, list2);
 
             Console.WriteLine(intersection.PrintForward());
         }

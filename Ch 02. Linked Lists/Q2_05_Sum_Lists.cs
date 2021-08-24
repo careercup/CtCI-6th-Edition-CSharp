@@ -4,12 +4,15 @@ using System;
 
 namespace Chapter02
 {
+    // A Solution
     public class Q2_05_Sum_Lists : Question
     {
         #region First Part
 
-        private LinkedListNode AddLists(LinkedListNode list1, LinkedListNode list2, int carry)
+        private LinkedListNode AddListsA(LinkedListNode list1, LinkedListNode list2, int carry)
         {
+            // Time complexity: O(n)
+            // Space complexity: O(1)
             if (list1 == null && list2 == null && carry == 0)
             {
                 return null;
@@ -31,7 +34,7 @@ namespace Chapter02
 
             if (list1 != null || list2 != null)
             {
-                var more = AddLists(list1 == null ? null : list1.Next,
+                var more = AddListsA(list1 == null ? null : list1.Next,
                                                list2 == null ? null : list2.Next,
                                                value >= 10 ? 1 : 0);
                 result.SetNext(more);
@@ -90,15 +93,17 @@ namespace Chapter02
                 val = sum.Carry + list1.Data + list2.Data;
             }
 
-            var fullResult = insertBefore(sum.Sum, val % 10);
+            var fullResult = InsertBefore(sum.Sum, val % 10);
             sum.Sum = fullResult;
             sum.Carry = val / 10;
 
             return sum;
         }
 
-        private LinkedListNode AddLists2(LinkedListNode list1, LinkedListNode list2)
+        private LinkedListNode AddListsB(LinkedListNode list1, LinkedListNode list2)
         {
+            // Time complexity: O(n)
+            // Space complexity: O(1)
             var len1 = Length(list1);
             var len2 = Length(list2);
 
@@ -119,7 +124,7 @@ namespace Chapter02
             }
             else
             {
-                var result = insertBefore(sum.Sum, sum.Carry);
+                var result = InsertBefore(sum.Sum, sum.Carry);
                 return result;
             }
         }
@@ -139,7 +144,7 @@ namespace Chapter02
             return head;
         }
 
-        private LinkedListNode insertBefore(LinkedListNode list, int data)
+        private LinkedListNode InsertBefore(LinkedListNode list, int data)
         {
             var node = new LinkedListNode(data, null, null);
 
@@ -180,7 +185,7 @@ namespace Chapter02
                 var lB2 = new LinkedListNode(0, null, lB1);
                 var lB3 = new LinkedListNode(0, null, lB2);
 
-                var list3 = AddLists(lA1, lB1, 0);
+                var list3 = AddListsA(lA1, lB1, 0);
 
                 Console.WriteLine("  " + lA1.PrintForward());
                 Console.WriteLine("+ " + lB1.PrintForward());
@@ -207,7 +212,7 @@ namespace Chapter02
                 var lB2 = new LinkedListNode(9, null, lB1);
                 var lB3 = new LinkedListNode(1, null, lB2);
 
-                var list3 = AddLists2(lA1, lB1);
+                var list3 = AddListsB(lA1, lB1);
 
                 Console.WriteLine("  " + lA1.PrintForward());
                 Console.WriteLine("+ " + lB1.PrintForward());

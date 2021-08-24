@@ -8,6 +8,7 @@ namespace Chapter02
     {
         private LinkedListNode FindBeginning(LinkedListNode head)
         {
+            // Space complexity: O(1)
             var slow = head;
             var fast = head;
 

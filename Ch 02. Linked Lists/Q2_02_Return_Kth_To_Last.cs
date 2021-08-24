@@ -6,49 +6,59 @@ namespace Chapter02
 {
     public class Q2_02_Return_Kth_To_Last : Question
     {
-        private int NthToLastR1(LinkedListNode head, int n)
+        private int PrintKthToLastA(LinkedListNode head, int k)
         {
-            if (n == 0 || head == null)
+            // Time complexity: O(n)
+            // Space complexity: O(n) 考慮Stack空間
+            if (k == 0 || head == null)
             {
                 return 0;
             }
-
-            var k = NthToLastR1(head.Next, n) + 1;
-
-            if (k == n)
+            else
             {
-                Console.WriteLine(n + "th to last node is " + head.Data);
+                var index = PrintKthToLastA(head.Next, k) + 1;
+
+                if (index == k)
+                {
+                    Console.WriteLine(k + "th to last node is " + head.Data);
+                }
+
+                return index;
             }
 
-            return k;
         }
 
-        private LinkedListNode NthToLastR2(LinkedListNode head, int n, ref int i)
+        private LinkedListNode KthToLastB(LinkedListNode head, int k, ref int i)
         {
+            // Time complexity: O(n)
+            // Space complexity: O(n) 考慮Stack空間
             if (head == null)
             {
                 return null;
             }
-
-            var node = NthToLastR2(head.Next, n, ref i);
-            i = i + 1;
-
-            if (i == n)
+            else
             {
-                return head;
-            }
+                var node = KthToLastB(head.Next, k, ref i);
+                i = i + 1;
 
-            return node;
+                if (i == k)
+                {
+                    return head;
+                }
+
+                return node;
+            }
+            
         }
 
-        private Result NthToLastR3Helper(LinkedListNode head, int k)
+        private Result KthToLastCHelper(LinkedListNode head, int k)
         {
             if (head == null)
             {
                 return new Result(null, 0);
             }
 
-            var result = NthToLastR3Helper(head.Next, k);
+            var result = KthToLastCHelper(head.Next, k);
 
             if (result.Node == null)
             {
@@ -63,9 +73,11 @@ namespace Chapter02
             return result;
         }
 
-        private LinkedListNode NthToLastR3(LinkedListNode head, int k)
+        private LinkedListNode KthToLastC(LinkedListNode head, int k)
         {
-            var result = NthToLastR3Helper(head, k);
+            // Time complexity: O(n)
+            // Space complexity: O(n) 考慮Stack空間
+            var result = KthToLastCHelper(head, k);
 
             if (result != null)
             {
@@ -75,37 +87,28 @@ namespace Chapter02
             return null;
         }
 
-        private LinkedListNode NthToLast(LinkedListNode head, int n)
+        private LinkedListNode KthToLastD(LinkedListNode head, int k)
         {
+            // Time complexity: O(n)
+            // Space complexity: O(1)
             var p1 = head;
             var p2 = head;
 
-            if (n <= 0) return null;
-
-            // Move p2 n nodes into the list.  Keep n1 in the same position.
-            for (var i = 0; i < n - 1; i++)
+            /* Move p1 k nodes into the list.*/
+            for (int i = 0; i < k; i++)
             {
-                if (p2 == null)
-                {
-                    return null; // Error: list is too small.
-                }
-
-                p2 = p2.Next;
-            }
-            if (p2 == null)
-            { // Another error check.
-                return null;
+                if (p1 == null) return null; // Out of bounds
+                p1 = p1.Next;
             }
 
-            // Move them at the same pace.  When p2 hits the end,
-            // p1 will be at the right element.
-            while (p2.Next != null)
+            /* Move them at the same pace. When p1 hits the end, 
+             * p2 will be at the right element. */
+            while (p1 != null)
             {
                 p1 = p1.Next;
                 p2 = p2.Next;
             }
-
-            return p1;
+            return p2;
         }
 
         public override void Run()
@@ -114,8 +117,8 @@ namespace Chapter02
             Console.WriteLine(head.PrintForward());
             const int nth = 3;
 
-            var node = NthToLastR3(head, nth);
-            NthToLastR1(head, nth);
+            var node = KthToLastC(head, nth);
+            PrintKthToLastA(head, nth);
 
             if (node != null)
             {

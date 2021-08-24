@@ -4,10 +4,13 @@ using System;
 
 namespace Chapter02
 {
+    // A solution
     public class Q2_04_Partition : Question
     {
-        private LinkedListNode Partition(LinkedListNode node, int pivot)
+        private LinkedListNode PartitionA(LinkedListNode node, int pivot)
         {
+            // Time complexity: O(n)
+            // Space complexity: O(1)
             LinkedListNode beforeStart = null;
             LinkedListNode beforeEnd = null;
             LinkedListNode afterStart = null;
@@ -59,8 +62,10 @@ namespace Chapter02
             return beforeStart;
         }
 
-        private LinkedListNode Partition2(LinkedListNode node, int pivot)
+        private LinkedListNode PartitionB(LinkedListNode node, int pivot)
         {
+            // Time complexity: O(n)
+            // Space complexity: O(1)
             LinkedListNode beforeStart = null;
             LinkedListNode afterStart = null;
 
@@ -102,8 +107,40 @@ namespace Chapter02
             return head;
         }
 
+        private LinkedListNode PartitionC(LinkedListNode node, int pivot)
+        {
+            // Time complexity: O(n)
+            // Space complexity: O(1)
+            LinkedListNode head = node;
+            LinkedListNode tail = node;
+
+            /* Partition list */
+            while (node != null)
+            {
+                LinkedListNode next = node.Next;
+                if (node.Data < pivot)
+                {
+                    /* Insert node at head. */
+                    node.Next = head;
+                    head = node;
+                }
+                else
+                {
+                    /* Insert node at tail. */
+                    tail.Next = node;
+                    tail = node;
+                }
+                node = next;
+            }
+            tail.Next = null;
+
+            return head;
+        }
+
         private LinkedListNode Partition3(LinkedListNode listHead, int pivot)
         {
+            // Time complexity: O(n)
+            // Space complexity: O(1)
             var leftList = new LinkedListNode(); // empty temp node to not have an IF inside the loop
             var rightList = new LinkedListNode(pivot, null, null);
 
@@ -136,6 +173,8 @@ namespace Chapter02
 
         private LinkedListNode Partition4(LinkedListNode listHead, int pivot)
         {
+            // Time complexity: O(n)
+            // Space complexity: O(1)
             LinkedListNode leftSubList = null;
             LinkedListNode rightSubList = null;
             LinkedListNode rightSubListHead = null;
@@ -193,8 +232,8 @@ namespace Chapter02
             var head4 = head.Clone();
 
             /* Partition */
-            var h = Partition(head, 5);
-            var h2 = Partition2(head2, 5);
+            var h = PartitionA(head, 5);
+            var h2 = PartitionB(head2, 5);
             var h3 = Partition3(head3, 5);
             var h4 = Partition4(head4, 5);
 

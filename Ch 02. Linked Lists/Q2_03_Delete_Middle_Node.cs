@@ -6,8 +6,11 @@ namespace Chapter02
 {
     public class Q2_03_Delete_Middle_Node : Question
     {
+        // 要刪除的節點為最後一個節點時無解
         private bool DeleteNode(LinkedListNode node)
         {
+            // Time complexity: O(1)
+            // Space complexity: O(1)
             if (node == null || node.Next == null)
             {
                 return false; // Failure

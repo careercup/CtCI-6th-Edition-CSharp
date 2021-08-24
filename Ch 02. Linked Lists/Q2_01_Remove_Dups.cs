@@ -24,12 +24,14 @@ namespace Chapter02
 
         private void DeleteDupsA(LinkedListNode node)
         {
-            var table = new Dictionary<int, bool>();
+            // Time complexity: O(n)
+            // Space complexity: O(n)
+            var set = new HashSet<int>();
             LinkedListNode previous = null;
 
             while (node != null)
             {
-                if (table.ContainsKey(node.Data))
+                if (set.Contains(node.Data))
                 {
                     if (previous != null)
                     {
@@ -38,7 +40,7 @@ namespace Chapter02
                 }
                 else
                 {
-                    table.Add(node.Data, true);
+                    set.Add(node.Data);
                     previous = node;
                 }
 
@@ -48,34 +50,41 @@ namespace Chapter02
 
         private void DeleteDupsB(LinkedListNode head)
         {
+            // Time complexity: O(n^2)
+            // Space complexity: O(1)
             if (head == null) return;
-
-            var current = head;
-
-            while (current != null)
+            else
             {
-                /* Remove all future nodes that have the same value */
-                var runner = current;
+                var current = head;
 
-                while (runner.Next != null)
+                while (current != null)
                 {
-                    Tap(0);
+                    /* Remove all future nodes that have the same value */
+                    var runner = current;
 
-                    if (runner.Next.Data == current.Data)
+                    while (runner.Next != null)
                     {
-                        runner.Next = runner.Next.Next;
+                        Tap(0);
+
+                        if (runner.Next.Data == current.Data)
+                        {
+                            runner.Next = runner.Next.Next;
+                        }
+                        else
+                        {
+                            runner = runner.Next;
+                        }
                     }
-                    else
-                    {
-                        runner = runner.Next;
-                    }
+                    current = current.Next;
                 }
-                current = current.Next;
             }
+            
         }
 
         private void DeleteDupsC(LinkedListNode head)
         {
+            // Time complexity: O(n^2)
+            // Space complexity: O(1)
             if (head == null) return;
 
             var previous = head;
@@ -103,7 +112,7 @@ namespace Chapter02
                     runner = runner.Next;
                 }
 
-                /* If runner == current, then we didn�t find any duplicate
+                /* If runner == current, then we didn't find any duplicate
                  * elements in the previous for loop.  We then need to
                  * increment current.
                  * If runner != current, then we must have hit the �break�
