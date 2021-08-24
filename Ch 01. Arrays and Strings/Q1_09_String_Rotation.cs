@@ -5,13 +5,18 @@ namespace Chapter01
 {
     public class Q1_09_String_Rotation : Question
     {
-        public static bool IsSubstring(String big, String small)
+        public static bool IsSubstring(string big, string small)
         {
             return big.IndexOf(small) >= 0;
         }
 
-        public static bool IsRotation(String s1, String s2)
+        public static bool IsRotation(string s1, string s2)
         {
+            // Time complexity: O(n)
+            // Space complexity: O(1)
+            //s1=xy
+            //s2=yx
+            //s1S1=xyxy
             var len = s1.Length;
 
             /* check that s1 and s2 are equal length and not empty */

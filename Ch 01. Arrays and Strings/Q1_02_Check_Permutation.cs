@@ -9,6 +9,8 @@ namespace Chapter01
     {
         private bool IsPermutationA(string original, string valueToTest)
         {
+            // Time complexity: O(nlogn)
+            // Space complexity: O(n)
             if (original.Length != valueToTest.Length)
             {
                 return false;
@@ -19,18 +21,20 @@ namespace Chapter01
 
         private bool IsPermutationB(string original, string valueToTest)
         {
+            // Time complexity: O(n)
+            // Space complexity: O(1)
             if (original.Length != valueToTest.Length) return false;// Permutations must be same length
             else
             {
-                int[] originalTable = new int[128];// Assumption: ASCII
+                int[] letters = new int[128];// Assumption: ASCII
                 foreach (var c in original)
                 {
-                    originalTable[c]++;
+                    letters[c]++;
                 }
                 foreach (var c in valueToTest)
                 {
-                    originalTable[c]--;
-                    if (originalTable[c] < 0) return false;
+                    letters[c]--;
+                    if (letters[c] < 0) return false;
                 }
                 return true; // letters array has no negative values, and therefore no positive values either
             }

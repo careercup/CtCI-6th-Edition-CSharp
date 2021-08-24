@@ -50,6 +50,8 @@ namespace Chapter01
 
         public static bool IsPermutationOfPalindromeA(string phrase)
         {
+            // Time complexity: O(n)
+            // Space complexity: O(1)
             int[] table = BuildCharFrequencyTable(phrase);
             return CheckMaxOneOdd(table);
         }
@@ -60,6 +62,8 @@ namespace Chapter01
 
         public static bool IsPermutationOfPalindromeB(string phrase)
         {
+            // Time complexity: O(n)
+            // Space complexity: O(1)
             int countOdd = 0;
             int[] table = new int[26];
             foreach (char c in phrase.ToCharArray())
@@ -105,7 +109,7 @@ namespace Chapter01
         /* Create bit vector for string. For each letter with value i,
          * toggle the ith bit. */
 
-        public static int MarkBitForOddCharacterCount(string phrase)
+        public static int CreateBitVector(string phrase)
         {
             int bitVector = 0;
             foreach (char c in phrase.ToCharArray())
@@ -126,7 +130,9 @@ namespace Chapter01
 
         public static bool IsPermutationOfPalindromeC(string phrase)
         {
-            int bitVector = MarkBitForOddCharacterCount(phrase);
+            // Time complexity: O(n)
+            // Space complexity: O(1)
+            int bitVector = CreateBitVector(phrase);
             return bitVector == 0 || CheckExactlyOneBitSet(bitVector);
         }
 

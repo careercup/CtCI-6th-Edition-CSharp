@@ -62,6 +62,8 @@ namespace Chapter01
 
         private void SetZerosA(int[][] matrix)
         {
+            // Time complexity: O(n^2)
+            // Space complexity: O(n) or O(m)
             var row = new bool[matrix.Length];
             var column = new bool[matrix[0].Length];
 
@@ -99,6 +101,8 @@ namespace Chapter01
 
         private void SetZerosB(int[][] matrix)
         {
+            // Time complexity: O(n^2)
+            // Space complexity: O(1)
             var rowHasZero = false;
             var colHasZero = false;
 

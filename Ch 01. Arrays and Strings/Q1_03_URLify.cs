@@ -9,6 +9,8 @@ namespace Chapter01
 		// Assume string has sufficient free space at the end
 		public void ReplaceSpaces(char[] str, int trueLength)
 		{
+			// Time complexity: O(n)
+			// Space complexity: O(1)
 			int spaceCount = 0;
 			for (int i = 0; i < trueLength; i++)
 			{

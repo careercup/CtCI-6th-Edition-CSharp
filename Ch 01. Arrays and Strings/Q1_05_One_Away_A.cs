@@ -5,7 +5,7 @@ namespace Chapter01
 {
     public class Q1_05_One_Away_A : Question
     {
-        public static bool OneEditReplace(String s1, String s2)
+        public static bool OneEditReplace(string s1, string s2)
         {
             bool foundDifference = false;
             for (int i = 0; i < s1.Length; i++)
@@ -25,7 +25,7 @@ namespace Chapter01
 
         /* Check if you can insert a character into s1 to make s2. */
 
-        public static bool OneEditInsert(String s1, String s2)
+        public static bool OneEditInsert(string s1, string s2)
         {
             int index1 = 0;
             int index2 = 0;
@@ -47,8 +47,10 @@ namespace Chapter01
             return true;
         }
 
-        public static bool OneEditAwayA(String first, String second)
+        public static bool OneEditAwayA(string first, string second)
         {
+            // Time complexity: O(n)
+            // Space complexity: O(1)
             if (first.Length == second.Length)
             {
                 return OneEditReplace(first, second);
@@ -64,8 +66,11 @@ namespace Chapter01
             return false;
         }
 
-        public static bool OneEditAwayB(String first, String second)
+        public static bool OneEditAwayB(string first, string second)
         {
+            // Time complexity: O(n)
+            // Space complexity: O(1)
+
             /* Length checks. */
             if (Math.Abs(first.Length - second.Length) > 1)
             {
@@ -73,8 +78,8 @@ namespace Chapter01
             }
 
             /* Get shorter and longer string.*/
-            String s1 = first.Length < second.Length ? first : second;
-            String s2 = first.Length < second.Length ? second : first;
+            string s1 = first.Length < second.Length ? first : second;
+            string s2 = first.Length < second.Length ? second : first;
 
             int index1 = 0;
             int index2 = 0;
@@ -101,8 +106,8 @@ namespace Chapter01
 
         public override void Run()
         {
-            String a = "pse";
-            String b = "pale";
+            string a = "pse";
+            string b = "pale";
             bool isOneEdit = OneEditAwayA(a, b);
             Console.WriteLine("{0}, {1}: {2}", a, b, isOneEdit);
 

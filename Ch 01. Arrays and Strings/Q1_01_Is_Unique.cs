@@ -8,6 +8,8 @@ namespace Chapter01
     {
         private bool IsUniqueCharsA(string str)
         {
+            // Time complexity: O(n)
+            // Space complexity: O(n)
             var hashset = new HashSet<char>();
             foreach (var c in str)
             {
@@ -21,6 +23,8 @@ namespace Chapter01
         /* Assumes only letters a through z. */
         private bool IsUniqueCharsB(string str)
         {
+            // Time complexity: O(n)
+            // Space complexity: O(1)
             if (str.Length > 26) return false; // Only 26 characters
             {
                 return false;

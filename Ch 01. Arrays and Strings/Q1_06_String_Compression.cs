@@ -6,8 +6,10 @@ namespace Chapter01
 {
     public class Q1_06_String_Compression : Question
     {
-        public string compressBadA(string str)
+        public string CompressBadA(string str)
         {
+            // Time complexity: O(n)
+            // Space complexity: O(1)
             string compressedString = string.Empty;
             int countConsecutive = 0;
             for (int i = 0; i < str.Length; i++)
@@ -17,7 +19,7 @@ namespace Chapter01
                 /* If next character is different than current, append this char to result.*/
                 if (i + 1 >= str.Length || str[i] != str[i + 1])
                 {
-                    compressedString += str[i] + countConsecutive;
+                    compressedString += $"{str[i]}{countConsecutive}";// 效能較差
                     countConsecutive = 0;
                 }
             }
@@ -25,8 +27,10 @@ namespace Chapter01
         }
         
 
-        public static String compressB(String str)
+        public static string CompressB(string str)
         {
+            // Time complexity: O(n)
+            // Space complexity: O(1)
             StringBuilder compressed = new StringBuilder();
             int countConsecutive = 0;
             for (int i = 0; i < str.Length; i++)
@@ -36,6 +40,7 @@ namespace Chapter01
                 /* If next character is different than current, append this char to result.*/
                 if (i + 1 >= str.Length || str[i] != str[i + 1])
                 {
+                    // 效能較好
                     compressed.Append(str[i]);
                     compressed.Append(countConsecutive);
                     countConsecutive = 0;
@@ -46,6 +51,8 @@ namespace Chapter01
 
         private string CompressBetterC(string str)
         {
+            // Time complexity: O(n)
+            // Space complexity: O(1)
             int finalLength = CountCompression(str);
             if (finalLength >= str.Length) return str;
             else
@@ -90,7 +97,7 @@ namespace Chapter01
         public override void Run()
         {
             const string original = "abbccccccde";
-            var compressed = CompressBetterC(original);
+            var compressed = CompressBadA(original);
             Console.WriteLine("Original  : {0}", original);
             Console.WriteLine("Compressed: {0}", compressed);
         }
