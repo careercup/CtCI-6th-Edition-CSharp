@@ -1,3 +1,9 @@
+using Ch_03._Stacks_and_Queues.Q3_01_Three_in_One;
+using Ch_03._Stacks_and_Queues.Q3_02_Stack_Min;
+using Ch_03._Stacks_and_Queues.Q3_03_Stack_of_Plates;
+using Ch_03._Stacks_and_Queues.Q3_04_Queue_via_Stacks;
+using Ch_03._Stacks_and_Queues.Q3_05_Sort_Stack;
+using Ch_03._Stacks_and_Queues.Q3_06_Animal_Shelter;
 using Chapter01;
 using Chapter02;
 using Chapter04;
@@ -42,6 +48,16 @@ namespace ctci
                     new Q2_06_Palindrome(),
                     new Q2_07_Intersection(),
                     new Q2_08_Loop_Detection()
+                },
+
+                new Question[] {
+                    new Q3_01_Three_in_One_A(),
+                    new Q3_01_Three_in_One_B(),
+                    new Q3_02_Stack_Min(),
+                    new Q3_03_Stack_of_Plates(),
+                    new Q3_04_Queue_via_Stacks(),
+                    new Q3_05_Sort_Stack(),
+                    new Q3_06_Animal_Shelter()
                 },
 
                 new Question[] {

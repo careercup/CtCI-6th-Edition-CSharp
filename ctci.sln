@@ -1,31 +1,33 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26228.4
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ctci", "ctci\ctci.csproj", "{F7867FE4-E80B-44DD-9666-C82E6D401B8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ctci", "ctci\ctci.csproj", "{F7867FE4-E80B-44DD-9666-C82E6D401B8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch 01. Arrays and Strings", "Ch 01. Arrays and Strings\Ch 01. Arrays and Strings.csproj", "{3F2DF0FA-D7A0-479B-B720-3AB7411E9539}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ch 01. Arrays and Strings", "Ch 01. Arrays and Strings\Ch 01. Arrays and Strings.csproj", "{3F2DF0FA-D7A0-479B-B720-3AB7411E9539}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ctci.Contracts", "ctci.Contracts\ctci.Contracts.csproj", "{D1B538B9-DE81-4FFF-93B2-A958ED2CE4DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ctci.Contracts", "ctci.Contracts\ctci.Contracts.csproj", "{D1B538B9-DE81-4FFF-93B2-A958ED2CE4DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ctci.Library", "ctci.Library\ctci.Library.csproj", "{8DC982E1-042C-4652-BBC4-CD375223C852}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ctci.Library", "ctci.Library\ctci.Library.csproj", "{8DC982E1-042C-4652-BBC4-CD375223C852}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Introduction", "Introduction\Introduction.csproj", "{AF745A68-20A9-4FF4-801C-86A3B0383C49}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Introduction", "Introduction\Introduction.csproj", "{AF745A68-20A9-4FF4-801C-86A3B0383C49}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Helpers", "Helpers", "{F9BD47E4-94CA-4823-B074-22E8ABE9B8C8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Questions", "Questions", "{8E563D72-A200-4BB7-8AB8-A93BEED3A5B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch 05. Bit Manipulation", "Ch 05. Bit Manipulation\Ch 05. Bit Manipulation.csproj", "{6515F74F-66C6-414D-B5EC-10260AAD473C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ch 05. Bit Manipulation", "Ch 05. Bit Manipulation\Ch 05. Bit Manipulation.csproj", "{6515F74F-66C6-414D-B5EC-10260AAD473C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch 02. Linked Lists", "Ch 02. Linked Lists\Ch 02. Linked Lists.csproj", "{D1ACE913-9486-4CDC-B980-A5F848A67108}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ch 02. Linked Lists", "Ch 02. Linked Lists\Ch 02. Linked Lists.csproj", "{D1ACE913-9486-4CDC-B980-A5F848A67108}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch 10. Sorting and Searching", "Ch 10. Sorting and Searching\Ch 10. Sorting and Searching.csproj", "{90D56A57-CEAD-42F8-A978-BC2D33530E0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ch 10. Sorting and Searching", "Ch 10. Sorting and Searching\Ch 10. Sorting and Searching.csproj", "{90D56A57-CEAD-42F8-A978-BC2D33530E0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch 16. Moderate", "Ch 16. Moderate\Ch 16. Moderate.csproj", "{AE0D044B-1AE9-430F-B05D-ADAC72C407B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ch 16. Moderate", "Ch 16. Moderate\Ch 16. Moderate.csproj", "{AE0D044B-1AE9-430F-B05D-ADAC72C407B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch 04. Trees", "Ch 04. Trees\Ch 04. Trees.csproj", "{AF583937-1A80-407F-B683-3FEED7F3BC16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ch 04. Trees", "Ch 04. Trees\Ch 04. Trees.csproj", "{AF583937-1A80-407F-B683-3FEED7F3BC16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch 03. Stacks and Queues", "Ch 03. Stacks and Queues\Ch 03. Stacks and Queues.csproj", "{A2F823A2-C39E-4D18-BE43-04FA7E7F53E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +75,10 @@ Global
 		{AF583937-1A80-407F-B683-3FEED7F3BC16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF583937-1A80-407F-B683-3FEED7F3BC16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF583937-1A80-407F-B683-3FEED7F3BC16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2F823A2-C39E-4D18-BE43-04FA7E7F53E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2F823A2-C39E-4D18-BE43-04FA7E7F53E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2F823A2-C39E-4D18-BE43-04FA7E7F53E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2F823A2-C39E-4D18-BE43-04FA7E7F53E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -88,5 +94,9 @@ Global
 		{90D56A57-CEAD-42F8-A978-BC2D33530E0E} = {8E563D72-A200-4BB7-8AB8-A93BEED3A5B7}
 		{AE0D044B-1AE9-430F-B05D-ADAC72C407B8} = {8E563D72-A200-4BB7-8AB8-A93BEED3A5B7}
 		{AF583937-1A80-407F-B683-3FEED7F3BC16} = {8E563D72-A200-4BB7-8AB8-A93BEED3A5B7}
+		{A2F823A2-C39E-4D18-BE43-04FA7E7F53E0} = {8E563D72-A200-4BB7-8AB8-A93BEED3A5B7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7E387068-3BC7-4398-83D8-4E1F831D5A91}
 	EndGlobalSection
 EndGlobal
