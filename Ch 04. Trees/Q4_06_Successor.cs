@@ -10,6 +10,7 @@ namespace Chapter04
         static public TreeNode Successor(this TreeNode node)
         {
             if (node == null) return null;
+            // Found right children -> return left most node of right subtree
             if (node.Right != null) return LeftMost(node.Right);
 
             var current = node;

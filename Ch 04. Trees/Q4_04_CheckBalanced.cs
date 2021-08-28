@@ -6,35 +6,36 @@ namespace Chapter04
 {
     public class Q4_04_CheckBalanced: Question
     {
-        public static bool IsBalanced(TreeNode root)
+        public static bool IsBalancedBruteA(TreeNode root)
         {
+            // Time complexity: O(nlogn)
             if (root == null) return true;
             var difference = Math.Abs(Height(root.Left) - Height(root.Right));
             if (difference > 1) return false;
-            else return IsBalanced(root.Left) && IsBalanced(root.Right);
+            else return IsBalancedBruteA(root.Left) && IsBalancedBruteA(root.Right);
         }
 
-        public static int Height(TreeNode root, int height = 0)
+        public static int Height(TreeNode root)
         {
-            if (root == null) return height;
-            return Math.Max(Height(root.Left, height), Height(root.Right, height)) + 1;
+            if (root == null) return -1;
+            return Math.Max(Height(root.Left), Height(root.Right)) + 1;
         }
 
-        public static bool IsBalancedBook(TreeNode root)
+        public static bool IsBalancedImprovedB(TreeNode root)
         {
-            return CheckHeight(root) != -1;
+            return CheckHeight(root) != int.MinValue;
         }
 
         private static int CheckHeight(TreeNode root)
         {
-            if (root == null) return 0;
+            if (root == null) return -1;
             var leftHeight = CheckHeight(root.Left);
-            if (leftHeight == -1) return -1;
+            if (leftHeight == int.MinValue) return int.MinValue;
 
             var rightHeight = CheckHeight(root.Right);
-            if (rightHeight == -1) return -1;
+            if (rightHeight == int.MinValue) return int.MinValue;
 
-            if (Math.Abs(leftHeight - rightHeight) > 1) return -1;
+            if (Math.Abs(leftHeight - rightHeight) > 1) return int.MinValue; // Found error -> pass it back
             else return (Math.Max(leftHeight, rightHeight) + 1);
         }
 
@@ -53,7 +54,7 @@ namespace Chapter04
         {
             BTreePrinter.Print(root);
             var watch = System.Diagnostics.Stopwatch.StartNew();
-            var isBalanced1 = IsBalanced(root);
+            var isBalanced1 = IsBalancedBruteA(root);
             watch.Stop();
             var elapsedMs = watch.ElapsedMilliseconds;
 
@@ -64,11 +65,11 @@ namespace Chapter04
             Console.WriteLine($"Elapsed milliconds {elapsedMs}");
 
             watch = System.Diagnostics.Stopwatch.StartNew();
-            var isBalanced2 = IsBalancedBook(root);
+            var isBalanced2 = IsBalancedImprovedB(root);
             watch.Stop();
             elapsedMs = watch.ElapsedMilliseconds;
 
-            if (IsBalancedBook(root))
+            if (IsBalancedImprovedB(root))
                 Console.WriteLine("Tree is balanced");
             else
                 Console.WriteLine("Tree is not balalnced");

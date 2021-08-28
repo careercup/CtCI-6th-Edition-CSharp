@@ -4,6 +4,11 @@ using Ch_03._Stacks_and_Queues.Q3_03_Stack_of_Plates;
 using Ch_03._Stacks_and_Queues.Q3_04_Queue_via_Stacks;
 using Ch_03._Stacks_and_Queues.Q3_05_Sort_Stack;
 using Ch_03._Stacks_and_Queues.Q3_06_Animal_Shelter;
+using Ch_04._Trees.Q4_01_Route_Between_Nodes;
+using Ch_04._Trees.Q4_07_Build_Order.DFSB;
+using Ch_04._Trees.Q4_07_Build_Order.EdgeRemovalA;
+using Ch_04._Trees.Q4_11_Random_Node;
+using Ch_04._Trees.Q4_12_Paths_with_Sum;
 using Chapter01;
 using Chapter02;
 using Chapter04;
@@ -61,14 +66,20 @@ namespace ctci
                 },
 
                 new Question[] {
+                    new Q4_01_Route_Between_Nodes(),
                     new Q4_02_CreateMinimalBSTfromSortedUniqueArray(),
                     new Q4_03_List_of_Depths(),
                     new Q4_04_CheckBalanced(),
                     new Q4_05_Validate_BST(),
                     new Q4_06_Successor(),
+                    new Q4_07_Build_Order_Edge_Removal_A(),
+                    new Q4_07_Build_Order_Edge_DFS_B(),
                     new Q4_08_LowestCommonAncestorNotBST(),
                     new Q4_09_BST_Sequence(),
                     new Q4_10_Check_SubTree(),
+                    new Q4_11_Random_Node(),
+                    new Q4_12_Paths_with_SumA(),
+                    new Q4_12_Paths_with_SumB(),
                     new ReplaceNodeInImmutableTree()
                 },
 
