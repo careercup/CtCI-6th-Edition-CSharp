@@ -13,6 +13,7 @@ using Chapter01;
 using Chapter02;
 using Chapter04;
 using Chapter05;
+using Chapter05.Q5_03_Flip_Bit_to_Win;
 using Chapter10;
 using Chapter16;
 using ctci.Contracts;
@@ -86,6 +87,8 @@ namespace ctci
                 new Question[] {
                     new Q5_01_Insertion(),
                     new Q5_02_Binary_to_String(),
+                    new Q5_03_Flip_Bit_to_Win_B(),
+                    new Q5_03_Flip_Bit_to_Win_D(),
                     new Q5_04_Next_Number(),
                     new Q5_06_Conversion(),
                     new Q5_06_Conversion(),

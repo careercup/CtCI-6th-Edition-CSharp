@@ -6,108 +6,7 @@ namespace Chapter05
 {
     public class Q5_04_Next_Number : Question
     {
-        public static int CountOnes(int number)
-        {
-            var count = 0;
-
-            while (number > 0)
-            {
-                if ((number & 1) == 1)
-                {
-                    count++;
-                }
-
-                number = number >> 1;
-            }
-
-            return count;
-        }
-
-        public static int CountZeros(int number)
-        {
-            return 32 - CountOnes(number);
-        }
-
-        public static bool HasValidNext(int number)
-        {
-            if (number == 0)
-            {
-                return false;
-            }
-            var count = 0;
-
-            while ((number & 1) == 0)
-            {
-                number >>= 1;
-                count++;
-            }
-
-            while ((number & 1) == 1)
-            {
-                number >>= 1;
-                count++;
-            }
-
-            if (count == 31)
-            {
-                return false;
-            }
-
-            return true;
-        }
-
-        public static bool HasValidPrev(int number)
-        {
-            while ((number & 1) == 1)
-            {
-                number >>= 1;
-            }
-
-            if (number == 0)
-            {
-                return false;
-            }
-
-            return true;
-        }
-
-        public static int GetNextSlow(int number)
-        {
-            if (!HasValidNext(number))
-            {
-                return -1;
-            }
-
-            var numOnes = CountOnes(number);
-            number++;
-
-            while (CountOnes(number) != numOnes)
-            {
-                number++;
-            }
-
-            return number;
-        }
-
-        public static int GetPrevSlow(int number)
-        {
-            if (!HasValidPrev(number))
-            {
-                return -1;
-            }
-
-            var numOnes = CountOnes(number);
-            number--;
-
-            while (CountOnes(number) != numOnes)
-            {
-                number--;
-            }
-
-            return number;
-        }
-
-        public static int GetNext(int number)
+        public static int GetNextB(int number)
         {
             var c = number;
             var c0 = 0;
@@ -157,42 +56,7 @@ namespace Chapter05
             return number;
         }
 
-        public static int GetNextArith(int number)
-        {
-            var c = number;
-            var c0 = 0;
-            var c1 = 0;
-
-            while (((c & 1) == 0) && (c != 0))
-            {
-                c0++;
-                c >>= 1;
-            }
-
-            while ((c & 1) == 1)
-            {
-                c1++;
-                c >>= 1;
-            }
-
-            /* If c is 0, then n is a sequence of 1s followed by a sequence of 0s. This is already the biggest
-             * number with c1 ones. Return error.
-             */
-            if (c0 + c1 == 31 || c0 + c1 == 0)
-            {
-                return -1;
-            }
-
-            /* Arithmetically:
-             * 2^c0 = 1 << c0
-             * 2^(c1-1) = 1 << (c0 - 1)
-             * next = n + 2^c0 + 2^(c1-1) - 1;
-             */
-
-            return number + (1 << c0) + (1 << (c1 - 1)) - 1;
-        }
-
-        public static int GetPrev(int number)
+        public static int GetPrevB(int number)
         {
             var temp = number;
             var c0 = 0;
@@ -252,7 +116,44 @@ namespace Chapter05
             return number;
         }
 
-        public static int GetPrevArith(int number)
+        public static int GetNextArithC(int number)
+        {
+            var c = number;
+            var c0 = 0;
+            var c1 = 0;
+
+            while (((c & 1) == 0) && (c != 0))
+            {
+                c0++;
+                c >>= 1;
+            }
+
+            while ((c & 1) == 1)
+            {
+                c1++;
+                c >>= 1;
+            }
+
+            /* If c is 0, then n is a sequence of 1s followed by a sequence of 0s. This is already the biggest
+             * number with c1 ones. Return error.
+             */
+            if (c0 + c1 == 31 || c0 + c1 == 0)
+            {
+                return -1;
+            }
+
+            /* Arithmetically:
+             * 2^c0 = 1 << c0
+             * 2^(c1-1) = 1 << (c0 - 1)
+             * next = n + 2^c0 + 2^(c1-1) - 1;
+             */
+
+            return number + (1 << c0) + (1 << (c1 - 1)) - 1;
+        }
+
+
+
+        public static int GetPrevArithC(int number)
         {
             var temp = number;
             var c0 = 0;
@@ -285,6 +186,112 @@ namespace Chapter05
             return number - (1 << c1) - (1 << (c0 - 1)) + 1;
         }
 
+
+        public static int CountOnesA(int number)
+        {
+            var count = 0;
+
+            while (number > 0)
+            {
+                if ((number & 1) == 1)
+                {
+                    count++;
+                }
+
+                number = number >> 1;
+            }
+
+            return count;
+        }
+
+        public static int CountZerosA(int number)
+        {
+            return 32 - CountOnesA(number);
+        }
+
+        public static bool HasValidNext(int number)
+        {
+            if (number == 0)
+            {
+                return false;
+            }
+            var count = 0;
+
+            while ((number & 1) == 0)
+            {
+                number >>= 1;
+                count++;
+            }
+
+            while ((number & 1) == 1)
+            {
+                number >>= 1;
+                count++;
+            }
+
+            if (count == 31)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public static bool HasValidPrevA(int number)
+        {
+            while ((number & 1) == 1)
+            {
+                number >>= 1;
+            }
+
+            if (number == 0)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public static int GetNextSlowA(int number)
+        {
+            if (!HasValidNext(number))
+            {
+                return -1;
+            }
+
+            var numOnes = CountOnesA(number);
+            number++;
+
+            while (CountOnesA(number) != numOnes)
+            {
+                number++;
+            }
+
+            return number;
+        }
+
+        public static int GetPrevSlowA(int number)
+        {
+            if (!HasValidPrevA(number))
+            {
+                return -1;
+            }
+
+            var numOnes = CountOnesA(number);
+            number--;
+
+            while (CountOnesA(number) != numOnes)
+            {
+                number--;
+            }
+
+            return number;
+        }
+
+        
+
+        
+
         public static void BinPrint(int number)
         {
             Console.WriteLine(number + ": " + AssortedMethods.ToFullBinarystring(number));
@@ -295,13 +302,13 @@ namespace Chapter05
             // TODO: Fix this (ported from Java but does not seem to function properly)
             for (var i = 0; i < 200; i++)
             {
-                var p1 = GetPrevSlow(i);
-                var p2 = GetPrev(i);
-                var p3 = GetPrevArith(i);
+                var p1 = GetPrevSlowA(i);
+                var p2 = GetPrevB(i);
+                var p3 = GetPrevArithC(i);
 
-                var n1 = GetNextSlow(i);
-                var n2 = GetNext(i);
-                var n3 = GetNextArith(i);
+                var n1 = GetNextSlowA(i);
+                var n2 = GetNextB(i);
+                var n3 = GetNextArithC(i);
 
                 if (p1 != p2 || p2 != p3 || n1 != n2 || n2 != n3)
                 {
