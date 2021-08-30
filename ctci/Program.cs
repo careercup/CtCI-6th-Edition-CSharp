@@ -9,6 +9,10 @@ using Ch_04._Trees.Q4_07_Build_Order.DFSB;
 using Ch_04._Trees.Q4_07_Build_Order.EdgeRemovalA;
 using Ch_04._Trees.Q4_11_Random_Node;
 using Ch_04._Trees.Q4_12_Paths_with_Sum;
+using Ch_06._Math_and_Logic_Puzzles.Q6_01_Find_Heavy_bottle;
+using Ch_06._Math_and_Logic_Puzzles.Q6_07_The_Apocalypse;
+using Ch_06._Math_and_Logic_Puzzles.Q6_08_Egg_Drop;
+using Ch_06._Math_and_Logic_Puzzles.Q6_10_Test_Strips;
 using Chapter01;
 using Chapter02;
 using Chapter04;
@@ -94,6 +98,15 @@ namespace ctci
                     new Q5_06_Conversion(),
                     new Q5_07_Pairwise_Swap(),
                     new Q5_08_Draw_Line()
+                },
+                new Question[]
+                {
+                    new Q6_01_Find_Heavy_bottle(),
+                    new Q6_07_The_Apocalypse(),
+                    new Q6_08_Egg_Drop(),
+                    new Q6_10_Test_StripsA(),
+                    new Q6_10_Test_StripsB(),
+                    new Q6_10_Test_StripsC(),
                 },
 
                 new Question[] {

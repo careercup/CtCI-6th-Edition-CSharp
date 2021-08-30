@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Ch_06._Math_and_Logic_Puzzles</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ctci.Contracts\ctci.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>
