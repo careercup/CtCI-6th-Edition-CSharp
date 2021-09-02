@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Ch_07._Object_Oriented_Design</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ctci.Contracts\ctci.Contracts.csproj" />
+    <ProjectReference Include="..\ctci.Library\ctci.Library.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -13,6 +13,14 @@ using Ch_06._Math_and_Logic_Puzzles.Q6_01_Find_Heavy_bottle;
 using Ch_06._Math_and_Logic_Puzzles.Q6_07_The_Apocalypse;
 using Ch_06._Math_and_Logic_Puzzles.Q6_08_Egg_Drop;
 using Ch_06._Math_and_Logic_Puzzles.Q6_10_Test_Strips;
+using Ch_07._Object_Oriented_Design.Q7_01_Deck_of_Cards;
+using Ch_07._Object_Oriented_Design.Q7_04_Parking_Lot;
+using Ch_07._Object_Oriented_Design.Q7_06_Jigsaw;
+using Ch_07._Object_Oriented_Design.Q7_08_Othello;
+using Ch_07._Object_Oriented_Design.Q7_09_Circular_Array;
+using Ch_07._Object_Oriented_Design.Q7_10_Minesweeper;
+using Ch_07._Object_Oriented_Design.Q7_11_File_System;
+using Ch_07._Object_Oriented_Design.Q7_12_Hash_Table;
 using Chapter01;
 using Chapter02;
 using Chapter04;
@@ -102,11 +110,22 @@ namespace ctci
                 new Question[]
                 {
                     new Q6_01_Find_Heavy_bottle(),
-                    new Q6_07_The_Apocalypse(),
+                    //new Q6_07_The_Apocalypse(),
                     new Q6_08_Egg_Drop(),
                     new Q6_10_Test_StripsA(),
                     new Q6_10_Test_StripsB(),
                     new Q6_10_Test_StripsC(),
+                },
+                new Question[]
+                {
+                    new Q7_01_Deck_of_Cards(),
+                    new Q7_04_Parking_Lot(),
+                    new Q7_06_Jigsaw(),
+                    new Q7_08_Othello(),
+                    new Q7_09_Circular_Array(),
+                    //new Q7_10_Minesweeper(),
+                    new Q7_11_File_System(),
+                    new Q7_12_Hash_Table(),
                 },
 
                 new Question[] {

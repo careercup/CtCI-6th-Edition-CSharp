@@ -16,6 +16,7 @@
     <ProjectReference Include="..\Ch 04. Trees\Ch 04. Trees.csproj" />
     <ProjectReference Include="..\Ch 05. Bit Manipulation\Ch 05. Bit Manipulation.csproj" />
     <ProjectReference Include="..\Ch 06. Math and Logic Puzzles\Ch 06. Math and Logic Puzzles.csproj" />
+    <ProjectReference Include="..\Ch 07. Object-Oriented Design\Ch 07. Object-Oriented Design.csproj" />
     <ProjectReference Include="..\Ch 10. Sorting and Searching\Ch 10. Sorting and Searching.csproj" />
     <ProjectReference Include="..\Ch 16. Moderate\Ch 16. Moderate.csproj" />
     <ProjectReference Include="..\Introduction\Introduction.csproj" />
