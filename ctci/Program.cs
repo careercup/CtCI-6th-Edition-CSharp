@@ -21,6 +21,20 @@ using Ch_07._Object_Oriented_Design.Q7_09_Circular_Array;
 using Ch_07._Object_Oriented_Design.Q7_10_Minesweeper;
 using Ch_07._Object_Oriented_Design.Q7_11_File_System;
 using Ch_07._Object_Oriented_Design.Q7_12_Hash_Table;
+using Ch_08._Recursion_and_Dynamic_Programming.Q8_01_Triple_Step;
+using Ch_08._Recursion_and_Dynamic_Programming.Q8_02_Robot_in_a_Grid;
+using Ch_08._Recursion_and_Dynamic_Programming.Q8_03_Magic_Index;
+using Ch_08._Recursion_and_Dynamic_Programming.Q8_04_Power_Set;
+using Ch_08._Recursion_and_Dynamic_Programming.Q8_05_Recursive_Multiply;
+using Ch_08._Recursion_and_Dynamic_Programming.Q8_06_Towers_of_Hanoi;
+using Ch_08._Recursion_and_Dynamic_Programming.Q8_07_Permutations_Without_Dups;
+using Ch_08._Recursion_and_Dynamic_Programming.Q8_08_Permutations_With_Dups;
+using Ch_08._Recursion_and_Dynamic_Programming.Q8_09_Parens;
+using Ch_08._Recursion_and_Dynamic_Programming.Q8_10_Paint_Fill;
+using Ch_08._Recursion_and_Dynamic_Programming.Q8_11_Coins;
+using Ch_08._Recursion_and_Dynamic_Programming.Q8_12_Eight_Queens;
+using Ch_08._Recursion_and_Dynamic_Programming.Q8_13_Stack_of_Boxes;
+using Ch_08._Recursion_and_Dynamic_Programming.Q8_14_Boolean_Evaluation;
 using Chapter01;
 using Chapter02;
 using Chapter04;
@@ -126,6 +140,33 @@ namespace ctci
                     //new Q7_10_Minesweeper(),
                     new Q7_11_File_System(),
                     new Q7_12_Hash_Table(),
+                },
+                new Question[]
+                {
+                    new Q8_01_Triple_StepA(),
+                    new Q8_01_Triple_StepB(),
+                    new Q8_02_Robot_in_a_GridA(),
+                    new Q8_02_Robot_in_a_GridB(),
+                    new Q8_03_Magic_IndexA(),
+                    new Q8_03_Magic_IndexB(),
+                    new Q8_04_Power_SetA(),
+                    new Q8_04_Power_SetB(),
+                    new Q8_05_Recursive_MultiplyC(),
+                    new Q8_05_Recursive_MultiplyD(),
+                    new Q8_06_Towers_of_Hanoi(),
+                    new Q8_07_Permutations_Without_DupsA(),
+                    new Q8_07_Permutations_Without_DupsB(),
+                    new Q8_07_Permutations_Without_DupsC(),
+                    new Q8_08_Permutations_With_Dups(),
+                    new Q8_09_ParensA(),
+                    new Q8_09_ParensB(),
+                    new Q8_10_Paint_Fill(),
+                    new Q8_11_CoinsB(),
+                    new Q8_12_Eight_Queens(),
+                    new Q8_13_Stack_of_BoxesB(),
+                    new Q8_13_Stack_of_BoxesC(),
+                    new Q8_14_Boolean_EvaluationA(),
+                    new Q8_14_Boolean_EvaluationB(),
                 },
 
                 new Question[] {

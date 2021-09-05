@@ -2306,5 +2306,19 @@ namespace ctci.Library
             };
             return wordList;
         }
+
+        public static bool[][] RandomBooleanMatrix(int M, int N, int percentTrue)
+        {
+            bool[][] matrix = new bool[M][];
+            for (int i = 0; i < M; i++)
+            {
+                matrix[i] = new bool[N];
+                for (int j = 0; j < N; j++)
+                {
+                    matrix[i][j] = RandomBoolean(percentTrue);
+                }
+            }
+            return matrix;
+        }
     }
 }
