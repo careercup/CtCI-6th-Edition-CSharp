@@ -35,6 +35,8 @@ using Ch_08._Recursion_and_Dynamic_Programming.Q8_11_Coins;
 using Ch_08._Recursion_and_Dynamic_Programming.Q8_12_Eight_Queens;
 using Ch_08._Recursion_and_Dynamic_Programming.Q8_13_Stack_of_Boxes;
 using Ch_08._Recursion_and_Dynamic_Programming.Q8_14_Boolean_Evaluation;
+using Ch_09._Scalability_and_Memory_Limits.Q9_02_Social_Network;
+using Ch_09._Scalability_and_Memory_Limits.Q9_05_Cache;
 using Chapter01;
 using Chapter02;
 using Chapter04;
@@ -167,6 +169,12 @@ namespace ctci
                     new Q8_13_Stack_of_BoxesC(),
                     new Q8_14_Boolean_EvaluationA(),
                     new Q8_14_Boolean_EvaluationB(),
+                },
+                new Question[]
+                {
+                    new Q9_02_Social_NetworkA(),
+                    new Q9_02_Social_NetworkB(),
+                    new Q9_05_Cache(),
                 },
 
                 new Question[] {
