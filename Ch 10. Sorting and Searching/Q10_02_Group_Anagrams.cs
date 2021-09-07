@@ -6,31 +6,32 @@ using System.Collections.Generic;
 
 namespace Chapter10
 {
+    // Time complexity: O(nlogn)
     public class Q10_02_Group_Anagrams : Question
     {
-        private class AnagramComparator : IComparer
+        private class AnagramComparator : IComparer<string>
         {
             private string SortChars(string s)
             {
                 char[] content = s.ToCharArray();
-                Array.Sort<char>(content);
+                Array.Sort(content);
                 return new string(content);
             }
 
-            int IComparer.Compare(Object x, Object y)
+            int IComparer<string>.Compare(string x, string y)
             {
-                return SortChars((string)x).CompareTo(SortChars((string)y));
+                return SortChars(x).CompareTo(SortChars(y));
             }
         }
 
         private string SortChars(string s)
         {
             char[] content = s.ToCharArray();
-            Array.Sort<char>(content);
+            Array.Sort(content);
             return new string(content);
         }
 
-        private void Sort(string[] array)
+        private void SortB(string[] array)
         {
             Dictionary<string, LinkedList<string>> hash = new Dictionary<string, LinkedList<string>>();
 
@@ -61,13 +62,14 @@ namespace Chapter10
 
         public override void Run()
         {
+            // Solution A
             string[] array = { "apple", "banana", "carrot", "ele", "duck", "papel", "tarroc", "cudk", "eel", "lee" };
             Console.WriteLine(AssortedMethods.StringArrayToString(array));
             Array.Sort(array, new AnagramComparator());
             Console.WriteLine(AssortedMethods.StringArrayToString(array));
 
-            string[] array2 = { "apple", "banana", "carrot", "ele", "duck", "papel", "tarroc", "cudk", "eel", "lee" };
-            Sort(array);
+            // Solution B
+            SortB(array);
             Console.WriteLine(AssortedMethods.StringArrayToString(array));
         }
     }

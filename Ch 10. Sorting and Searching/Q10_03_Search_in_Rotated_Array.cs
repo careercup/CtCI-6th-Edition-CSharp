@@ -3,6 +3,8 @@ using System;
 
 namespace Chapter10
 {
+    // Time complexity: O(logn)
+    // 若有很多重複: Time complexity: O(n)
     public class Q10_03_Search_in_Rotated_Array : Question
     {
         /// <summary>

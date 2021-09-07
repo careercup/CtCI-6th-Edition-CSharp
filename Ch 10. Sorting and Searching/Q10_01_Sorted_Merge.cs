@@ -4,6 +4,7 @@ using System;
 
 namespace Chapter10
 {
+    // Time complexity: O(n)
     public class Q10_01_Sorted_Merge : Question
     {
         /// <summary>

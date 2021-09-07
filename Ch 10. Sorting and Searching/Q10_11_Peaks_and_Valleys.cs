@@ -14,8 +14,9 @@ namespace Chapter10
         }
 
         #region Solution A
-
-        public void SortValleyPeak(int[] array)
+        // 次最佳化方案
+        // Time complexity: O(n log n)
+        public void SortValleyPeakA(int[] array)
         {
             Array.Sort(array);
             for (int i = 1; i < array.Length; i += 2)
@@ -27,8 +28,9 @@ namespace Chapter10
         #endregion Solution A
 
         #region Solution B
-
-        public void SortValleyPeak2(int[] array)
+        // 最佳化方案
+        // Time complexity: O(n)
+        public void SortValleyPeakB(int[] array)
         {
             for (int i = 1; i < array.Length; i += 2)
             {
@@ -65,8 +67,8 @@ namespace Chapter10
         #endregion Solution B
 
         #region Solution C
-
-        public static void SortValleyPeak3(int[] array)
+        // Time complexity: O(n)
+        public static void SortValleyPeakC(int[] array)
         {
             for (int i = 1; i < array.Length; i += 2)
             {
@@ -86,17 +88,17 @@ namespace Chapter10
             int[] array = { 48, 40, 31, 62, 28, 21, 64, 40, 23, 17 };
 
             Console.WriteLine(AssortedMethods.ArrayToString(array));
-            SortValleyPeak(array);
+            SortValleyPeakA(array);
             Console.WriteLine(AssortedMethods.ArrayToString(array));
 
             int[] array2 = { 48, 40, 31, 62, 28, 21, 64, 40, 23, 17 };
             Console.WriteLine(AssortedMethods.ArrayToString(array2));
-            SortValleyPeak2(array2);
+            SortValleyPeakB(array2);
             Console.WriteLine(AssortedMethods.ArrayToString(array2));
 
             int[] array3 = { 48, 40, 31, 62, 28, 21, 64, 40, 23, 17 };
             Console.WriteLine(AssortedMethods.ArrayToString(array3));
-            SortValleyPeak3(array3);
+            SortValleyPeakC(array3);
             Console.WriteLine(AssortedMethods.ArrayToString(array3));
         }
 

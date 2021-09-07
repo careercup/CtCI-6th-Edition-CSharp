@@ -37,6 +37,8 @@ using Ch_08._Recursion_and_Dynamic_Programming.Q8_13_Stack_of_Boxes;
 using Ch_08._Recursion_and_Dynamic_Programming.Q8_14_Boolean_Evaluation;
 using Ch_09._Scalability_and_Memory_Limits.Q9_02_Social_Network;
 using Ch_09._Scalability_and_Memory_Limits.Q9_05_Cache;
+using Ch_10._Sorting_and_Searching.Q10_04_Sorted_Search_No_Size;
+using Ch_10._Sorting_and_Searching.Q10_07_Missing_Int;
 using Chapter01;
 using Chapter02;
 using Chapter04;
@@ -181,7 +183,10 @@ namespace ctci
                     new Q10_01_Sorted_Merge(),
                     new Q10_02_Group_Anagrams(),
                     new Q10_03_Search_in_Rotated_Array(),
+                    new Q10_04_Sorted_Search_No_Size(),
                     new Q10_05_Sparse_Search(),
+                    new Q10_07_Missing_IntA(),
+                    new Q10_07_Missing_IntB(),
                     new Q10_08_Find_Duplicates(),
                     new Q10_09_Sorted_Matrix_Search(),
                     new Q10_10_Rank_from_Stream(),

@@ -9,4 +9,10 @@
     <ProjectReference Include="..\ctci.Library\ctci.Library.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Q10_07_Missing_Int\input.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

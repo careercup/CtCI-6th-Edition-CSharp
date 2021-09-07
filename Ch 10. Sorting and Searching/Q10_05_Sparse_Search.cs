@@ -5,7 +5,18 @@ namespace Chapter10
 {
     public class Q10_05_Sparse_Search : Question
     {
-        public static int Search(String[] strings, String str, int first, int last)
+        // Worst case 
+        // Time complexity: O(n)
+        public static int SearchA(string[] strings, string str)
+        {
+            if (strings == null || string.IsNullOrEmpty(str))
+            {
+                return -1;
+            }
+            return SearchA(strings, str, 0, strings.Length - 1);
+        }
+
+        public static int SearchA(string[] strings, string str, int first, int last)
         {
             if (first > last)
             {
@@ -48,23 +59,23 @@ namespace Chapter10
             }
             else if (strings[mid].CompareTo(str) < 0)
             { // Search right
-                return Search(strings, str, mid + 1, last);
+                return SearchA(strings, str, mid + 1, last);
             }
             else { // Search left
-                return Search(strings, str, first, mid - 1);
+                return SearchA(strings, str, first, mid - 1);
             }
         }
 
-        public static int Search(String[] strings, String str)
+        public static int SearchB(string[] strings, string str)
         {
             if (strings == null || string.IsNullOrEmpty(str))
             {
                 return -1;
             }
-            return Search(strings, str, 0, strings.Length - 1);
+            return SearchR(strings, str, 0, strings.Length - 1);
         }
 
-        public static int SearchI(String[] strings, String str, int first, int last)
+        public static int SearchI(string[] strings, string str, int first, int last)
         {
             while (first <= last)
             {
@@ -113,7 +124,7 @@ namespace Chapter10
             return -1;
         }
 
-        public static int SearchR(String[] strings, String str, int first, int last)
+        public static int SearchR(string[] strings, string str, int first, int last)
         {
             if (first > last)
             {
@@ -163,22 +174,15 @@ namespace Chapter10
             }
         }
 
-        public static int Search2(String[] strings, String str)
-        {
-            if (strings == null || string.IsNullOrEmpty(str))
-            {
-                return -1;
-            }
-            return SearchR(strings, str, 0, strings.Length - 1);
-        }
+        
 
         public override void Run()
         {
-            String[] stringList = { "apple", "", "", "banana", "", "", "", "carrot", "duck", "", "", "eel", "", "flower" };
+            string[] stringList = { "apple", "", "", "banana", "", "", "", "carrot", "duck", "", "", "eel", "", "flower" };
 
-            Console.WriteLine(Search(stringList, "duck"));
+            Console.WriteLine(SearchA(stringList, "duck"));
 
-            Console.WriteLine(Search2(stringList, "duck"));
+            Console.WriteLine(SearchB(stringList, "duck"));
         }
     }
 }

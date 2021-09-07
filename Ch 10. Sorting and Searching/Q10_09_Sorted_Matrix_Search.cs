@@ -6,49 +6,12 @@ namespace Chapter10
 {
     public class Q10_09_Sorted_Matrix_Search : Question
     {
-        public class Coordinate
-        {
-            public int row;
-            public int column;
 
-            public Coordinate(int r, int c)
-            {
-                row = r;
-                column = c;
-            }
-
-            public bool Inbounds(int[][] matrix)
-            {
-                return row >= 0 &&
-                        column >= 0 &&
-                        row < matrix.Length &&
-                        column < matrix[0].Length;
-            }
-
-            public bool IsBefore(Coordinate p)
-            {
-                return row <= p.row && column <= p.column;
-            }
-
-            public Object Clone()
-            {
-                return new Coordinate(row, column);
-            }
-
-            public void MoveDownRight()
-            {
-                row++;
-                column++;
-            }
-
-            public void SetToAverage(Coordinate min, Coordinate max)
-            {
-                row = (min.row + max.row) / 2;
-                column = (min.column + max.column) / 2;
-            }
-        }
-
-        public static bool FindElement(int[][] matrix, int elem)
+        // 方案1: 簡單方式
+        // Time complexity: O(M log(N))
+        // M: 列
+        // N: 攔
+        public static bool FindElementA(int[][] matrix, int elem)
         {
             int row = 0;
             int col = matrix[0].Length - 1;
@@ -90,7 +53,7 @@ namespace Chapter10
                 for (int j = 0; j < M; j++)
                 {
                     int v = 10 * i + j;
-                    Console.WriteLine(v + ": " + FindElement(matrix, v));
+                    Console.WriteLine(v + ": " + FindElementA(matrix, v));
                 }
             }
         }
@@ -114,7 +77,7 @@ namespace Chapter10
             int littleOverTheMax = matrix[m - 1][n - 1] + 10;
             for (int i = 0; i < littleOverTheMax; i++)
             {
-                Coordinate c = FindElement2(matrix, i);
+                Coordinate c = FindElementB(matrix, i);
                 if (c != null)
                 {
                     Console.WriteLine(i + ": (" + c.row + ", " + c.column + ")");
@@ -131,23 +94,15 @@ namespace Chapter10
         }
 
         #region Solution B
-
-        public static Coordinate PartitionAndSearch(int[][] matrix, Coordinate origin, Coordinate dest, Coordinate pivot, int x)
+        // 方案2: Binary Search
+        public static Coordinate FindElementB(int[][] matrix, int x)
         {
-            Coordinate lowerLeftOrigin = new Coordinate(pivot.row, origin.column);
-            Coordinate lowerLeftDest = new Coordinate(dest.row, pivot.column - 1);
-            Coordinate upperRightOrigin = new Coordinate(origin.row, pivot.column);
-            Coordinate upperRightDest = new Coordinate(pivot.row - 1, dest.column);
-
-            Coordinate lowerLeft = FindElement2(matrix, lowerLeftOrigin, lowerLeftDest, x);
-            if (lowerLeft == null)
-            {
-                return FindElement2(matrix, upperRightOrigin, upperRightDest, x);
-            }
-            return lowerLeft;
+            Coordinate origin = new Coordinate(0, 0);
+            Coordinate dest = new Coordinate(matrix.Length - 1, matrix[0].Length - 1);
+            return FindElementB(matrix, origin, dest, x);
         }
 
-        public static Coordinate FindElement2(int[][] matrix, Coordinate origin, Coordinate dest, int x)
+        public static Coordinate FindElementB(int[][] matrix, Coordinate origin, Coordinate dest, int x)
         {
             if (!origin.Inbounds(matrix) || !dest.Inbounds(matrix))
             {
@@ -189,13 +144,63 @@ namespace Chapter10
             return PartitionAndSearch(matrix, origin, dest, start, x);
         }
 
-        public static Coordinate FindElement2(int[][] matrix, int x)
+        public static Coordinate PartitionAndSearch(int[][] matrix, Coordinate origin, Coordinate dest, Coordinate pivot, int x)
         {
-            Coordinate origin = new Coordinate(0, 0);
-            Coordinate dest = new Coordinate(matrix.Length - 1, matrix[0].Length - 1);
-            return FindElement2(matrix, origin, dest, x);
+            Coordinate lowerLeftOrigin = new Coordinate(pivot.row, origin.column);
+            Coordinate lowerLeftDest = new Coordinate(dest.row, pivot.column - 1);
+            Coordinate upperRightOrigin = new Coordinate(origin.row, pivot.column);
+            Coordinate upperRightDest = new Coordinate(pivot.row - 1, dest.column);
+
+            Coordinate lowerLeft = FindElementB(matrix, lowerLeftOrigin, lowerLeftDest, x);
+            if (lowerLeft == null)
+            {
+                return FindElementB(matrix, upperRightOrigin, upperRightDest, x);
+            }
+            return lowerLeft;
         }
 
         #endregion Solution B
+    }
+
+    public class Coordinate
+    {
+        public int row;
+        public int column;
+
+        public Coordinate(int r, int c)
+        {
+            row = r;
+            column = c;
+        }
+
+        public bool Inbounds(int[][] matrix)
+        {
+            return row >= 0 &&
+                    column >= 0 &&
+                    row < matrix.Length &&
+                    column < matrix[0].Length;
+        }
+
+        public bool IsBefore(Coordinate p)
+        {
+            return row <= p.row && column <= p.column;
+        }
+
+        public object Clone()
+        {
+            return new Coordinate(row, column);
+        }
+
+        public void MoveDownRight()
+        {
+            row++;
+            column++;
+        }
+
+        public void SetToAverage(Coordinate min, Coordinate max)
+        {
+            row = (min.row + max.row) / 2;
+            column = (min.column + max.column) / 2;
+        }
     }
 }

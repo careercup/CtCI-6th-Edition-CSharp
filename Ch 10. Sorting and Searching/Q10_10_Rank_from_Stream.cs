@@ -4,6 +4,9 @@ using System;
 
 namespace Chapter10
 {
+    // Track 和 GetRankOfNumber 方法
+    // 平衡數: Time complexity: O(log N)
+    // 非平衡數: Time complexity: O(N)
     public class Q10_10_Rank_from_Stream : Question
     {
         private static RankNode root = null;
