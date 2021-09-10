@@ -1,3 +1,4 @@
+using Big_O;
 using Ch_03._Stacks_and_Queues.Q3_01_Three_in_One;
 using Ch_03._Stacks_and_Queues.Q3_02_Stack_Min;
 using Ch_03._Stacks_and_Queues.Q3_03_Stack_of_Plates;
@@ -73,6 +74,12 @@ namespace ctci
             {
                 // Intro
                 new Question[] { new CompareBinaryToHex(), new SwapMinMax(), },
+
+                new Question[]
+                {
+                    new Example_16_Power_of_2(),
+                    // new QVI_11_Print_Sorted_Strings(),
+                },
 
                 // Chapters
                 new Question[] {
@@ -223,16 +230,16 @@ namespace ctci
                     new Q15_07_FizzBuzzC(),
                 },
 
-                //new Question[]
-                //{
-                //    new Q16_01_Number_Swapper(),
-                //    new Q16_02_Word_Frequence(),
-                //    new Q16_04_Tic_Tac_Toe_Win(),
-                //    new Q16_06_Smallest_Difference(),
-                //    new Q16_08_English_Int(),
-                //    new Q16_19_Pond_Sizes(),
-                //    new Boggle()
-                //}
+                new Question[]
+                {
+                    new Q16_01_Number_Swapper(),
+                    new Q16_02_Word_Frequence(),
+                    new Q16_04_Tic_Tac_Toe_Win(),
+                    new Q16_06_Smallest_Difference(),
+                    new Q16_08_English_Int(),
+                    new Q16_19_Pond_Sizes(),
+                    new Boggle()
+                }
 
             };
 

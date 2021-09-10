@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Big O\Big O.csproj" />
     <ProjectReference Include="..\Ch 01. Arrays and Strings\Ch 01. Arrays and Strings.csproj" />
     <ProjectReference Include="..\Ch 02. Linked Lists\Ch 02. Linked Lists.csproj" />
     <ProjectReference Include="..\Ch 03. Stacks and Queues\Ch 03. Stacks and Queues.csproj" />
