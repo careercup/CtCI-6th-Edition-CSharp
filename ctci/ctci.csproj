@@ -20,6 +20,7 @@
     <ProjectReference Include="..\Ch 08. Recursion and Dynamic Programming\Ch 08. Recursion and Dynamic Programming.csproj" />
     <ProjectReference Include="..\Ch 09. Scalability and Memory Limits\Ch 09. Scalability and Memory Limits.csproj" />
     <ProjectReference Include="..\Ch 10. Sorting and Searching\Ch 10. Sorting and Searching.csproj" />
+    <ProjectReference Include="..\Ch 15. Threads and Locks\Ch 15. Threads and Locks.csproj" />
     <ProjectReference Include="..\Ch 16. Moderate\Ch 16. Moderate.csproj" />
     <ProjectReference Include="..\Introduction\Introduction.csproj" />
   </ItemGroup>

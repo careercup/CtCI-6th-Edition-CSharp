@@ -39,6 +39,18 @@ using Ch_09._Scalability_and_Memory_Limits.Q9_02_Social_Network;
 using Ch_09._Scalability_and_Memory_Limits.Q9_05_Cache;
 using Ch_10._Sorting_and_Searching.Q10_04_Sorted_Search_No_Size;
 using Ch_10._Sorting_and_Searching.Q10_07_Missing_Int;
+using Ch_15._Threads_and_Locks.IntroductionA;
+using Ch_15._Threads_and_Locks.IntroductionB;
+using Ch_15._Threads_and_Locks.IntroductionLocksF;
+using Ch_15._Threads_and_Locks.IntroductionSynchronizationD;
+using Ch_15._Threads_and_Locks.IntroductionSynchronizedBlocksC;
+using Ch_15._Threads_and_Locks.IntroductionWaitNotifyE;
+using Ch_15._Threads_and_Locks.Q15_03_Dining_Philosophers.QuestionA;
+using Ch_15._Threads_and_Locks.Q15_03_Dining_Philosophers.QuestionB;
+using Ch_15._Threads_and_Locks.Q15_04_Deadlock_Free_Class;
+using Ch_15._Threads_and_Locks.Q15_05_Call_In_Order;
+using Ch_15._Threads_and_Locks.Q15_06_Synchronized_Methods;
+using Ch_15._Threads_and_Locks.Q15_07_FizzBuzz;
 using Chapter01;
 using Chapter02;
 using Chapter04;
@@ -125,84 +137,102 @@ namespace ctci
                     new Q5_07_Pairwise_Swap(),
                     new Q5_08_Draw_Line()
                 },
+                //new Question[]
+                //{
+                //    new Q6_01_Find_Heavy_bottle(),
+                //    //new Q6_07_The_Apocalypse(),
+                //    new Q6_08_Egg_Drop(),
+                //    new Q6_10_Test_StripsA(),
+                //    new Q6_10_Test_StripsB(),
+                //    new Q6_10_Test_StripsC(),
+                //},
+                //new Question[]
+                //{
+                //    new Q7_01_Deck_of_Cards(),
+                //    new Q7_04_Parking_Lot(),
+                //    new Q7_06_Jigsaw(),
+                //    new Q7_08_Othello(),
+                //    new Q7_09_Circular_Array(),
+                //    //new Q7_10_Minesweeper(),
+                //    new Q7_11_File_System(),
+                //    new Q7_12_Hash_Table(),
+                //},
+                //new Question[]
+                //{
+                //    new Q8_01_Triple_StepA(),
+                //    new Q8_01_Triple_StepB(),
+                //    new Q8_02_Robot_in_a_GridA(),
+                //    new Q8_02_Robot_in_a_GridB(),
+                //    new Q8_03_Magic_IndexA(),
+                //    new Q8_03_Magic_IndexB(),
+                //    new Q8_04_Power_SetA(),
+                //    new Q8_04_Power_SetB(),
+                //    new Q8_05_Recursive_MultiplyC(),
+                //    new Q8_05_Recursive_MultiplyD(),
+                //    new Q8_06_Towers_of_Hanoi(),
+                //    new Q8_07_Permutations_Without_DupsA(),
+                //    new Q8_07_Permutations_Without_DupsB(),
+                //    new Q8_07_Permutations_Without_DupsC(),
+                //    new Q8_08_Permutations_With_Dups(),
+                //    new Q8_09_ParensA(),
+                //    new Q8_09_ParensB(),
+                //    new Q8_10_Paint_Fill(),
+                //    new Q8_11_CoinsB(),
+                //    new Q8_12_Eight_Queens(),
+                //    new Q8_13_Stack_of_BoxesB(),
+                //    new Q8_13_Stack_of_BoxesC(),
+                //    new Q8_14_Boolean_EvaluationA(),
+                //    new Q8_14_Boolean_EvaluationB(),
+                //},
+                //new Question[]
+                //{
+                //    new Q9_02_Social_NetworkA(),
+                //    new Q9_02_Social_NetworkB(),
+                //    new Q9_05_Cache(),
+                //},
+
+                //new Question[] {
+                //    new Q10_01_Sorted_Merge(),
+                //    new Q10_02_Group_Anagrams(),
+                //    new Q10_03_Search_in_Rotated_Array(),
+                //    new Q10_04_Sorted_Search_No_Size(),
+                //    new Q10_05_Sparse_Search(),
+                //    new Q10_07_Missing_IntA(),
+                //    new Q10_07_Missing_IntB(),
+                //    new Q10_08_Find_Duplicates(),
+                //    new Q10_09_Sorted_Matrix_Search(),
+                //    new Q10_10_Rank_from_Stream(),
+                //    new Q10_11_Peaks_and_Valleys()
+                //},
                 new Question[]
                 {
-                    new Q6_01_Find_Heavy_bottle(),
-                    //new Q6_07_The_Apocalypse(),
-                    new Q6_08_Egg_Drop(),
-                    new Q6_10_Test_StripsA(),
-                    new Q6_10_Test_StripsB(),
-                    new Q6_10_Test_StripsC(),
-                },
-                new Question[]
-                {
-                    new Q7_01_Deck_of_Cards(),
-                    new Q7_04_Parking_Lot(),
-                    new Q7_06_Jigsaw(),
-                    new Q7_08_Othello(),
-                    new Q7_09_Circular_Array(),
-                    //new Q7_10_Minesweeper(),
-                    new Q7_11_File_System(),
-                    new Q7_12_Hash_Table(),
-                },
-                new Question[]
-                {
-                    new Q8_01_Triple_StepA(),
-                    new Q8_01_Triple_StepB(),
-                    new Q8_02_Robot_in_a_GridA(),
-                    new Q8_02_Robot_in_a_GridB(),
-                    new Q8_03_Magic_IndexA(),
-                    new Q8_03_Magic_IndexB(),
-                    new Q8_04_Power_SetA(),
-                    new Q8_04_Power_SetB(),
-                    new Q8_05_Recursive_MultiplyC(),
-                    new Q8_05_Recursive_MultiplyD(),
-                    new Q8_06_Towers_of_Hanoi(),
-                    new Q8_07_Permutations_Without_DupsA(),
-                    new Q8_07_Permutations_Without_DupsB(),
-                    new Q8_07_Permutations_Without_DupsC(),
-                    new Q8_08_Permutations_With_Dups(),
-                    new Q8_09_ParensA(),
-                    new Q8_09_ParensB(),
-                    new Q8_10_Paint_Fill(),
-                    new Q8_11_CoinsB(),
-                    new Q8_12_Eight_Queens(),
-                    new Q8_13_Stack_of_BoxesB(),
-                    new Q8_13_Stack_of_BoxesC(),
-                    new Q8_14_Boolean_EvaluationA(),
-                    new Q8_14_Boolean_EvaluationB(),
-                },
-                new Question[]
-                {
-                    new Q9_02_Social_NetworkA(),
-                    new Q9_02_Social_NetworkB(),
-                    new Q9_05_Cache(),
+                    //new IntroductionA(),
+                    //new IntroductionB(),
+                    //new TaskExampleB(),
+                    //new IntroductionSynchronizedBlocksC(),
+                    //new IntroductionSynchronizationD(),
+                    //new IntroductionWaitNotifyE(),
+                    //new IntroductionLocksF(),
+                    //new Q15_03_Dining_PhilosophersA(),
+                    //new Q15_03_Dining_PhilosophersB(),
+                    //new Q15_04_Deadlock_Free_Class(),
+                    //new Q15_05_Call_In_Order(),
+                    //new Q15_06_Synchronized_Methods(),
+                    new Q15_07_FizzBuzzA(),
+                    //new Q15_07_FizzBuzzB(),
+                    new Q15_07_FizzBuzzC(),
                 },
 
-                new Question[] {
-                    new Q10_01_Sorted_Merge(),
-                    new Q10_02_Group_Anagrams(),
-                    new Q10_03_Search_in_Rotated_Array(),
-                    new Q10_04_Sorted_Search_No_Size(),
-                    new Q10_05_Sparse_Search(),
-                    new Q10_07_Missing_IntA(),
-                    new Q10_07_Missing_IntB(),
-                    new Q10_08_Find_Duplicates(),
-                    new Q10_09_Sorted_Matrix_Search(),
-                    new Q10_10_Rank_from_Stream(),
-                    new Q10_11_Peaks_and_Valleys()
-                },
-
-                new Question[]
-                {
-                    new Q16_01_Number_Swapper(),
-                    new Q16_02_Word_Frequence(),
-                    new Q16_04_Tic_Tac_Toe_Win(),
-                    new Q16_06_Smallest_Difference(),
-                    new Q16_08_English_Int(),
-                    new Q16_19_Pond_Sizes(),
-                    new Boggle()
-                }
+                //new Question[]
+                //{
+                //    new Q16_01_Number_Swapper(),
+                //    new Q16_02_Word_Frequence(),
+                //    new Q16_04_Tic_Tac_Toe_Win(),
+                //    new Q16_06_Smallest_Difference(),
+                //    new Q16_08_English_Int(),
+                //    new Q16_19_Pond_Sizes(),
+                //    new Boggle()
+                //}
 
             };
 

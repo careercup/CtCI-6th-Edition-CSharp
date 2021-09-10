@@ -35,7 +35,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ch 07. Object-Oriented Desi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ch 08. Recursion and Dynamic Programming", "Ch 08. Recursion and Dynamic Programming\Ch 08. Recursion and Dynamic Programming.csproj", "{19221357-101A-4084-8CAE-FB6A003B86B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch 09. Scalability and Memory Limits", "Ch 09. Scalability and Memory Limits\Ch 09. Scalability and Memory Limits.csproj", "{07EA48E1-BDA5-4879-8564-EAE3F6E67109}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ch 09. Scalability and Memory Limits", "Ch 09. Scalability and Memory Limits\Ch 09. Scalability and Memory Limits.csproj", "{07EA48E1-BDA5-4879-8564-EAE3F6E67109}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch 15. Threads and Locks", "Ch 15. Threads and Locks\Ch 15. Threads and Locks.csproj", "{B27D5310-398E-450A-A955-7968041D7ABD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -103,6 +105,10 @@ Global
 		{07EA48E1-BDA5-4879-8564-EAE3F6E67109}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07EA48E1-BDA5-4879-8564-EAE3F6E67109}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07EA48E1-BDA5-4879-8564-EAE3F6E67109}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B27D5310-398E-450A-A955-7968041D7ABD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B27D5310-398E-450A-A955-7968041D7ABD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B27D5310-398E-450A-A955-7968041D7ABD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B27D5310-398E-450A-A955-7968041D7ABD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -123,6 +129,7 @@ Global
 		{16FE7C06-D3C7-4200-B107-AFD91D752D9E} = {8E563D72-A200-4BB7-8AB8-A93BEED3A5B7}
 		{19221357-101A-4084-8CAE-FB6A003B86B4} = {8E563D72-A200-4BB7-8AB8-A93BEED3A5B7}
 		{07EA48E1-BDA5-4879-8564-EAE3F6E67109} = {8E563D72-A200-4BB7-8AB8-A93BEED3A5B7}
+		{B27D5310-398E-450A-A955-7968041D7ABD} = {8E563D72-A200-4BB7-8AB8-A93BEED3A5B7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7E387068-3BC7-4398-83D8-4E1F831D5A91}
