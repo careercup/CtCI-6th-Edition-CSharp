@@ -1,15 +1,18 @@
 using Big_O;
+using Ch_03._Stacks_and_Queues.Introduction;
 using Ch_03._Stacks_and_Queues.Q3_01_Three_in_One;
 using Ch_03._Stacks_and_Queues.Q3_02_Stack_Min;
 using Ch_03._Stacks_and_Queues.Q3_03_Stack_of_Plates;
 using Ch_03._Stacks_and_Queues.Q3_04_Queue_via_Stacks;
 using Ch_03._Stacks_and_Queues.Q3_05_Sort_Stack;
 using Ch_03._Stacks_and_Queues.Q3_06_Animal_Shelter;
+using Ch_04._Trees.Introduction;
 using Ch_04._Trees.Q4_01_Route_Between_Nodes;
 using Ch_04._Trees.Q4_07_Build_Order.DFSB;
 using Ch_04._Trees.Q4_07_Build_Order.EdgeRemovalA;
 using Ch_04._Trees.Q4_11_Random_Node;
 using Ch_04._Trees.Q4_12_Paths_with_Sum;
+using Ch_06._Math_and_Logic_Puzzles.Introduction;
 using Ch_06._Math_and_Logic_Puzzles.Q6_01_Find_Heavy_bottle;
 using Ch_06._Math_and_Logic_Puzzles.Q6_07_The_Apocalypse;
 using Ch_06._Math_and_Logic_Puzzles.Q6_08_Egg_Drop;
@@ -22,6 +25,7 @@ using Ch_07._Object_Oriented_Design.Q7_09_Circular_Array;
 using Ch_07._Object_Oriented_Design.Q7_10_Minesweeper;
 using Ch_07._Object_Oriented_Design.Q7_11_File_System;
 using Ch_07._Object_Oriented_Design.Q7_12_Hash_Table;
+using Ch_08._Recursion_and_Dynamic_Programming.Introduction;
 using Ch_08._Recursion_and_Dynamic_Programming.Q8_01_Triple_Step;
 using Ch_08._Recursion_and_Dynamic_Programming.Q8_02_Robot_in_a_Grid;
 using Ch_08._Recursion_and_Dynamic_Programming.Q8_03_Magic_Index;
@@ -38,6 +42,7 @@ using Ch_08._Recursion_and_Dynamic_Programming.Q8_13_Stack_of_Boxes;
 using Ch_08._Recursion_and_Dynamic_Programming.Q8_14_Boolean_Evaluation;
 using Ch_09._Scalability_and_Memory_Limits.Q9_02_Social_Network;
 using Ch_09._Scalability_and_Memory_Limits.Q9_05_Cache;
+using Ch_10._Sorting_and_Searching.Introduction;
 using Ch_10._Sorting_and_Searching.Q10_04_Sorted_Search_No_Size;
 using Ch_10._Sorting_and_Searching.Q10_07_Missing_Int;
 using Ch_15._Threads_and_Locks.IntroductionA;
@@ -57,6 +62,7 @@ using Chapter02;
 using Chapter04;
 using Chapter05;
 using Chapter05.Q5_03_Flip_Bit_to_Win;
+using Chapter05.Sample_Code;
 using Chapter10;
 using Chapter16;
 using ctci.Contracts;
@@ -106,6 +112,8 @@ namespace ctci
                 },
 
                 new Question[] {
+                    new QueueTester(),
+                    new StackTester(),
                     new Q3_01_Three_in_One_A(),
                     new Q3_01_Three_in_One_B(),
                     new Q3_02_Stack_Min(),
@@ -115,25 +123,28 @@ namespace ctci
                     new Q3_06_Animal_Shelter()
                 },
 
-                new Question[] {
-                    new Q4_01_Route_Between_Nodes(),
-                    new Q4_02_CreateMinimalBSTfromSortedUniqueArray(),
-                    new Q4_03_List_of_Depths(),
-                    new Q4_04_CheckBalanced(),
-                    new Q4_05_Validate_BST(),
-                    new Q4_06_Successor(),
-                    new Q4_07_Build_Order_Edge_Removal_A(),
-                    new Q4_07_Build_Order_Edge_DFS_B(),
-                    new Q4_08_LowestCommonAncestorNotBST(),
-                    new Q4_09_BST_Sequence(),
-                    new Q4_10_Check_SubTree(),
-                    new Q4_11_Random_Node(),
-                    new Q4_12_Paths_with_SumA(),
-                    new Q4_12_Paths_with_SumB(),
-                    new ReplaceNodeInImmutableTree()
-                },
+                //new Question[] {
+                //    new Traversals(),
+                //    new Q4_01_Route_Between_Nodes(),
+                //    new Q4_02_CreateMinimalBSTfromSortedUniqueArray(),
+                //    new Q4_03_List_of_Depths(),
+                //    new Q4_04_CheckBalanced(),
+                //    new Q4_05_Validate_BST(),
+                //    new Q4_06_Successor(),
+                //    new Q4_07_Build_Order_Edge_Removal_A(),
+                //    new Q4_07_Build_Order_Edge_DFS_B(),
+                //    new Q4_08_LowestCommonAncestorNotBST(),
+                //    new Q4_09_BST_Sequence(),
+                //    new Q4_10_Check_SubTree(),
+                //    new Q4_11_Random_Node(),
+                //    new Q4_12_Paths_with_SumA(),
+                //    new Q4_12_Paths_with_SumB(),
+                //    new ReplaceNodeInImmutableTree()
+                //},
 
                 new Question[] {
+                    new RightShifts(),
+                    new Sample_Code(),
                     new Q5_01_Insertion(),
                     new Q5_02_Binary_to_String(),
                     new Q5_03_Flip_Bit_to_Win_B(),
@@ -146,6 +157,8 @@ namespace ctci
                 },
                 //new Question[]
                 //{
+                //    new PrimeNumbers(),
+                //    new SieveOfEratosthenesB(),
                 //    new Q6_01_Find_Heavy_bottle(),
                 //    //new Q6_07_The_Apocalypse(),
                 //    new Q6_08_Egg_Drop(),
@@ -166,6 +179,10 @@ namespace ctci
                 //},
                 //new Question[]
                 //{
+                //    new FibonacciA(),
+                //    new FibonacciB(),
+                //    new FibonacciC(),
+                //    new FibonacciD(),
                 //    new Q8_01_Triple_StepA(),
                 //    new Q8_01_Triple_StepB(),
                 //    new Q8_02_Robot_in_a_GridA(),
@@ -198,19 +215,22 @@ namespace ctci
                 //    new Q9_05_Cache(),
                 //},
 
-                //new Question[] {
-                //    new Q10_01_Sorted_Merge(),
-                //    new Q10_02_Group_Anagrams(),
-                //    new Q10_03_Search_in_Rotated_Array(),
-                //    new Q10_04_Sorted_Search_No_Size(),
-                //    new Q10_05_Sparse_Search(),
-                //    new Q10_07_Missing_IntA(),
-                //    new Q10_07_Missing_IntB(),
-                //    new Q10_08_Find_Duplicates(),
-                //    new Q10_09_Sorted_Matrix_Search(),
-                //    new Q10_10_Rank_from_Stream(),
-                //    new Q10_11_Peaks_and_Valleys()
-                //},
+                new Question[] {
+                    new BinarySearchA(),
+                    new MergeSortB(),
+                    new QuicksortC(),
+                    new Q10_01_Sorted_Merge(),
+                    new Q10_02_Group_Anagrams(),
+                    new Q10_03_Search_in_Rotated_Array(),
+                    new Q10_04_Sorted_Search_No_Size(),
+                    new Q10_05_Sparse_Search(),
+                    new Q10_07_Missing_IntA(),
+                    new Q10_07_Missing_IntB(),
+                    new Q10_08_Find_Duplicates(),
+                    new Q10_09_Sorted_Matrix_Search(),
+                    new Q10_10_Rank_from_Stream(),
+                    new Q10_11_Peaks_and_Valleys()
+                },
                 new Question[]
                 {
                     //new IntroductionA(),
