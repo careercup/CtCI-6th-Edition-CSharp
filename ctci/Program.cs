@@ -57,6 +57,31 @@ using Ch_15._Threads_and_Locks.Q15_04_Deadlock_Free_Class;
 using Ch_15._Threads_and_Locks.Q15_05_Call_In_Order;
 using Ch_15._Threads_and_Locks.Q15_06_Synchronized_Methods;
 using Ch_15._Threads_and_Locks.Q15_07_FizzBuzz;
+using Ch_16._Moderate.Q16_02_Word_Frequencies;
+using Ch_16._Moderate.Q16_03_Intersection;
+using Ch_16._Moderate.Q16_04_Tic_Tac_Win;
+using Ch_16._Moderate.Q16_05_Factorial_Zeros;
+using Ch_16._Moderate.Q16_06_Smallest_Difference;
+using Ch_16._Moderate.Q16_07_Number_Max;
+using Ch_16._Moderate.Q16_08_English_Int;
+using Ch_16._Moderate.Q16_09_Operations;
+using Ch_16._Moderate.Q16_10_Living_People;
+using Ch_16._Moderate.Q16_11_Diving_Board;
+using Ch_16._Moderate.Q16_12_XML_Encoding;
+using Ch_16._Moderate.Q16_13_Bisect_Squares;
+using Ch_16._Moderate.Q16_14_Best_Line;
+using Ch_16._Moderate.Q16_15_Master_Mind;
+using Ch_16._Moderate.Q16_16_Sub_Sort;
+using Ch_16._Moderate.Q16_17_Contiguous_Sequence;
+using Ch_16._Moderate.Q16_18_Pattern_Matcher;
+using Ch_16._Moderate.Q16_19_Pond_Sizes;
+using Ch_16._Moderate.Q16_20_T9;
+using Ch_16._Moderate.Q16_21_Sum_Swap;
+using Ch_16._Moderate.Q16_22_Langtons_Ant;
+using Ch_16._Moderate.Q16_23_Rand7_From_Rand5;
+using Ch_16._Moderate.Q16_24_Pairs_With_Sum;
+using Ch_16._Moderate.Q16_25_LRU_Cache;
+using Ch_16._Moderate.Q16_26_Calculator;
 using Chapter01;
 using Chapter02;
 using Chapter04;
@@ -215,49 +240,99 @@ namespace ctci
                 //    new Q9_05_Cache(),
                 //},
 
-                new Question[] {
-                    new BinarySearchA(),
-                    new MergeSortB(),
-                    new QuicksortC(),
-                    new Q10_01_Sorted_Merge(),
-                    new Q10_02_Group_Anagrams(),
-                    new Q10_03_Search_in_Rotated_Array(),
-                    new Q10_04_Sorted_Search_No_Size(),
-                    new Q10_05_Sparse_Search(),
-                    new Q10_07_Missing_IntA(),
-                    new Q10_07_Missing_IntB(),
-                    new Q10_08_Find_Duplicates(),
-                    new Q10_09_Sorted_Matrix_Search(),
-                    new Q10_10_Rank_from_Stream(),
-                    new Q10_11_Peaks_and_Valleys()
-                },
-                new Question[]
-                {
-                    //new IntroductionA(),
-                    //new IntroductionB(),
-                    //new TaskExampleB(),
-                    //new IntroductionSynchronizedBlocksC(),
-                    //new IntroductionSynchronizationD(),
-                    //new IntroductionWaitNotifyE(),
-                    //new IntroductionLocksF(),
-                    //new Q15_03_Dining_PhilosophersA(),
-                    //new Q15_03_Dining_PhilosophersB(),
-                    //new Q15_04_Deadlock_Free_Class(),
-                    //new Q15_05_Call_In_Order(),
-                    //new Q15_06_Synchronized_Methods(),
-                    new Q15_07_FizzBuzzA(),
-                    //new Q15_07_FizzBuzzB(),
-                    new Q15_07_FizzBuzzC(),
-                },
+                //new Question[] {
+                //    new BinarySearchA(),
+                //    new MergeSortB(),
+                //    new QuicksortC(),
+                //    new Q10_01_Sorted_Merge(),
+                //    new Q10_02_Group_Anagrams(),
+                //    new Q10_03_Search_in_Rotated_Array(),
+                //    new Q10_04_Sorted_Search_No_Size(),
+                //    new Q10_05_Sparse_Search(),
+                //    new Q10_07_Missing_IntA(),
+                //    new Q10_07_Missing_IntB(),
+                //    new Q10_08_Find_Duplicates(),
+                //    new Q10_09_Sorted_Matrix_Search(),
+                //    new Q10_10_Rank_from_Stream(),
+                //    new Q10_11_Peaks_and_Valleys()
+                //},
+                //new Question[]
+                //{
+                //    new IntroductionA(),
+                //    new IntroductionB(),
+                //    new TaskExampleB(),
+                //    new IntroductionSynchronizedBlocksC(),
+                //    new IntroductionSynchronizationD(),
+                //    new IntroductionWaitNotifyE(),
+                //    new IntroductionLocksF(),
+                //    new Q15_03_Dining_PhilosophersA(),
+                //    new Q15_03_Dining_PhilosophersB(),
+                //    new Q15_04_Deadlock_Free_Class(),
+                //    new Q15_05_Call_In_Order(),
+                //    new Q15_06_Synchronized_Methods(),
+                //    new Q15_07_FizzBuzzA(),
+                //    new Q15_07_FizzBuzzB(),
+                //    new Q15_07_FizzBuzzC(),
+                //},
 
                 new Question[]
                 {
                     new Q16_01_Number_Swapper(),
-                    new Q16_02_Word_Frequence(),
-                    new Q16_04_Tic_Tac_Toe_Win(),
-                    new Q16_06_Smallest_Difference(),
-                    new Q16_08_English_Int(),
-                    new Q16_19_Pond_Sizes(),
+                    new Q16_02_Word_FrequenciesA(),
+                    new Q16_02_Word_FrequenciesB(),
+                    new Q16_03_Intersection(),
+                    new Q16_04_Tic_Tac_WinA(),
+                    new Q16_04_Tic_Tac_WinB(),
+                    new Q16_04_Tic_Tac_WinC(),
+                    new Q16_04_Tic_Tac_WinD(),
+                    new Q16_04_Tic_Tac_WinE(),
+                    new Q16_04_Tic_Tac_WinF(),
+                    new Q16_04_Tic_Tac_WinG(),
+                    new Q16_04_Tic_Tac_WinH(),
+                    new Q16_05_Factorial_ZerosA(),
+                    new Q16_05_Factorial_ZerosB(),
+                    new Q16_06_Smallest_DifferenceA(),
+                    new Q16_06_Smallest_DifferenceB(),
+                    new Q16_06_Smallest_DifferenceC(),
+                    new Q16_07_Number_Max(),
+                    new Q16_08_English_IntA(),
+                    new Q16_09_Operations(),
+                    // new Q16_10_Living_PeopleA(),
+                    new Q16_10_Living_PeopleB(),
+                    new Q16_10_Living_PeopleC(),
+                    new Q16_10_Living_PeopleD(),
+                    new Q16_11_Diving_BoardA(),
+                    new Q16_11_Diving_BoardB(),
+                    new Q16_11_Diving_BoardC(),
+                    new Q16_12_XML_Encoding_OO_A(),
+                    new Q16_13_Bisect_Squares(),
+                    new Q16_14_Best_Line(),
+                    new Q16_15_Master_Mind(),
+                    new Q16_16_Sub_SortA(),
+                    new Q16_16_Sub_SortB(),
+                    new Q16_17_Contiguous_Sequence(),
+                    new Q16_18_Pattern_MatcherA(),
+                    new Q16_18_Pattern_MatcherB(),
+                    new Q16_18_Pattern_MatcherC(),
+                    new Q16_18_Pattern_MatcherD(),
+                    new Q16_19_Pond_SizesA(),
+                    new Q16_19_Pond_SizesB(),
+                    new Q16_20_T9A(),
+                    new Q16_20_T9B(),
+                    new Q16_20_T9C(),
+                    new Q16_21_Sum_SwapA(),
+                    new Q16_21_Sum_SwapB(),
+                    new Q16_21_Sum_SwapC(),
+                    new Q16_21_Sum_SwapD(),
+                    new Q16_22_Langtons_Ant(),
+                    //new Q16_23_Rand7_From_Rand5_A(),
+                    //new Q16_23_Rand7_From_Rand5_B(),
+                    new Q16_24_Pairs_With_SumA(),
+                    new Q16_24_Pairs_With_SumB(),
+                    new Q16_24_Pairs_With_SumC(),
+                    new Q16_25_LRU_Cache(),
+                    new Q16_26_CalculatorA(),
+                    new Q16_26_CalculatorB(),
                     new Boggle()
                 }
 

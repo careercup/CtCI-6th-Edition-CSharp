@@ -13,20 +13,20 @@ namespace Ch_10._Sorting_and_Searching.Introduction
 	// Space complexity: O(logn)
 	public class QuicksortC : Question
     {
-		public static void quickSort(int[] arr, int left, int right)
+		public static void QuickSort(int[] arr, int left, int right)
 		{
-			int index = partition(arr, left, right);
+			int index = Partition(arr, left, right);
 			if (left < index - 1)
 			{ // Sort left half
-				quickSort(arr, left, index - 1);
+				QuickSort(arr, left, index - 1);
 			}
 			if (index < right)
 			{ // Sort right half
-				quickSort(arr, index, right);
+				QuickSort(arr, index, right);
 			}
 		}
 
-		public static int partition(int[] arr, int left, int right)
+		public static int Partition(int[] arr, int left, int right)
 		{
 			int pivot = arr[left + (right - left) / 2]; // Pick a pivot point. Can be an element		
 
@@ -47,7 +47,7 @@ namespace Ch_10._Sorting_and_Searching.Introduction
 				// Swap elements, and move left and right indices
 				if (left <= right)
 				{
-					swap(arr, left, right);
+					Swap(arr, left, right);
 					left++;
 					right--;
 				}
@@ -55,7 +55,7 @@ namespace Ch_10._Sorting_and_Searching.Introduction
 			return left;
 		}
 
-		public static void swap(int[] array, int i, int j)
+		public static void Swap(int[] array, int i, int j)
 		{
 			int tmp = array[i];
 			array[i] = array[j];
@@ -66,7 +66,7 @@ namespace Ch_10._Sorting_and_Searching.Introduction
         {
 			int[] arr = AssortedMethods.RandomArray(20, 0, 6);
 			AssortedMethods.PrintIntArray(arr);
-			quickSort(arr, 0, arr.Length - 1);
+			QuickSort(arr, 0, arr.Length - 1);
 			AssortedMethods.PrintIntArray(arr);
 		}
     }
