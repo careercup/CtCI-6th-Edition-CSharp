@@ -82,6 +82,15 @@ using Ch_16._Moderate.Q16_23_Rand7_From_Rand5;
 using Ch_16._Moderate.Q16_24_Pairs_With_Sum;
 using Ch_16._Moderate.Q16_25_LRU_Cache;
 using Ch_16._Moderate.Q16_26_Calculator;
+using Ch_17._Hard.Q17_01_Add_Without_Plus;
+using Ch_17._Hard.Q17_02_Shuffle;
+using Ch_17._Hard.Q17_03_Random_Set;
+using Ch_17._Hard.Q17_04_Missing_Number;
+using Ch_17._Hard.Q17_05_Letters_and_Numbers;
+using Ch_17._Hard.Q17_06_Count_of_2s;
+using Ch_17._Hard.Q17_07_Baby_Names;
+using Ch_17._Hard.Q17_08_Circus_Tower;
+using Ch_17._Hard.Q17_09_Kth_Multiple;
 using Chapter01;
 using Chapter02;
 using Chapter04;
@@ -334,6 +343,26 @@ namespace ctci
                     new Q16_26_CalculatorA(),
                     new Q16_26_CalculatorB(),
                     new Boggle()
+                },
+                new Question[]
+                {
+                    new Q17_01_Add_Without_PlusA(),
+                    new Q17_01_Add_Without_PlusB(),
+                    new Q17_02_Shuffle(),
+                    new Q17_03_Random_Set(),
+                    new Q17_04_Missing_Number(),
+                    new Q17_04_Missing_NumberB(),
+                    new Q17_05_Letters_and_NumbersA(),
+                    new Q17_05_Letters_and_NumbersB(),
+                    new Q17_06_Count_of_2sA(),
+                    //new Q17_06_Count_of_2sB(),
+                    new Q17_07_Baby_NamesA(),
+                    new Q17_07_Baby_NamesB(),
+                    new Q17_08_Circus_TowerA(),
+                    new Q17_08_Circus_TowerB(),
+                    new Q17_09_Kth_MultipleA(),
+                    new Q17_09_Kth_MultipleB(),
+                    new Q17_09_Kth_MultipleC(),
                 }
 
             };
