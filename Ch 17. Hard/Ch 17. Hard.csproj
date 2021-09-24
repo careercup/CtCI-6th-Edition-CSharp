@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MoreComplexDataStructures" Version="1.9.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ctci.Contracts\ctci.Contracts.csproj" />
     <ProjectReference Include="..\ctci.Library\ctci.Library.csproj" />
   </ItemGroup>

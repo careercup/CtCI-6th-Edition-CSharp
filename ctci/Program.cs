@@ -91,6 +91,23 @@ using Ch_17._Hard.Q17_06_Count_of_2s;
 using Ch_17._Hard.Q17_07_Baby_Names;
 using Ch_17._Hard.Q17_08_Circus_Tower;
 using Ch_17._Hard.Q17_09_Kth_Multiple;
+using Ch_17._Hard.Q17_10_Majority_Element;
+using Ch_17._Hard.Q17_11_Word_Distance;
+using Ch_17._Hard.Q17_12_BiNode;
+using Ch_17._Hard.Q17_13_ReSpace;
+using Ch_17._Hard.Q17_14_Smallest_K;
+using Ch_17._Hard.Q17_15_Longest_Word;
+using Ch_17._Hard.Q17_16_The_Masseuse;
+using Ch_17._Hard.Q17_17_Multi_Search;
+using Ch_17._Hard.Q17_18_Shortest_Supersequence;
+using Ch_17._Hard.Q17_19_Missing_Two;
+using Ch_17._Hard.Q17_20_Continuous_Median;
+using Ch_17._Hard.Q17_21_Volume_of_Histogram;
+using Ch_17._Hard.Q17_22_Word_Transformer;
+using Ch_17._Hard.Q17_23_Max_Black_Square;
+using Ch_17._Hard.Q17_24_Max_Submatrix;
+using Ch_17._Hard.Q17_25_Word_Rectangle;
+using Ch_17._Hard.Q17_26_Sparse_Similarity;
 using Chapter01;
 using Chapter02;
 using Chapter04;
@@ -363,6 +380,52 @@ namespace ctci
                     new Q17_09_Kth_MultipleA(),
                     new Q17_09_Kth_MultipleB(),
                     new Q17_09_Kth_MultipleC(),
+                    new Q17_10_Majority_ElementA(),
+                    new Q17_10_Majority_ElementB(),
+                    new Q17_11_Word_DistanceA(),
+                    new Q17_11_Word_DistanceB(),
+                    new Q17_12_BiNodeA(),
+                    new Q17_12_BiNodeB(),
+                    new Q17_12_BiNodeC(),
+                    // new Q17_13_ReSpaceA(),
+                    new Q17_13_ReSpaceB(),
+                    new Q17_14_Smallest_K_A(),
+                    new Q17_14_Smallest_K_B(),
+                    new Q17_14_Smallest_K_C(),
+                    new Q17_15_Longest_Word(),
+                    new Q17_16_The_MasseuseA(),
+                    new Q17_16_The_MasseuseB(),
+                    new Q17_16_The_MasseuseC(),
+                    new Q17_16_The_MasseuseD(),
+                    // new Q17_16_The_MasseuseE(),
+                    new Q17_17_Multi_SearchA(),
+                    new Q17_17_Multi_SearchB(),
+                    new Q17_17_Multi_SearchC(),
+                    new Q17_18_Shortest_SupersequenceA(),
+                    new Q17_18_Shortest_SupersequenceB(),
+                    new Q17_18_Shortest_SupersequenceC(),
+                    new Q17_18_Shortest_SupersequenceD(),
+                    new Q17_18_Shortest_SupersequenceE(),
+                    new Q17_19_Missing_TwoA(),
+                    new Q17_19_Missing_TwoB(),
+                    new Q17_19_Missing_TwoC(),
+                    new Q17_20_Continuous_Median(),
+                    new Q17_21_Volume_of_HistogramA(),
+                    new Q17_21_Volume_of_HistogramB(),
+                    new Q17_21_Volume_of_HistogramC(),
+                    new Q17_22_Word_TransformerA(),
+                    new Q17_22_Word_TransformerB(),
+                    new Q17_22_Word_TransformerC(),
+                    new Q17_23_Max_Black_SquareA(),
+                    new Q17_23_Max_Black_Square_EfficiencyB(),
+                    new Q17_24_Max_SubmatrixA(),
+                    new Q17_24_Max_SubmatrixB(),
+                    new Q17_24_Max_SubmatrixC(),
+                    new Q17_25_Word_Rectangle_Test(),
+                    //new Q17_26_Sparse_SimilarityA(),
+                    //new Q17_26_Sparse_SimilarityB(),
+                    //new Q17_26_Sparse_SimilarityC(),
+                    new Q17_26_Sparse_Similarity_Tester(),
                 }
 
             };
