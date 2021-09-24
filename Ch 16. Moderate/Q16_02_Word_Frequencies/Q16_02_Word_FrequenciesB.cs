@@ -47,7 +47,7 @@ namespace Ch_16._Moderate.Q16_02_Word_Frequencies
 
 		public override void Run()
         {
-			string[] wordlist = AssortedMethods.GetLongTextBlobAsstringList();
+			string[] wordlist = AssortedMethods.GetLongTextBlobAsStringList();
 			Dictionary<string, int> dictionary = SetupDictionary(wordlist);
 
 			string[] words = { "the", "Lara", "and", "outcropping", "career", "it" };

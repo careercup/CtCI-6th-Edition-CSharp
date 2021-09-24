@@ -43,7 +43,7 @@ namespace ctci.Library
             }
         }
 
-        public String PrintForward()
+        public string PrintForward()
         {
             if (Next != null)
             {

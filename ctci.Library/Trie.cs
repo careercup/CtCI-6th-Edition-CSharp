@@ -50,7 +50,7 @@ namespace ctci.Library
             return !exact || lastNode.Terminates;
         }
 
-        public bool Contains(String prefix)
+        public bool Contains(string prefix)
         {
             return Contains(prefix, false);
         }

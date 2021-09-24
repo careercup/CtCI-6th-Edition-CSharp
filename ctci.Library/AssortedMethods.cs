@@ -277,7 +277,7 @@ namespace ctci.Library
             return book_mod;
         }
 
-        public static string[] GetLongTextBlobAsstringList()
+        public static string[] GetLongTextBlobAsStringList()
         {
             return GetLongTextBlob().Split(new char[] { ' ' });
         }

@@ -64,9 +64,9 @@ namespace ctci.Library
 					ans.Append(pair.Value[i]);
 					if (i != pair.Value.Count - 1)
 						ans.Append(", ");
-					else ans.Append($"){Environment.NewLine}");
                 }
-            }
+				ans.Append($"){Environment.NewLine}");
+			}
 			return ans.ToString();
 		}
 	}
