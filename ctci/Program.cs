@@ -1,12 +1,14 @@
 using Chapter01;
 using Chapter02;
-using Chapter04;
+//using Chapter04;
 using Chapter05;
+using Chapter08;
 using Chapter10;
 using Chapter16;
 using ctci.Contracts;
 using Introduction;
 using System;
+using System.Diagnostics;
 
 namespace ctci
 {
@@ -28,7 +30,7 @@ namespace ctci
                     new Q1_04_Palindrome_Permutation(),
                     new Q1_05_One_Away_A(),
                     new Q1_06_String_Compression(),
-                    new Q1_07_Rotate_Matrix(),
+                    // new Q1_07_Rotate_Matrix(),
                     new Q1_08_Zero_Matrix(),
                     new Q1_09_String_Rotation(),
                 },
@@ -44,17 +46,17 @@ namespace ctci
                     new Q2_08_Loop_Detection()
                 },
 
-                new Question[] {
-                    new Q4_02_CreateMinimalBSTfromSortedUniqueArray(),
-                    new Q4_03_List_of_Depths(),
-                    new Q4_04_CheckBalanced(),
-                    new Q4_05_Validate_BST(),
-                    new Q4_06_Successor(),
-                    new Q4_08_LowestCommonAncestorNotBST(),
-                    new Q4_09_BST_Sequence(),
-                    new Q4_10_Check_SubTree(),
-                    new ReplaceNodeInImmutableTree()
-                },
+                // new Question[] {
+                //     new Q4_02_CreateMinimalBSTfromSortedUniqueArray(),
+                //     new Q4_03_List_of_Depths(),
+                //     new Q4_04_CheckBalanced(),
+                //     new Q4_05_Validate_BST(),
+                //     new Q4_06_Successor(),
+                //     new Q4_08_LowestCommonAncestorNotBST(),
+                //     new Q4_09_BST_Sequence(),
+                //     new Q4_10_Check_SubTree(),
+                //     new ReplaceNodeInImmutableTree()
+                // },
 
                 new Question[] {
                     new Q5_01_Insertion(),
@@ -64,6 +66,10 @@ namespace ctci
                     new Q5_06_Conversion(),
                     new Q5_07_Pairwise_Swap(),
                     new Q5_08_Draw_Line()
+                },
+
+                new Question[] {
+                    new Q8_01_Triple_Step()
                 },
 
                 new Question[] {
@@ -92,13 +98,19 @@ namespace ctci
 
             foreach (var chapter in chapters)
             {
+                Stopwatch stopwatch = new Stopwatch();
                 foreach (Question q in chapter)
                 {
                     Console.WriteLine("\n\n");
                     Console.WriteLine($"// Executing: {q.Name}");
                     Console.WriteLine("// ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----");
 
+                    stopwatch.Start();
                     q.Run();
+                    stopwatch.Stop();
+                    
+                    Console.WriteLine();
+                    Console.WriteLine($"// Elapsed: {stopwatch.Elapsed}");
                 }
             }
 

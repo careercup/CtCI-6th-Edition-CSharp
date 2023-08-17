@@ -2306,5 +2306,13 @@ namespace ctci.Library
             };
             return wordList;
         }
+
+        public static void FillArray<T>(T[] arr, T val)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = val;
+            }
+        }
     }
 }
