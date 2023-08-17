@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch 16. Moderate", "Ch 16. M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch 04. Trees", "Ch 04. Trees\Ch 04. Trees.csproj", "{AF583937-1A80-407F-B683-3FEED7F3BC16}"
 EndProject
+Project("{8E563D72-A200-4BB7-8AB8-A93BEED3A5B7}") = "Ch 08. Recursion and Dynamic Programming", "Ch 08. Recursion and Dynamic Programming\Ch 08. Recursion and Dynamic Programming.csproj", "{CF860E19-E678-4DB8-BF4A-87A92B58F7E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,10 @@ Global
 		{AF583937-1A80-407F-B683-3FEED7F3BC16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF583937-1A80-407F-B683-3FEED7F3BC16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF583937-1A80-407F-B683-3FEED7F3BC16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF860E19-E678-4DB8-BF4A-87A92B58F7E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF860E19-E678-4DB8-BF4A-87A92B58F7E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF860E19-E678-4DB8-BF4A-87A92B58F7E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF860E19-E678-4DB8-BF4A-87A92B58F7E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -88,5 +94,6 @@ Global
 		{90D56A57-CEAD-42F8-A978-BC2D33530E0E} = {8E563D72-A200-4BB7-8AB8-A93BEED3A5B7}
 		{AE0D044B-1AE9-430F-B05D-ADAC72C407B8} = {8E563D72-A200-4BB7-8AB8-A93BEED3A5B7}
 		{AF583937-1A80-407F-B683-3FEED7F3BC16} = {8E563D72-A200-4BB7-8AB8-A93BEED3A5B7}
+		{CF860E19-E678-4DB8-BF4A-87A92B58F7E7} = {8E563D72-A200-4BB7-8AB8-A93BEED3A5B7}
 	EndGlobalSection
 EndGlobal

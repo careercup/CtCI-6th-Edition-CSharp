@@ -31,10 +31,10 @@ namespace Chapter01
         {
             if (!IsSquareMatrix(matrix))  // Edge case + error checking.
             {
-                return false;
+                return;
             }
-            
-            int matrixSize = matrix.Length
+
+            int matrixSize = matrix.Length;
             for (int layer = 0; layer < matrixSize / 2; layer++)
             {
                 int startIndex = layer;
@@ -71,7 +71,7 @@ namespace Chapter01
 
             AssortedMethods.PrintMatrix(matrix);
 
-            Rotate(matrix, size);
+            Rotate(matrix);
             Console.WriteLine();
             AssortedMethods.PrintMatrix(matrix);
         }
