@@ -14,8 +14,8 @@ namespace Chapter01
             {
                 return false;
             }
-            
-            // Now, check the length of all the rows to make sure we have a 
+
+            // Now, check the length of all the rows to make sure we have a
             // square matrix, as 1 or more rows may be too small or too big.
             for (int row = 0; row < matrix[row].Length; row++)
             {
@@ -26,15 +26,15 @@ namespace Chapter01
             }
             return true;  // No errors so far, so we must have a square matrix.
         }
-        
+
         private void Rotate(int[][] matrix)
         {
             if (!IsSquareMatrix(matrix))  // Edge case + error checking.
             {
-                return false;
+                return;
             }
-            
-            int matrixSize = matrix.Length
+
+            int matrixSize = matrix.Length;
             for (int layer = 0; layer < matrixSize / 2; layer++)
             {
                 int startIndex = layer;
@@ -44,7 +44,7 @@ namespace Chapter01
                 {
                     // Need this offset so we don't reference the incorrect rows and columns when more layers occur.
                     int offset = elementIndex - layer;
-                    
+
                     // Write a diagram to help visualise and understand what occurs below:
                     int topRowElement = matrix[startIndex][elementIndex]; // save top
 
@@ -71,7 +71,7 @@ namespace Chapter01
 
             AssortedMethods.PrintMatrix(matrix);
 
-            Rotate(matrix, size);
+            Rotate(matrix);
             Console.WriteLine();
             AssortedMethods.PrintMatrix(matrix);
         }

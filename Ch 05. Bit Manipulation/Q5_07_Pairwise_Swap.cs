@@ -8,7 +8,7 @@ namespace Chapter05
     {
         public static int SwapOddEvenBits(int x)
         {
-            return (int)(((x & 0xaaaaaaaa) >> 1) | ((x & 0x55555555) << 1));
+            return (int)((((uint)x & 0xaaaaaaaa) >> 1) | (((uint)x & 0x55555555) << 1));
         }
 
         public override void Run()
