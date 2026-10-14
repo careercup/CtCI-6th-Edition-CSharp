@@ -18,7 +18,10 @@ namespace ctci.Library
         public static void Print(this TreeNode root, int topMargin = 2, int leftMargin = 2)
         {
             if (root == null) return;
-            int rootTop = Console.CursorTop + topMargin;
+            // Scroll down first so the tree fits even when the console buffer is only as tall as the window (Windows Terminal, VS Code).
+            int treeRows = 2 * root.Height() - 1;
+            for (int i = 0; i < topMargin + treeRows; i++) Console.WriteLine();
+            int rootTop = Console.CursorTop - treeRows;
             var last = new List<NodeInfo>();
             var next = root;
             for (int level = 0; next != null; level++)

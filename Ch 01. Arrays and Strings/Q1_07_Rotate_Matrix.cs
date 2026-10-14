@@ -17,7 +17,7 @@ namespace Chapter01
             
             // Now, check the length of all the rows to make sure we have a 
             // square matrix, as 1 or more rows may be too small or too big.
-            for (int row = 0; row < matrix[row].Length; row++)
+            for (int row = 0; row < matrixSize; row++)
             {
                 if (matrixSize != matrix[row].Length)
                 {
@@ -31,10 +31,10 @@ namespace Chapter01
         {
             if (!IsSquareMatrix(matrix))  // Edge case + error checking.
             {
-                return false;
+                return;
             }
             
-            int matrixSize = matrix.Length
+            int matrixSize = matrix.Length;
             for (int layer = 0; layer < matrixSize / 2; layer++)
             {
                 int startIndex = layer;
@@ -71,7 +71,7 @@ namespace Chapter01
 
             AssortedMethods.PrintMatrix(matrix);
 
-            Rotate(matrix, size);
+            Rotate(matrix);
             Console.WriteLine();
             AssortedMethods.PrintMatrix(matrix);
         }
